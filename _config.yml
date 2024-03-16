@@ -1,0 +1,64 @@
+### Site metadata ###
+title: "Thoughts Worth Documenting"
+description: "Glenn J. Lea Technical Writer and Historian"
+name: "Glenn J Lea"
+
+### Build settings ###
+
+url: "https://glennjlea.com"
+baseurl: /
+feedback_email: glenn.lea@gmail.com
+media: https://glennjlea.com/
+host: 127.0.0.1
+port: 4029
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - ssg-build.sh
+  - LICENSE.md
+  - README.md
+  - "not_released/*"
+  - "_drafts/*"
+
+permalink: /:categories/:title/
+
+# paginate: 3
+## paginate_path: /page:num/ ###
+# excerpt_separator: "\n\n"
+
+markdown           : redcarpet
+markdown           : kramdown
+highlighter        : rouge
+output             : web
+format             : web
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-paginate
+
+whitelist:
+  - jekyll-sitemap
+
+collections:
+  servetus:
+    output: true
+  tyndale:
+    output: true
+  ware:
+    output: true
+  latex:
+    output: true
+  haudenosaunee:
+    output: true
+  blog:
+    output: true

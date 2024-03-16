@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Creating LaTeX Stylesheets</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Creating LaTeX Stylesheets" />
+    <meta property="og:url" content="http://localhost:4029/latex/latex-stylesheets/" />
+    <meta property="og:description" content="Use a stylesheet to easily maintain all the styles used by your LaTeX project." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Creating LaTeX Stylesheets
+      
+    
+</div></div>
+      <h1 id="creating-latex-stylesheets">Creating LaTeX Stylesheets</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#creating-latex-stylesheets" id="markdown-toc-creating-latex-stylesheets">Creating LaTeX Stylesheets</a>    <ul>
+      <li><a href="#why-use-a-stylesheets" id="markdown-toc-why-use-a-stylesheets">Why Use a stylesheets?</a></li>
+      <li><a href="#project-structure-that-includes-a-styles-subdirectory" id="markdown-toc-project-structure-that-includes-a-styles-subdirectory">Project structure that includes a styles subdirectory</a></li>
+      <li><a href="#including-the-stylesheet-in-the-root-file-maintex" id="markdown-toc-including-the-stylesheet-in-the-root-file-maintex">Including the stylesheet in the root file main.tex</a></li>
+      <li><a href="#example-stylesheet" id="markdown-toc-example-stylesheet">Example stylesheet</a>        <ul>
+          <li><a href="#packages" id="markdown-toc-packages">Packages</a></li>
+          <li><a href="#base-fonts-and-text-formatting" id="markdown-toc-base-fonts-and-text-formatting">Base fonts and text formatting</a></li>
+          <li><a href="#title-page" id="markdown-toc-title-page">Title Page</a></li>
+          <li><a href="#warnings-notes-and-info-boxes-colours" id="markdown-toc-warnings-notes-and-info-boxes-colours">Warnings, Notes and Info boxes colours</a></li>
+          <li><a href="#heading-styles" id="markdown-toc-heading-styles">Heading styles</a></li>
+          <li><a href="#section-definitions" id="markdown-toc-section-definitions">Section definitions</a></li>
+          <li><a href="#page-size-margin-and-layout-definitions" id="markdown-toc-page-size-margin-and-layout-definitions">Page size, margin and layout definitions</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The key development effort to create high-quality technical documentation is the stylesheet. It takes a considerable amount of time to develop but getting it right is critical for the quality of the documentation.</p>
+
+<p>Using a LaTex stylesheet makes it easy to keep in one place all the styles used by the document. Stylesheets are a useful method of organizing all the styles used throughout your LaTeX project. You could also have a single stylesheet file, <code class="language-plaintext highlighter-rouge">stylesheet.sty</code> for example, that is used across multiple projects.</p>
+
+<h2 id="why-use-a-stylesheets">Why Use a stylesheets?</h2>
+
+<p>You could put all your styles in the head of each <code class="language-plaintext highlighter-rouge">.tex</code> file in your project but that makes no sense, especially if you have multiple files referring to the same stylesheet. Furthermore, keeping all your styles in a single file makes maintaining the styles vastly easier. For example, you could comment out particular commands to help you during your development process. You could also comment out chapters that are not required for specific documents, such as reference material or list of terminology.</p>
+
+<h2 id="project-structure-that-includes-a-styles-subdirectory">Project structure that includes a styles subdirectory</h2>
+
+<p>For my LaTeX projects, I created a subdirectory called <code class="language-plaintext highlighter-rouge">\styles</code>and I placed in this directory a single style sheet called <code class="language-plaintext highlighter-rouge">mystyles.sty</code>. If more than one stylesheet is required for your project, then they can be placed in this subdirectory.</p>
+
+<p>Here is an example project structure. Notice the <code class="language-plaintext highlighter-rouge">\styles</code> directory.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Project Root
+├── manual-ROOT.tex        # document root file
+├── \styles                # stylesheet subdirectory
+├── \chapters              # subdirectory to store all chapters
+├── \append                # subdirectory to store any appendices
+├── \images                # subdirectory for shared images
+</code></pre></div></div>
+
+<h2 id="including-the-stylesheet-in-the-root-file-maintex">Including the stylesheet in the root file main.tex</h2>
+
+<p>To use the stylesheet in your project, you simply include a command in the root file <code class="language-plaintext highlighter-rouge">main.tex</code> immediately following the <code class="language-plaintext highlighter-rouge">\documentclass</code> command but before the <code class="language-plaintext highlighter-rouge">\begin{document}</code> command.</p>
+
+<p>Here is an example snippet from a <code class="language-plaintext highlighter-rouge">main.tex</code> file.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">% Copyright Glenn J. Lea</span>
+<span class="c">%</span>
+<span class="c">% MAIN FILE</span>
+<span class="c">%</span>
+<span class="c">% Set the document class which is book</span>
+<span class="k">\documentclass</span><span class="na">[a4paper,11pt,twoside]</span><span class="p">{</span>book<span class="p">}</span> 
+<span class="c">% Insert the stylesheet</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+<span class="c">% Begin the document</span>
+<span class="nt">\begin{document}</span>   
+</code></pre></div></div>
+
+<h2 id="example-stylesheet">Example stylesheet</h2>
+
+<p>To help you get started creating a stylesheet for your project, here is an short example you can begin with. I kept all related styles together within sections separated by comments.</p>
+
+<h3 id="packages">Packages</h3>
+
+<p>First, include required packages.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Packages</span>
+  <span class="k">\usepackage</span><span class="na">[T1]</span><span class="p">{</span>fontenc<span class="p">}</span>
+  <span class="k">\usepackage</span><span class="p">{</span>amsmath<span class="p">}</span>
+  <span class="k">\usepackage</span><span class="p">{</span>amssymb,amsfonts,textcomp<span class="p">}</span>
+  <span class="k">\usepackage</span><span class="p">{</span>hhline<span class="p">}</span>
+
+<span class="c">% Creates custom columns</span>
+  <span class="k">\usepackage</span><span class="p">{</span>array<span class="p">}</span>
+
+<span class="c">% Create links for clickable URLs</span>
+  <span class="k">\usepackage</span><span class="p">{</span>hyperref<span class="p">}</span>
+
+<span class="c">% Langauge selection to US English</span>
+  <span class="k">\usepackage</span><span class="na">[english]</span><span class="p">{</span>babel<span class="p">}</span>
+
+<span class="c">% Standard graphics support.</span>
+  <span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="base-fonts-and-text-formatting">Base fonts and text formatting</h3>
+
+<p>Second, define a base font and format specifications for text.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Font Selection Styles and Packages, where Helvetica is the base font.</span>
+  <span class="k">\usepackage</span><span class="p">{</span>lmodern<span class="p">}</span>
+  <span class="k">\usepackage</span><span class="p">{</span>helvet<span class="p">}</span>
+  <span class="k">\renewcommand</span><span class="p">{</span><span class="k">\familydefault</span><span class="p">}{</span><span class="k">\sfdefault</span><span class="p">}</span>
+
+<span class="c">% Monospaced font</span>
+  <span class="k">\usepackage</span><span class="p">{</span>courier<span class="p">}</span>
+
+<span class="c">% Allow relative size specifications, for example \smaller, \larger.</span>
+  <span class="k">\usepackage</span><span class="p">{</span>relsize<span class="p">}</span>
+
+<span class="c">% Table of contents fonts and formatting</span>
+  <span class="k">\usepackage</span><span class="na">[titles]</span><span class="p">{</span>tocloft<span class="p">}</span>
+
+<span class="c">% Redefine spacing</span>
+  <span class="k">\setlength</span><span class="p">{</span><span class="k">\cftbeforechapskip</span><span class="p">}{</span>2ex<span class="p">}</span>
+
+  <span class="k">\setlength</span><span class="p">{</span><span class="k">\cftbeforesecskip</span><span class="p">}{</span>0.5ex<span class="p">}</span>
+
+<span class="c">% Text styles</span>
+  <span class="k">\newcommand\textstyleCourier</span><span class="na">[1]</span><span class="p">{</span><span class="k">\texttt</span><span class="p">{</span>#1<span class="p">}}</span>
+  <span class="k">\newcommand\textstyleDefaultParagraphFont</span><span class="na">[1]</span><span class="p">{</span>#1<span class="p">}</span>
+  <span class="k">\makeatletter</span>
+  <span class="k">\newcommand\arraybslash</span><span class="p">{</span><span class="k">\let\\\@</span>arraycr<span class="p">}</span>
+  <span class="k">\makeatother</span>
+</code></pre></div></div>
+
+<h3 id="title-page">Title Page</h3>
+
+<p>Third, define the layout of the document’s title page.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Title page packages and colour settings</span>
+  <span class="k">\usepackage</span><span class="p">{</span>xcolor<span class="p">}</span>
+  <span class="k">\usepackage</span><span class="p">{</span>lipsum<span class="p">}</span>  <span class="c">% Used for dummy text.</span>
+  <span class="k">\definecolor</span><span class="p">{</span>titlepagecolor<span class="p">}{</span>RGB<span class="p">}{</span>0,38,75<span class="p">}</span>
+  <span class="k">\definecolor</span><span class="p">{</span>namecolor<span class="p">}{</span>RGB<span class="p">}{</span>241,133,0<span class="p">}</span>
+
+<span class="c">% General use colour definitions</span>
+  <span class="k">\definecolor</span><span class="p">{</span>blue<span class="p">}{</span>rgb<span class="p">}{</span>0,38,75<span class="p">}</span>
+  <span class="k">\definecolor</span><span class="p">{</span>orange<span class="p">}{</span>rgb<span class="p">}{</span>241,133,0<span class="p">}</span>
+  <span class="k">\definecolor</span><span class="p">{</span>gray<span class="p">}{</span>rgb<span class="p">}{</span>0.4, 0.0, 0.4<span class="p">}</span>
+  <span class="k">\definecolor</span><span class="p">{</span>codeBackground<span class="p">}{</span>RGB<span class="p">}{</span>251, 251, 244<span class="p">}</span>
+  <span class="k">\definecolor</span><span class="p">{</span>codeBackground<span class="p">}{</span>white<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="warnings-notes-and-info-boxes-colours">Warnings, Notes and Info boxes colours</h3>
+
+<p>Fourth, define the background and line colours for boxes for warnings, notes and additional information.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Background Colors</span>
+  <span class="k">\definecolor</span><span class="p">{</span>warning<span class="p">}{</span>RGB<span class="p">}{</span>255,231,231<span class="p">}</span> <span class="c">% Warning</span>
+  <span class="k">\definecolor</span><span class="p">{</span>note<span class="p">}{</span>RGB<span class="p">}{</span>255,255,211<span class="p">}</span> <span class="c">% Note</span>
+  <span class="k">\definecolor</span><span class="p">{</span>info<span class="p">}{</span>RGB<span class="p">}{</span>224,239,255<span class="p">}</span> <span class="c">% Info</span>
+
+<span class="c">% Line Colors</span>
+  <span class="k">\definecolor</span><span class="p">{</span>infoline<span class="p">}{</span>RGB<span class="p">}{</span>158,182,212<span class="p">}</span> <span class="c">% Info</span>
+  <span class="k">\definecolor</span><span class="p">{</span>noteline<span class="p">}{</span>RGB<span class="p">}{</span>247,223,146<span class="p">}</span> <span class="c">% Note</span>
+  <span class="k">\definecolor</span><span class="p">{</span>warnline<span class="p">}{</span>RGB<span class="p">}{</span>51,51,51<span class="p">}</span> <span class="c">% Warning</span>
+</code></pre></div></div>
+
+<h3 id="heading-styles">Heading styles</h3>
+
+<p>Fifth, define the packages and formatting of headings.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Sectioning Styles and Packages</span>
+  <span class="k">\usepackage</span><span class="p">{</span>titlesec<span class="p">}</span>
+  <span class="c">%\usepackage{sectsty}</span>
+
+<span class="c">% Chapter heading redefinition</span>
+
+<span class="c">% Redefine size and position of chapter heading</span>
+  <span class="k">\titleformat</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}</span>
+    <span class="p">{</span><span class="k">\fontsize</span><span class="p">{</span>19pt<span class="p">}{</span>0em<span class="p">}</span><span class="k">\selectfont\bf</span><span class="p">}</span>
+    <span class="p">{</span><span class="k">\thechapter</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+
+<span class="c">% Change colour of chapter heading</span>
+  <span class="k">\titleformat</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}</span>
+    <span class="p">{</span><span class="k">\fontsize</span><span class="p">{</span>20pt<span class="p">}{</span>0em<span class="p">}</span><span class="k">\selectfont\bf\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+    <span class="p">{</span><span class="k">\thechapter</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+
+<span class="c">% Redefine spacing above chapter heading</span>
+  <span class="k">\titlespacing*</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}{</span>0pt<span class="p">}{</span>-30pt<span class="p">}{</span>20pt<span class="p">}</span>
+
+<span class="c">% Indent Section label</span>
+  <span class="k">\titlelabel</span><span class="p">{</span><span class="k">\llap</span><span class="p">{</span><span class="k">\makebox</span><span class="na">[1cm][l]</span><span class="p">{</span><span class="k">\thetitle</span><span class="p">}}</span><span class="k">\hspace*</span><span class="p">{</span>25.4mm<span class="p">}}</span>
+</code></pre></div></div>
+
+<h3 id="section-definitions">Section definitions</h3>
+
+<p>Sixth, define the fonts and layout of document sections, subsections and subsubsections. LaTex has default settings for these elements, so what you need to do is redefine these settings.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">% Redefine font size of Section heading</span>
+  <span class="k">\titleformat</span><span class="p">{</span><span class="k">\section</span><span class="p">}</span>[hang]
+    <span class="p">{</span><span class="k">\normalfont\Large\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+    <span class="p">{</span><span class="k">\thesection</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+
+<span class="c">% Redefine spacing above Section heading</span>
+  <span class="k">\titlespacing</span><span class="p">{</span><span class="k">\section</span><span class="p">}{</span>0pt<span class="p">}{</span>*4<span class="p">}{</span>*1.5<span class="p">}</span>      
+
+<span class="c">% Redefine size and position of Subsection heading</span>
+  <span class="k">\titleformat</span><span class="p">{</span><span class="k">\subsection</span><span class="p">}</span>[hang]
+    <span class="p">{</span><span class="k">\normalfont\Normalsize\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+    <span class="p">{</span><span class="k">\thesubsection</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+
+<span class="c">% Redefine size and position of subsubsection heading</span>
+  <span class="k">\titleformat</span><span class="p">{</span><span class="k">\subsubsection</span><span class="p">}</span>[hang]
+    <span class="p">{</span><span class="k">\normalfont\Normalsize\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+    <span class="p">{</span><span class="k">\thesubsubsection</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<h3 id="page-size-margin-and-layout-definitions">Page size, margin and layout definitions</h3>
+
+<p>Seventh, perhaps the most important settings are here in the page size and margins. This needs to be carefully prepared. On the other hand, you can just copy and paste the following for an A4 page with relatively sufficient margins for readability.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Package</span>
+  <span class="k">\usepackage</span><span class="na">[vcentering,dvips]</span><span class="p">{</span>geometry<span class="p">}</span>
+  <span class="k">\geometry</span><span class="p">{</span>papersize=<span class="p">{</span>210mm,295mm<span class="p">}</span>,total=<span class="p">{</span>160mm,185mm<span class="p">}}</span>
+
+<span class="c">% Defining page layout (geometry)</span>
+   <span class="k">\setlength\voffset</span><span class="p">{</span>-1in<span class="p">}</span>
+   <span class="k">\setlength\hoffset</span><span class="p">{</span>-1in<span class="p">}</span>
+   <span class="k">\setlength\topmargin</span><span class="p">{</span>1cm<span class="p">}</span>
+   <span class="k">\setlength\oddsidemargin</span><span class="p">{</span>3cm<span class="p">}</span>
+   <span class="k">\setlength</span><span class="p">{</span><span class="k">\evensidemargin</span><span class="p">}{</span>3cm<span class="p">}</span>
+
+<span class="c">% Text height original: 24.5, new: 23.5cm</span>
+  <span class="k">\setlength\textheight</span><span class="p">{</span>23.5cm<span class="p">}</span>
+
+<span class="c">% Text width original: 16cm, new 15 cm</span>
+  <span class="k">\setlength\textwidth</span><span class="p">{</span>15cm<span class="p">}</span>
+  <span class="k">\setlength\footskip</span><span class="p">{</span>1.0cm<span class="p">}</span>
+  <span class="k">\setlength\headheight</span><span class="p">{</span>1cm<span class="p">}</span>
+
+  <span class="k">\setlength\headsep</span><span class="p">{</span>1cm<span class="p">}</span>
+
+  <span class="k">\setlength</span><span class="p">{</span><span class="k">\parindent</span><span class="p">}{</span>0cm<span class="p">}</span>
+  <span class="k">\setlength</span><span class="p">{</span><span class="k">\parskip</span><span class="p">}{</span>3pt<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> The following topics refer to this stylesheet.</p>
+
+<p><a href="/latex/adding-defining-fonts.html">Next: Adding and defining fonts</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

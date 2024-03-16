@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Generating output from a LaTeX project</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Generating output from a LaTeX project" />
+    <meta property="og:url" content="http://localhost:4029/latex/generating-output-latex-files/" />
+    <meta property="og:description" content="After creating a LaTeX file, It needs to be built using the TeX distribution to generate an output PDF file." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Generating output from a LaTeX project
+      
+    
+</div></div>
+      <h1 id="generating-output-from-a-latex-project">Generating output from a LaTeX project</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#generating-output-from-a-latex-project" id="markdown-toc-generating-output-from-a-latex-project">Generating output from a LaTeX project</a>    <ul>
+      <li><a href="#example-helloworldtex-file" id="markdown-toc-example-helloworldtex-file">Example HelloWorld.tex file</a></li>
+      <li><a href="#build-the-file" id="markdown-toc-build-the-file">Build the file</a></li>
+      <li><a href="#completed-build-saved-in-root-directory" id="markdown-toc-completed-build-saved-in-root-directory">Completed build saved in root directory</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>After creating a LaTeX file, it needs to be built using the TeX distribution to generate an output PDF file. Lets look at how to generate an example output file from a LaTeX <code class="language-plaintext highlighter-rouge">.tex</code> file.</p>
+
+<h2 id="example-helloworldtex-file">Example HelloWorld.tex file</h2>
+
+<p>Here is an example Hello World file. You can type the following in a LaTeX editor and save the file as <code class="language-plaintext highlighter-rouge">HelloWorld.tex</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="k">\title</span><span class="p">{</span>Title of Document<span class="p">}</span>
+<span class="k">\author</span><span class="p">{</span>Your Name<span class="p">}</span>
+<span class="k">\date</span><span class="p">{</span><span class="k">\today</span><span class="p">}</span>
+<span class="k">\maketitle</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\section</span><span class="p">{</span>Section Head<span class="p">}</span>
+  Hello, world!
+<span class="k">\section</span><span class="p">{</span>Second Section Head<span class="p">}</span>
+  This is the last thing I am going to say here!
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<h2 id="build-the-file">Build the file</h2>
+
+<p>Next, build the file on the command line or in a LaTeX editor such as TeXworks. See <a href="/latex/1-2-installing_distributions">Selecting a LaTeX distribution and editor</a> for more information.</p>
+
+<p>In TeXworks, for example, select the build option <em>pdfLaTeX+MakeIndex+BibTex</em> from the <em>Build</em> menu, then click <em>Build</em> (the arrow next to the dropdown menu).</p>
+
+<p>Alternately, open a terminal (MAC) or Command Prompt (Windows) and change to the directory where you saved the file. Then run the following command <strong>twice</strong> to build the file and to generate a table of contents:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdflatex HelloWorld.tex
+pdflatex HelloWorld.tex
+</code></pre></div></div>
+
+<h2 id="completed-build-saved-in-root-directory">Completed build saved in root directory</h2>
+
+<p>In the directory containing <code class="language-plaintext highlighter-rouge">HelloWorld.tex</code> you will find a whole bunch of new files in there. Find the file <code class="language-plaintext highlighter-rouge">HelloWorld.pdf</code> and open it in a pdf viewer. You should see the following output.</p>
+
+<p><img class="img" src="/assets/img/latex/hello-world.png" alt="LaTeX document with table of contents" /></p>
+<p class="center">LaTeX document with table of contents</p>
+
+<p><a href="../latex.html">Return to start</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Customizing headers and footers</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Customizing headers and footers" />
+    <meta property="og:url" content="http://localhost:4029/latex/customizing-headers-footers/" />
+    <meta property="og:description" content="Using the fancyhdr package, you can create customized headers and footers." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Customizing headers and footers
+      
+    
+</div></div>
+      <h1 id="customizing-headers-and-footers">Customizing headers and footers</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#customizing-headers-and-footers" id="markdown-toc-customizing-headers-and-footers">Customizing headers and footers</a>    <ul>
+      <li><a href="#defining-headers-and-footers" id="markdown-toc-defining-headers-and-footers">Defining headers and footers</a></li>
+      <li><a href="#font-definitions" id="markdown-toc-font-definitions">Font definitions</a></li>
+      <li><a href="#injecting-chapter-and-section-text-into-the-header" id="markdown-toc-injecting-chapter-and-section-text-into-the-header">Injecting chapter and section text into the header</a></li>
+      <li><a href="#eliminating-horizontal-lines" id="markdown-toc-eliminating-horizontal-lines">Eliminating horizontal lines</a></li>
+      <li><a href="#defining-footer-text" id="markdown-toc-defining-footer-text">Defining footer text</a></li>
+      <li><a href="#inserting-fancyhead-into-the-root-file" id="markdown-toc-inserting-fancyhead-into-the-root-file">Inserting fancyhead into the root file</a></li>
+      <li><a href="#header-and-footer-example" id="markdown-toc-header-and-footer-example">Header and Footer Example</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Page headers and footers in LaTeX are defined by the <code class="language-plaintext highlighter-rouge">\pagestyle</code> and <code class="language-plaintext highlighter-rouge">\pagenumbering</code> commands.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">\pagestyle</code> defines the general contents of the headers and footers, such as where the page numbers will be printed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">\pagenumbering</code> defines the format of the page number.</p>
+  </li>
+</ul>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">fancyhdr</code> package, you can create customized headers and footers. I have added this to the stylesheet so it can be applied to all chapters in the project.</p>
+
+<h2 id="defining-headers-and-footers">Defining headers and footers</h2>
+
+<p>To customize headers and footers, you can use the <code class="language-plaintext highlighter-rouge">fancyhdr</code> package, which is used with the page style <code class="language-plaintext highlighter-rouge">fancy</code>. Rather than using the default headers and footers, <code class="language-plaintext highlighter-rouge">fancyhdr</code>enables custom headers and footers for odd and even pages, for chapter pages and to allow for control over font sizes, as well as much more.</p>
+
+<p>The following commands defines the headers and footers of the document.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>fancyhdr<span class="p">}</span>
+<span class="k">\pagestyle</span><span class="p">{</span>fancy<span class="p">}</span>
+<span class="k">\fancyhf</span><span class="p">{}</span>
+
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\helv</span><span class="p">}{</span><span class="k">\fontfamily</span><span class="p">{</span>phv<span class="p">}</span>
+  <span class="k">\color</span><span class="p">{</span>titlepagecolor<span class="p">}</span>
+  <span class="k">\fontseries</span><span class="p">{</span>b<span class="p">}</span>
+  <span class="k">\fontshape</span><span class="p">{</span>n<span class="p">}</span>
+  <span class="k">\fontsize</span><span class="p">{</span>9<span class="p">}{</span>11<span class="p">}</span><span class="k">\selectfont</span><span class="p">}</span>
+
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\chaptermark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markboth</span><span class="p">{</span><span class="k">\helv\NoUppercase</span><span class="p">{</span>#1<span class="p">}}{}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\sectionmark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markright</span><span class="p">{</span><span class="k">\helv\NoUppercase</span><span class="p">{</span>#1<span class="p">}}{}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\sectionmark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markright</span><span class="p">{</span><span class="k">\helv\thesection</span>.<span class="k">\ </span>#1<span class="p">}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\chaptermark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markboth</span><span class="p">{</span><span class="k">\helv\thechapter</span>.<span class="k">\ </span>#1<span class="p">}{}}</span>
+
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\headrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\footrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+
+<span class="k">\fancyfoot</span><span class="na">[LE,RO]</span><span class="p">{</span><span class="k">\helv</span> Page <span class="k">\thepage</span><span class="p">}</span>
+<span class="k">\fancyfoot</span><span class="na">[RE,LO]</span><span class="p">{</span><span class="k">\helv</span> Copyright <span class="k">\copyright</span> 2020 Glenn J. Lea Confidential<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>These commands are explained in the following sections.</p>
+
+<p><strong>Note:</strong> Information about the <code class="language-plaintext highlighter-rouge">fancyhdr</code> package is available <a href="http://www.ctex.org/documents/packages/layout/fancyhdr.pdf">here</a>.</p>
+
+<h2 id="font-definitions">Font definitions</h2>
+
+<p>In the following set of commands, the font is defined as 9 pt Helvetica using the short form <code class="language-plaintext highlighter-rouge">phv</code>. The text of the headers and footers use the <code class="language-plaintext highlighter-rouge">titlepagecolor</code> for the background.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\renewcommand</span><span class="p">{</span><span class="k">\helv</span><span class="p">}{</span><span class="k">\fontfamily</span><span class="p">{</span>phv<span class="p">}</span>
+<span class="k">\color</span><span class="p">{</span>titlepagecolor<span class="p">}</span>
+<span class="k">\fontseries</span><span class="p">{</span>b<span class="p">}</span>
+<span class="k">\fontshape</span><span class="p">{</span>n<span class="p">}</span>
+<span class="k">\fontsize</span><span class="p">{</span>9<span class="p">}{</span>11<span class="p">}</span><span class="k">\selectfont</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note that the <code class="language-plaintext highlighter-rouge">titlepagecolor</code> has been defined elsewhere in the stylesheet using the <code class="language-plaintext highlighter-rouge">definecolor</code> command.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\definecolor</span><span class="p">{</span>titlepagecolor<span class="p">}{</span>RGB<span class="p">}{</span>0,38,75<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="injecting-chapter-and-section-text-into-the-header">Injecting chapter and section text into the header</h2>
+
+<p>The text of a chapter heading is injected into the header using <code class="language-plaintext highlighter-rouge">\chaptermark</code>. <code class="language-plaintext highlighter-rouge">\thechapter</code> pulls in the chapter number. Similarly, the text of the section heading is pulled in using <code class="language-plaintext highlighter-rouge">\sectionmark</code>. The macro <code class="language-plaintext highlighter-rouge">thesection</code> pulls in the number of the section.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\renewcommand</span><span class="p">{</span><span class="k">\chaptermark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markboth</span><span class="p">{</span><span class="k">\helv\NoUppercase</span><span class="p">{</span>#1<span class="p">}}{}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\sectionmark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markright</span><span class="p">{</span><span class="k">\helv\NoUppercase</span><span class="p">{</span>#1<span class="p">}}{}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\sectionmark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markright</span><span class="p">{</span><span class="k">\helv\thesection</span>.<span class="k">\ </span>#1<span class="p">}}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\chaptermark</span><span class="p">}</span>[1]<span class="p">{</span><span class="k">\markboth</span><span class="p">{</span><span class="k">\helv\thechapter</span>.<span class="k">\ </span>#1<span class="p">}{}}</span>
+</code></pre></div></div>
+
+<h2 id="eliminating-horizontal-lines">Eliminating horizontal lines</h2>
+
+<p>If you don’t want to have a decorative line to separate the header from the body text, set the header and footer rule width to 0pt.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\renewcommand</span><span class="p">{</span><span class="k">\headrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\footrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="defining-footer-text">Defining footer text</h2>
+
+<p>If you want the footer to have only a page number and a copyright notice on each page, use the following commands.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\fancyfoot</span><span class="na">[LE,RO]</span><span class="p">{</span><span class="k">\helv</span> Page <span class="k">\thepage</span><span class="p">}</span>
+<span class="k">\fancyfoot</span><span class="na">[RE,LO]</span><span class="p">{</span><span class="k">\helv</span> Copyright <span class="k">\copyright</span> 2021 Glenn J. Lea. Confidential<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="inserting-fancyhead-into-the-root-file">Inserting fancyhead into the root file</h2>
+
+<p>After defining the headers and footers in the stylesheet, you insert the header into the root file after the <code class="language-plaintext highlighter-rouge">\frontmatter</code> environment command as follows.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{document}</span>
+
+<span class="k">\frontmatter</span>
+
+<span class="c">% Configuration of the header strings for the frontmatter pages.</span>
+<span class="k">\setcounter</span><span class="p">{</span>tocdepth<span class="p">}{</span>3<span class="p">}</span>
+<span class="k">\fancyhead</span><span class="na">[RE,LO]</span><span class="p">{}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> It is important where you place this command. The LaTeX typesetter needs to know how to build the headers and footers before any geometry is defined. After calling the <code class="language-plaintext highlighter-rouge">\fancyhead</code> command, you can go ahead and input your files, and so forth.</p>
+
+<h2 id="header-and-footer-example">Header and Footer Example</h2>
+
+<p>The following shows the resulting pages with headers and footers.</p>
+
+<p><img class="img" src="/assets/img/latex/header-footer-pg01.png" alt="Sample chapter page with header and footer" /></p>
+<p class="center">Sample chapter page with header and footer.</p>
+
+<p><img class="img" src="/assets/img/latex/header-footer-pg02.png" alt="Sample even page" /></p>
+<p class="center">Sample even page.</p>
+
+<p><a href="/latex/defining-and-using-colours.html">Next: Defining and using colours</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

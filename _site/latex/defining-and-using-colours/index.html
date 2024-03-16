@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Defining and using colours</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Defining and using colours" />
+    <meta property="og:url" content="http://localhost:4029/latex/defining-and-using-colours/" />
+    <meta property="og:description" content="By setting colour definitions in the stylesheet, you can reference them throughout the stylesheet or in the document." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Defining and using colours
+      
+    
+</div></div>
+      <h1 id="defining-and-using-colours">Defining and using colours</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#defining-and-using-colours" id="markdown-toc-defining-and-using-colours">Defining and using colours</a>    <ul>
+      <li><a href="#color-and-xcolor-packages" id="markdown-toc-color-and-xcolor-packages">color and xcolor packages</a></li>
+      <li><a href="#setting-up-xcolor-for-the-document" id="markdown-toc-setting-up-xcolor-for-the-document">Setting up xcolor for the document</a></li>
+      <li><a href="#defining-custom-colours" id="markdown-toc-defining-custom-colours">Defining custom colours</a></li>
+      <li><a href="#defining-colours-for-the-title-page" id="markdown-toc-defining-colours-for-the-title-page">Defining colours for the title page</a></li>
+      <li><a href="#defining-general-use-colours" id="markdown-toc-defining-general-use-colours">Defining general use colours</a></li>
+      <li><a href="#summary-of-colour-definitions" id="markdown-toc-summary-of-colour-definitions">Summary of colour definitions</a></li>
+      <li><a href="#defining-colours-for-information-boxes" id="markdown-toc-defining-colours-for-information-boxes">Defining colours for information Boxes</a></li>
+      <li><a href="#using-colour-definitions" id="markdown-toc-using-colour-definitions">Using colour definitions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>By setting colour definitions in the stylesheet, you can reference them throughout the stylesheet or in the document. For example,if you need to use corporate colours, you can then use these colours in your documentation, such as on the title page or in the headers or footers. The <code class="language-plaintext highlighter-rouge">color</code> anc <code class="language-plaintext highlighter-rouge">xcolor</code> packages are available for colour definitions.</p>
+
+<h2 id="color-and-xcolor-packages">color and xcolor packages</h2>
+
+<p>Before defining colours, you add the <code class="language-plaintext highlighter-rouge">colour</code> and <code class="language-plaintext highlighter-rouge">xcolor</code> packages. The <code class="language-plaintext highlighter-rouge">color</code> package provides basic colours to your document. You add it using the following command.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>color<span class="p">}</span>
+<span class="c">% \usepackage{xcolor} Note: commented out</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">xcolor</code> package allows you to define custom colours using one of the colour models such as gray, rgb, cmyk, and so on. Use the <code class="language-plaintext highlighter-rouge">xcolor</code> package if you want to define colours based on corporate branding.</p>
+
+<p>Note: If you use the <code class="language-plaintext highlighter-rouge">xcolor</code> package, comment out the <code class="language-plaintext highlighter-rouge">color</code> package.</p>
+
+<h2 id="setting-up-xcolor-for-the-document">Setting up xcolor for the document</h2>
+
+<p>You can define <code class="language-plaintext highlighter-rouge">xcolor</code> for use in your document as follows:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}</code></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">usenames</code> is one of the following sixteen predefined colours:</p>
+
+    <p>black, blue, brown, cyan, darkgray,
+  gray, green, lightgray, lime, magenta,
+  olive, orange, pink, purple, red,
+  teal, violet, white, yellow.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">dvipsnames</code> loads a set of predefined colours.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">svgnames</code> loads a set of predefined colours based on SVG definitions.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">table</code> loads a predefined set of colours for use in table rows, columns and cells.</p>
+  </li>
+</ul>
+
+<h2 id="defining-custom-colours">Defining custom colours</h2>
+
+<p>Once you add the <code class="language-plaintext highlighter-rouge">xcolor</code> package, you can create a set of custom colours that can be used throughout the document. You use the <code class="language-plaintext highlighter-rouge">/definecolor</code> command with the colour type and settings as arguments, as shown below.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\definecolor{name}{colour model}{specification}</code></p>
+
+<p>The xcolor package provides many more options. I found that I only needed to use the rgb model, give the new colour a name and define its rgb values.</p>
+
+<p>For example, if you wanted to define a colour for use on the title page, give it a descriptive name, provide a colour model, and then provide colour values.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\definecolor{mynewcolor}{RGB}{25,25,25}</code></p>
+
+<h2 id="defining-colours-for-the-title-page">Defining colours for the title page</h2>
+
+<p>You can define for the package <code class="language-plaintext highlighter-rouge">xcolor</code> color settings for the title page, such as the following example.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\definecolor</span><span class="p">{</span>titlepagecolor<span class="p">}{</span>RGB<span class="p">}{</span>0,38,75<span class="p">}</span> <span class="c">% Blue</span>
+<span class="k">\definecolor</span><span class="p">{</span>namecolor<span class="p">}{</span>RGB<span class="p">}{</span>241,133,0<span class="p">}</span> <span class="c">% Orange</span>
+</code></pre></div></div>
+
+<p>The colours are given names so you can refer to them within the document. In the colour definitions, these are <code class="language-plaintext highlighter-rouge">titlepagecolor</code> and <code class="language-plaintext highlighter-rouge">namecolor</code>.</p>
+
+<h2 id="defining-general-use-colours">Defining general use colours</h2>
+
+<p>You can then define some colour settings for use in various elements in the document. You can then use the given names within the stylesheet and document, for example <code class="language-plaintext highlighter-rouge">blue</code>, <code class="language-plaintext highlighter-rouge">orange</code>, <code class="language-plaintext highlighter-rouge">gray</code> or <code class="language-plaintext highlighter-rouge">codeBackground</code>. Note that I have defined two colours for <code class="language-plaintext highlighter-rouge">codebackground</code>. This allows me to switch between colours as needed by commenting one of the out.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\definecolor</span><span class="p">{</span>blue<span class="p">}{</span>rgb<span class="p">}{</span>0,38,75<span class="p">}</span> <span class="c">% Blue</span>
+<span class="k">\definecolor</span><span class="p">{</span>orange<span class="p">}{</span>rgb<span class="p">}{</span>241,133,0<span class="p">}</span> <span class="c">% Orange</span>
+<span class="k">\definecolor</span><span class="p">{</span>gray<span class="p">}{</span>rgb<span class="p">}{</span>0.4, 0.0, 0.4<span class="p">}</span> <span class="c">% Gray</span>
+<span class="k">\definecolor</span><span class="p">{</span>codeBackground<span class="p">}{</span>RGB<span class="p">}{</span>251, 251, 244<span class="p">}</span> <span class="c">% background color for code boxes</span>
+<span class="c">%\definecolor{codeBackground}{white} % White</span>
+</code></pre></div></div>
+
+<h2 id="summary-of-colour-definitions">Summary of colour definitions</h2>
+
+<p>Here are the colours that I defined for use on the title page, headers and footers and other elements. Note that they all use the rgb colour model.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\definecolor</span><span class="p">{</span>blue<span class="p">}{</span>rgb<span class="p">}{</span>0,38,75<span class="p">}</span>                 <span class="c">% Blue: title page</span>
+<span class="k">\definecolor</span><span class="p">{</span>orange<span class="p">}{</span>rgb<span class="p">}{</span>241,133,0<span class="p">}</span>             <span class="c">% Orange: headers/footers/headings</span>
+<span class="k">\definecolor</span><span class="p">{</span>gray<span class="p">}{</span>rgb<span class="p">}{</span>0.4, 0.0, 0.4<span class="p">}</span>           <span class="c">% Gray: as required.</span>
+<span class="k">\definecolor</span><span class="p">{</span>codeBackground<span class="p">}{</span>RGB<span class="p">}{</span>251, 251, 244<span class="p">}</span> <span class="c">% Code box background colour</span>
+<span class="k">\definecolor</span><span class="p">{</span>codeBackground<span class="p">}{</span>white<span class="p">}</span>              <span class="c">% White: as required.</span>
+</code></pre></div></div>
+
+<h2 id="defining-colours-for-information-boxes">Defining colours for information Boxes</h2>
+
+<p>You can define background colour settings and line colour settings for information boxes used in the document.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\definecolor</span><span class="p">{</span>warning<span class="p">}{</span>RGB<span class="p">}{</span>255,231,231<span class="p">}</span>   <span class="c">% Background for Warning Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>note<span class="p">}{</span>RGB<span class="p">}{</span>255,255,211<span class="p">}</span>      <span class="c">% Background for Note Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>info<span class="p">}{</span>RGB<span class="p">}{</span>224,239,255<span class="p">}</span>      <span class="c">% Background Info Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>infoline<span class="p">}{</span>RGB<span class="p">}{</span>158,182,212<span class="p">}</span>  <span class="c">% Line Color for Info Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>noteline<span class="p">}{</span>RGB<span class="p">}{</span>247,223,146<span class="p">}</span>  <span class="c">% Line Color for Note Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>warnline<span class="p">}{</span>RGB<span class="p">}{</span>51,51,51<span class="p">}</span>     <span class="c">% Line Colors for Warning Box</span>
+<span class="k">\definecolor</span><span class="p">{</span>warnline<span class="p">}{</span>RGB<span class="p">}{</span>155,231,231<span class="p">}</span>  <span class="c">% Additional line color for Warning Box</span>
+</code></pre></div></div>
+
+<h2 id="using-colour-definitions">Using colour definitions</h2>
+
+<p>Once you have defined a colour, you can using it within other styles or commands in the stylesheet.</p>
+
+<p>For example, you can define an orange colour for chapter titles.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\definecolor{chaptertitlecolor}{RGB}{232,134,12}</code></p>
+
+<p>Then this colour can be referenced in the style for chapter titles.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}</span>
+  <span class="p">{</span><span class="k">\fontsize</span><span class="p">{</span>20pt<span class="p">}{</span>0em<span class="p">}</span>
+  <span class="k">\selectfont\bf\color</span><span class="p">{</span>chaptertitlecolor<span class="p">}}</span>
+  <span class="p">{</span><span class="k">\thechapter</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<p>If you want to change the colour of chapter titles then you need only change the definition of <code class="language-plaintext highlighter-rouge">chaptertitlecolor</code>.</p>
+
+<p><a href="/latex/warning-note-info-boxes.html">Next: Warning, Note and Info Boxes</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

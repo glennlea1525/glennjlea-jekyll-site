@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Creating custom tables</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Creating custom tables" />
+    <meta property="og:url" content="http://localhost:4029/latex/creating-custom-tables/" />
+    <meta property="og:description" content="You can add simple to complex tables to a LaTeX document using several types of packages, depending on the requirements of the table." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Creating custom tables
+      
+    
+</div></div>
+      <h1 id="creating-custom-tables">Creating custom tables</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#creating-custom-tables" id="markdown-toc-creating-custom-tables">Creating custom tables</a>    <ul>
+      <li><a href="#inserting-table-packages" id="markdown-toc-inserting-table-packages">Inserting table packages</a></li>
+      <li><a href="#defining-a-table-using-the-tabular-package" id="markdown-toc-defining-a-table-using-the-tabular-package">Defining a table using the tabular package</a></li>
+      <li><a href="#defining-a-more-complex-table-using-supertabular" id="markdown-toc-defining-a-more-complex-table-using-supertabular">Defining a more complex table using supertabular</a></li>
+      <li><a href="#adding-spacing-to-table-cells" id="markdown-toc-adding-spacing-to-table-cells">Adding spacing to table cells</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can add simple to complex tables to a LaTeX document using several types of packages, depending on the requirements of the table.</p>
+
+<h2 id="inserting-table-packages">Inserting table packages</h2>
+
+<p>LaTeX provides several packages for adding tables to a LaTeX document. Two useful packages for tables are the <code class="language-plaintext highlighter-rouge">tabular</code> and the <code class="language-plaintext highlighter-rouge">supertabular</code> package.</p>
+
+<p>Note: When using <code class="language-plaintext highlighter-rouge">tabular</code> or <code class="language-plaintext highlighter-rouge">supertabular</code>, the cell contents are in text mode.</p>
+
+<h2 id="defining-a-table-using-the-tabular-package">Defining a table using the tabular package</h2>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">tabular</code> package you can, for example, define a basic table with a header, three columns and rows as follows:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{center}</span>
+<span class="nt">\begin{tabular}</span><span class="p">{</span>|l|l|l|<span class="p">}</span>
+Column Heading <span class="p">&amp;</span> Column Heading <span class="p">&amp;</span> Column Heading <span class="k">\\\
+\hline</span>
+Cell contents <span class="p">&amp;</span> Cell contents <span class="p">&amp;</span> Cell contents <span class="k">\\</span>
+Cell contents <span class="p">&amp;</span> Cell contents <span class="p">&amp;</span> Cell contents <span class="k">\\</span>
+Cell contents <span class="p">&amp;</span> Cell contents <span class="p">&amp;</span> Cell contents <span class="k">\\</span>
+<span class="nt">\end{tabular}</span>
+<span class="nt">\end{center}</span>
+</code></pre></div></div>
+
+<p>This explains what is happening in this definition:</p>
+
+<ul>
+  <li>
+    <p>The line <code class="language-plaintext highlighter-rouge">\begin{tabular}{|l|l|l|}</code> creates a table with three columns that are left aligned and have a vertical line between each column.</p>
+  </li>
+  <li>
+    <p>Next, column headings are added where each heading is marked off by a <code class="language-plaintext highlighter-rouge">&amp;</code> symbol and where the row is ended with the command <code class="language-plaintext highlighter-rouge">\\</code>.</p>
+  </li>
+  <li>
+    <p>A horizontal line is added using <code class="language-plaintext highlighter-rouge">\hline</code>.</p>
+  </li>
+</ul>
+
+<p>The cell contents follow the same structure as column headings.</p>
+
+<h2 id="defining-a-more-complex-table-using-supertabular">Defining a more complex table using supertabular</h2>
+
+<p>Using <code class="language-plaintext highlighter-rouge">supertabular</code> you can create more complex tables by adding the following commands to the stylesheet:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>supertabular<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>tikz<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>longtable<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>tabulary<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>colortbl<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then you can create a table as shown in the following example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{2cm}|m{6cm}|}
+\hline
+Heading 1 &amp; Heading 2\\\hline
+1st column and 1st row &amp; 2nd column and 1st Row\\\hline
+1st column and 2nd row &amp; 2nd column and 2nd Row\\\hline
+1st column and 3rd row &amp; 2nd column and 3rd Row\\\hline
+1st column and 4th row &amp; 2nd column and 4th Row\\\hline
+\end{supertabular}
+\end{flushleft}
+</code></pre></div></div>
+
+<p>This explains what is happening in this definition:</p>
+
+<ul>
+  <li>
+    <p>The environment command <code class="language-plaintext highlighter-rouge">\begin{flushleft}</code>places the table left aligned to the margin.</p>
+  </li>
+  <li>
+    <p>The command <code class="language-plaintext highlighter-rouge">\tablehead{}</code> adds a table heading. In this case, it is empty so no table heading is used.</p>
+  </li>
+</ul>
+
+<h2 id="adding-spacing-to-table-cells">Adding spacing to table cells</h2>
+
+<p>You can add spacing above and below the text in table row as follows:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength</span><span class="p">{</span><span class="k">\extrarowheight</span><span class="p">}{</span>4pt<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here is an example of it used in a table.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{footnotesize}</span>
+<span class="k">\setlength</span><span class="p">{</span><span class="k">\extrarowheight</span><span class="p">}{</span>7.6pt<span class="p">}</span>
+<span class="nt">\begin{tabular}</span><span class="p">{</span>l|m<span class="p">{</span>7cm<span class="p">}}</span>
+<span class="k">\hline</span>
+<span class="k">\hline</span>
+Cell contents <span class="p">&amp;</span> Cell contents  <span class="k">\\\hline</span>
+<span class="k">\hline</span>
+Cell contents <span class="p">&amp;</span> Cell contents  <span class="k">\\\hline</span>
+Cell contents <span class="p">&amp;</span> Cell contents  <span class="k">\\\hline</span>
+Cell contents <span class="p">&amp;</span> Cell contents  <span class="k">\\\hline</span>
+<span class="k">\hline</span>
+<span class="nt">\end{tabular}</span>
+<span class="nt">\end{footnotesize}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/formatting-chapter-sections.html">Next: Formatting chapter sections</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

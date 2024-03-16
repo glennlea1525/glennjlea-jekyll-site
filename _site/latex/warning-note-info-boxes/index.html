@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Warning, Note and Info Boxes</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Warning, Note and Info Boxes" />
+    <meta property="og:url" content="http://localhost:4029/latex/warning-note-info-boxes/" />
+    <meta property="og:description" content="Define styles for notes, info and warning boxes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Warning, Note and Info Boxes
+      
+    
+</div></div>
+      <h1 id="warning-note-and-info-boxes">Warning, Note and Info Boxes</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#warning-note-and-info-boxes" id="markdown-toc-warning-note-and-info-boxes">Warning, Note and Info Boxes</a>    <ul>
+      <li><a href="#adding-table--related-packages" id="markdown-toc-adding-table--related-packages">Adding table- related packages</a></li>
+      <li><a href="#defining-a-custom-framed-box" id="markdown-toc-defining-a-custom-framed-box">Defining a custom framed box</a></li>
+      <li><a href="#defining-a-basic-boxes" id="markdown-toc-defining-a-basic-boxes">Defining a basic boxes</a></li>
+      <li><a href="#inserting-a-basic-box-in-a-document" id="markdown-toc-inserting-a-basic-box-in-a-document">Inserting a basic box in a document</a></li>
+      <li><a href="#defining-warning-boxes" id="markdown-toc-defining-warning-boxes">Defining Warning boxes</a></li>
+      <li><a href="#inserting-a-warning-box-in-document" id="markdown-toc-inserting-a-warning-box-in-document">Inserting a Warning box in document</a></li>
+      <li><a href="#defining-note-boxes" id="markdown-toc-defining-note-boxes">Defining Note boxes</a></li>
+      <li><a href="#inserting-a-note-box-in-document" id="markdown-toc-inserting-a-note-box-in-document">Inserting a Note box in document</a></li>
+      <li><a href="#definition-for-info-boxes" id="markdown-toc-definition-for-info-boxes">Definition for Info boxes</a></li>
+      <li><a href="#inserting-a-info-box-in-document" id="markdown-toc-inserting-a-info-box-in-document">Inserting a Info box in document</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Custom formatted framed boxes for notes, warnings and additional information can be included in the document based on styles you define in the Stylesheet. These same definitions can be used to insert basic boxes for general use.</p>
+
+<p>You then insert the appropriate box type in the document using a simple command.</p>
+
+<h2 id="adding-table--related-packages">Adding table- related packages</h2>
+
+<p>These framed boxes use a type of table that is provided in the <code class="language-plaintext highlighter-rouge">supertabular</code> and <code class="language-plaintext highlighter-rouge">tikz</code> packages. You need to add these packages before adding the packages for framed boxes. You add them as shown below.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>supertabular<span class="p">}</span> 
+  <span class="c">% Adds the supertabular type of table</span>
+<span class="c">% \usepackage{xcolor} </span>
+  <span class="c">% Adds the xcolor package</span>
+<span class="k">\usepackage</span><span class="p">{</span>tikz<span class="p">}</span> 
+  <span class="c">% This package modifies the framed boxes</span>
+<span class="c">% \usepackage{longtable} </span>
+  <span class="c">% Adds the longtable type of table which breaks across pages</span>
+<span class="c">% \usepackage{tabulary} </span>
+  <span class="c">% Adds the tabulary type of table</span>
+<span class="c">% \usepackage{colortbl} </span>
+  <span class="c">% Use for table colouring</span>
+</code></pre></div></div>
+
+<h2 id="defining-a-custom-framed-box">Defining a custom framed box</h2>
+
+<p>Before you define the specific boxes, you need to add some packages and define some colours. Add the following to your stylesheet and change the RGB values to what you need.</p>
+
+<p>Note: You can keep all the colour definitions organized by including them within the Colours section of the stylesheet.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>framed, multicol, color<span class="p">}</span> 
+  <span class="c">% Packages for creating a framed multicolumn box</span>
+<span class="k">\definecolor</span><span class="p">{</span>shadecolor<span class="p">}{</span>RGB<span class="p">}{</span>216,228,241<span class="p">}</span> 
+  <span class="c">% First shading colour</span>
+<span class="k">\definecolor</span><span class="p">{</span>shadecolor1<span class="p">}{</span>RGB<span class="p">}{</span>216,228,241<span class="p">}</span> 
+  <span class="c">% Second shading colour</span>
+<span class="k">\usepackage</span><span class="na">[framemethod=tikz]</span><span class="p">{</span>mdframed<span class="p">}</span> 
+  <span class="c">% Allows for tikz options for the frame</span>
+<span class="k">\usetikzlibrary</span><span class="p">{</span>calc<span class="p">}</span> 
+  <span class="c">% Adds the calculation library</span>
+<span class="k">\usetikzlibrary</span><span class="p">{</span>shadows<span class="p">}</span> 
+  <span class="c">% Adds the shadows library</span>
+</code></pre></div></div>
+
+<p>With these settings, each type of box can now be defined in the stylesheet.</p>
+
+<h2 id="defining-a-basic-boxes">Defining a basic boxes</h2>
+
+<p>You can define a general purpose box for use as required.</p>
+
+<p>The following defines the rules, spacing, icon and background colour of a warning box. You can just copy and adjust these settings as needed. This give the name of this rule <code class="language-plaintext highlighter-rouge">{basic}</code> which you find at the end of this definition.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Redefine the environment for a Basic box using the following:</span>
+<span class="k">\newmdenv</span>[
+  roundcorner=10pt,
+  skipabove=10pt
+  skipbelow=10pt
+  leftmargin=10pt,
+  rightmargin=10pt,
+  backgroundcolor=codeBackground,
+  innertopmargin=20pt,
+  innerbottommargin=20pt,
+  innerleftmargin=20pt,
+  innerrightmargin=20pt,
+  middlelinewidth=0pt,
+  everyline=true,
+  linecolor=warnline,
+  font=<span class="k">\normalfont\normalsize</span>,
+  shadow=false,
+  frametitlefont=<span class="k">\normalfont\normalsize\bfseries</span>,
+  frametitleaboveskip=1em,
+  singleextra=<span class="p">{</span>
+<span class="c">%   \node[inner sep=0pt,anchor=north west,xshift=10pt,yshift=-30pt] </span>
+         at (P-|O);
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,yshift=-.8<span class="k">\baselineskip</span>,
+         font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O) <span class="p">{</span> <span class="p">}</span>;    
+  <span class="p">}</span>,
+  firstextra=<span class="p">{</span>
+<span class="c">%   \node[inner sep=0pt,anchor=north west,xshift=10pt,yshift=-30pt] at (P-|O);</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,yshift=-.8<span class="k">\baselineskip</span>,
+         font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O) <span class="p">{</span> <span class="p">}</span>;    
+  <span class="p">}</span>
+]
+<span class="c">% Define the name of the framed box</span>
+<span class="p">{</span>basic<span class="p">}</span>                     
+</code></pre></div></div>
+<h2 id="inserting-a-basic-box-in-a-document">Inserting a basic box in a document</h2>
+
+<p>Use the following to insert a basic box into the document flow. I usually just copy and paste it into the document where I need it and then replace the placeholder text with my text.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{basic}</span>
+Basic text placeholder
+<span class="nt">\end{basic}</span>
+</code></pre></div></div>
+
+<h2 id="defining-warning-boxes">Defining Warning boxes</h2>
+
+<p>A Warning Box is information that a user must be aware of before performing a specific task.</p>
+
+<p>The following defines the rules, spacing, icon and background colour of a warning box. You can just copy and adjust these settings as needed. This give the name of this rule <code class="language-plaintext highlighter-rouge">{warnbox}</code> which you find at the end of this definition.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Redefine the environment for the Warning framed box</span>
+<span class="k">\newmdenv</span>[
+  roundcorner=10pt,
+  skipabove=10pt
+  skipbelow=10pt
+  leftmargin=20pt,
+  rightmargin=20pt,
+  backgroundcolor=warning,
+  innertopmargin=30pt,
+  innerbottommargin=10pt,
+  innerleftmargin=70pt,
+  middlelinewidth=0pt,
+  everyline=true,
+  linecolor=warnline,
+  font=<span class="k">\normalfont\normalsize</span>,
+  shadow=false,
+  frametitlefont=<span class="k">\normalfont\normalsize\bfseries</span>,
+  frametitleaboveskip=1em,
+  singleextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt]
+      at (P-|O)<span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/alerticon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      yshift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt]
+       at (P-|O)
+     <span class="p">{</span>Warning<span class="p">}</span>;    
+  <span class="p">}</span>,
+  firstextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt] at (P-|O)
+    <span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/alerticon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      shift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt]
+     at (P-|O)
+     <span class="p">{</span>Warning<span class="p">}</span>;    
+  <span class="p">}</span>
+]
+<span class="c">% Define the name of the framed box  </span>
+<span class="p">{</span>warnbox<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="inserting-a-warning-box-in-document">Inserting a Warning box in document</h2>
+
+<p>You insert a warning box into the document flow using the following commands.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{warnbox}</span>
+Warning text placeholder
+<span class="nt">\end{warnbox}</span>
+</code></pre></div></div>
+
+<h2 id="defining-note-boxes">Defining Note boxes</h2>
+
+<p>Note Boxes are additional information that is important but outside the procedure described in the current text flow.</p>
+
+<p>The following is essentially the same as defined for the Warning Box, with the exception of the background colour and the icon used in the box. This gives the name of the Note box as <code class="language-plaintext highlighter-rouge">notice</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Redefine the environment for Note boxes                     </span>
+<span class="k">\newmdenv</span>[
+  roundcorner=10pt,
+  skipabove=10pt
+  skipbelow=10pt
+  leftmargin=20pt,
+  rightmargin=20pt,
+  backgroundcolor=note,
+  innertopmargin=30pt,
+  innerbottommargin=10pt,
+  innerleftmargin=70pt,
+  middlelinewidth=0pt,
+  everyline=true,
+  linecolor=warnline,
+  font=<span class="k">\normalfont\normalsize</span>,
+  shadow=false,
+  frametitlefont=<span class="k">\normalfont\normalsize\bfseries</span>,
+  frametitleaboveskip=1em,
+  singleextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt] at (P-|O)
+    <span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/tipsicon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      yshift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O)
+    <span class="p">{</span>Note<span class="p">}</span>;    
+  <span class="p">}</span>,
+  firstextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt] at (P-|O)
+    <span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/tipsicon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      yshift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O)
+    <span class="p">{</span>Note<span class="p">}</span>;    
+  <span class="p">}</span>
+]
+<span class="c">% Define the name of the framed box  </span>
+<span class="p">{</span>notice<span class="p">}</span>                     
+</code></pre></div></div>
+
+<h2 id="inserting-a-note-box-in-document">Inserting a Note box in document</h2>
+
+<p>Use the following commands to insert a Note Box into the document flow.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{notice}</span>
+Note text placeholder
+<span class="nt">\end{notice}</span>
+</code></pre></div></div>
+
+<h2 id="definition-for-info-boxes">Definition for Info boxes</h2>
+
+<p>An Info Box would normally be used to provide additional information that may be available outside the current document, such as a website or another user manual.</p>
+
+<p>Like the Warning and Note Box definitions above, you can adjust the settings as required. This gives the name of the box <code class="language-plaintext highlighter-rouge">infobox</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Redefine the environment for Info boxes                     </span>
+<span class="k">\newmdenv</span>[
+  roundcorner=10pt,
+  skipabove=10pt
+  skipbelow=10pt
+  leftmargin=20pt,
+  rightmargin=20pt,
+  backgroundcolor=info,
+  innertopmargin=30pt,
+  innerbottommargin=10pt,
+  innerleftmargin=70pt,
+  middlelinewidth=0pt,
+  everyline=true,
+  linecolor=warnline,
+  font=<span class="k">\normalfont\normalsize</span>,
+  shadow=false,
+  frametitlefont=<span class="k">\normalfont\normalsize\bfseries</span>,
+  frametitleaboveskip=1em,
+  singleextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt] at (P-|O)
+    <span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/noticeicon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      yshift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O)
+    <span class="p">{</span>Information<span class="p">}</span>;    
+  <span class="p">}</span>,
+  firstextra=<span class="p">{</span>
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      xshift=10pt,yshift=-30pt] at (P-|O)
+    <span class="p">{</span><span class="k">\includegraphics</span><span class="na">[scale=0.40]</span><span class="p">{</span>sharedimages/noticeicon<span class="p">}}</span>;
+    <span class="k">\node</span>[inner sep=0pt,anchor=north west,
+      yshift=-.8<span class="k">\baselineskip</span>,font=<span class="k">\bfseries</span>,xshift=10pt] at (P-|O)
+    <span class="p">{</span>Information<span class="p">}</span>;    
+  <span class="p">}</span>
+]
+<span class="c">% Define the name of the framed box</span>
+<span class="p">{</span>infobox<span class="p">}</span>                     
+</code></pre></div></div>
+
+<h2 id="inserting-a-info-box-in-document">Inserting a Info box in document</h2>
+
+<p>Use the following commands to insert an Info box into the document flow.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{infobox}</span>
+Info text placeholder
+<span class="nt">\end{infobox}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/creating-custom-tables.html">Next: Creating custom tables</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

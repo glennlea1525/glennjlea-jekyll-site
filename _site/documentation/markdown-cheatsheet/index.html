@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Markdown syntax cheatsheet</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Markdown syntax cheatsheet" />
+    <meta property="og:url" content="http://localhost:4029/documentation/markdown-cheatsheet/" />
+    <meta property="og:description" content="Markdown syntax cheatsheet
+" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/documentation/">Documentation</a>
+      
+    
+      
+        / Markdown syntax cheatsheet
+      
+    
+</div></div>
+      <h1 id="markdown-syntax-cheatsheet">Markdown syntax cheatsheet</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#markdown-syntax-cheatsheet" id="markdown-toc-markdown-syntax-cheatsheet">Markdown syntax cheatsheet</a>    <ul>
+      <li><a href="#headers" id="markdown-toc-headers">Headers</a></li>
+      <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+      <li><a href="#paragraphs-body-text" id="markdown-toc-paragraphs-body-text">Paragraphs (Body text)</a></li>
+      <li><a href="#font-styling" id="markdown-toc-font-styling">Font styling</a></li>
+      <li><a href="#inline-html" id="markdown-toc-inline-html">Inline HTML</a></li>
+      <li><a href="#horizontal-rules" id="markdown-toc-horizontal-rules">Horizontal Rules</a></li>
+      <li><a href="#links" id="markdown-toc-links">Links</a></li>
+      <li><a href="#images" id="markdown-toc-images">Images</a></li>
+      <li><a href="#blockquote" id="markdown-toc-blockquote">Blockquote</a>        <ul>
+          <li><a href="#single-line-blockquote" id="markdown-toc-single-line-blockquote">Single line blockquote</a></li>
+          <li><a href="#multi-line-blockquote" id="markdown-toc-multi-line-blockquote">Multi-line blockquote</a></li>
+        </ul>
+      </li>
+      <li><a href="#tables" id="markdown-toc-tables">Tables</a></li>
+      <li><a href="#list-of-items" id="markdown-toc-list-of-items">List of items</a>        <ul>
+          <li><a href="#unordered-lists-nested" id="markdown-toc-unordered-lists-nested">Unordered Lists (Nested)</a></li>
+          <li><a href="#ordered-list-nested" id="markdown-toc-ordered-list-nested">Ordered List (Nested)</a></li>
+        </ul>
+      </li>
+      <li><a href="#code" id="markdown-toc-code">Code</a>        <ul>
+          <li><a href="#inline-code" id="markdown-toc-inline-code">Inline Code</a></li>
+          <li><a href="#code-snippets-with-syntax-highlighting" id="markdown-toc-code-snippets-with-syntax-highlighting">Code snippets with syntax highlighting</a></li>
+        </ul>
+      </li>
+      <li><a href="#more-information" id="markdown-toc-more-information">More information</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>This is a brief but hopefully useful Cheatsheet for Markdown syntax. It isn’t comprehensive but has the most frequently used markdown that I use in my docs. It is a work in progress and is added to as I get around to doing it.</p>
+
+<h2 id="headers">Headers</h2>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Header one</span>
+<span class="gu">## Header two</span>
+<span class="gu">### Header three</span>
+<span class="gu">#### Header four</span>
+<span class="gu">##### Header five</span>
+<span class="gu">###### Header six</span>
+</code></pre></div></div>
+
+<h2 id="comments">Comments</h2>
+
+<p>Text can be commented out using the <code class="language-plaintext highlighter-rouge">&lt;!-- --&gt;</code> syntax:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--
+This is some text I want commented out for the time being. 
+--&gt;
+</code></pre></div></div>
+
+<h2 id="paragraphs-body-text">Paragraphs (Body text)</h2>
+
+<p>Paragraphs can be added simply by entering some text then putting a blank line between the paragraphs:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing.
+</code></pre></div></div>
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+
+<h2 id="font-styling">Font styling</h2>
+
+<p>Bold, emphasis and strikethrough are added using:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**bolded word**</span>
+<span class="ge">*emphasized word*</span>
+~~strikethrough word~~
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>bolded word</strong>
+<em>emphasized word</em>
+<del>strikethrough word</del></p>
+</blockquote>
+
+<h2 id="inline-html">Inline HTML</h2>
+
+<p>Markdown accepts inline HTML including classes and inline styles. The following shows inserting an image using HTML:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"post-image"</span> <span class="na">src=</span><span class="s">"path/to/image.pnd"</span> <span class="na">alt=</span><span class="s">" Alt text"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="horizontal-rules">Horizontal Rules</h2>
+
+<p>An <code class="language-plaintext highlighter-rouge">&lt;hr&gt;</code> element can be added quickly using:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ge">__</span>_ (three underscores)
+--- (three dashes)
+<span class="ge">**</span><span class="err">*</span> (three asterisk)
+</code></pre></div></div>
+
+<h2 id="links">Links</h2>
+
+<p>Links are added using the following syntax:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Description of the link</span><span class="p">](</span><span class="sx">Path</span> to the link)
+</code></pre></div></div>
+
+<p>To add a tooltip to the link use the following syntax:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Description of the link</span><span class="p">](</span><span class="sx">Path</span> to the line "Tooltip added here")
+</code></pre></div></div>
+
+<h2 id="images">Images</h2>
+
+<p>Images can be added using HTML or markdown. In markdown use the following syntax:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Description of the image</span><span class="p">](</span><span class="sx">path/to/image.png</span> <span class="nn">"Alt text"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"post-image"</span> <span class="na">src=</span><span class="s">"path/to/image.pnd"</span> <span class="na">alt=</span><span class="s">" Alt text"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="blockquote">Blockquote</h2>
+
+<h3 id="single-line-blockquote">Single line blockquote</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</blockquote>
+
+<h3 id="multi-line-blockquote">Multi-line blockquote</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</blockquote>
+
+<h2 id="tables">Tables</h2>
+
+<p>Tables can be inserted using HTML or Markdown. In Markdown, use the following syntax:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Heading  | Heading |
+|  ---     |   ----  |
+| Cell     | Cell    |
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Heading</th>
+      <th>Heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="list-of-items">List of items</h2>
+
+<h3 id="unordered-lists-nested">Unordered Lists (Nested)</h3>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">-</code> or <code class="language-plaintext highlighter-rouge">+</code> as valid bullet symbols.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> List item one
+<span class="p">  -</span> List item one
+<span class="p">  -</span> List item two
+<span class="p">  -</span> List item three
+<span class="p">  -</span> List item four
+<span class="p">-</span> List item two
+<span class="p">-</span> List item three
+<span class="p">-</span> List item four
+</code></pre></div></div>
+
+<ul>
+  <li>List item one
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ul>
+  </li>
+  <li>List item two</li>
+  <li>List item three</li>
+  <li>List item four</li>
+</ul>
+
+<h3 id="ordered-list-nested">Ordered List (Nested)</h3>
+
+<p>Markdown renders an ordered list if the item begins with a number followed by a period and space. You can use <code class="language-plaintext highlighter-rouge">1. </code> and it will render into an order list.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> List item one
+<span class="p">   1.</span> List item one
+<span class="p">   1.</span> List item two
+<span class="p">   1.</span> List item three
+<span class="p">   1.</span> List item four
+<span class="p">1.</span> List item two
+<span class="p">1.</span> List item three
+<span class="p">1.</span> List item four
+</code></pre></div></div>
+
+<ol>
+  <li>List item one</li>
+  <li>List item one
+    <ol>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+      <li>List item four</li>
+    </ol>
+  </li>
+  <li>List item two</li>
+  <li>List item three</li>
+  <li>List item four</li>
+</ol>
+
+<h2 id="code">Code</h2>
+
+<h3 id="inline-code">Inline Code</h3>
+
+<p>Snippets of code within a sentence can be rendered using back ticks.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a sentence that contains <span class="sb">`code`</span> inside the sentence.
+</code></pre></div></div>
+
+<p>This is a sentence that contains <code class="language-plaintext highlighter-rouge">code</code> inside the sentence.</p>
+
+<h3 id="code-snippets-with-syntax-highlighting">Code snippets with syntax highlighting</h3>
+
+<p>Markdown flavours support many language snippets. A code snippet is added using three back ticks (```) followed by the language renderer, such as Ruby, Python, Bash, Markdown and ends with three back ticks.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c1"># Print Hello World
+</span>   <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello World</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="more-information">More information</h2>
+
+<ul>
+  <li>
+    <p><a href="https://jekyllrb.com/docs/configuration/markdown/">Official Jekyll Markdown page</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.markdownguide.org/basic-syntax/">Basic Syntax form the Markdown Guide</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.xaprb.com/blog/how-to-style-images-with-markdown/">How to Style Images with Markdown</a></p>
+  </li>
+</ul>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

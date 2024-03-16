@@ -1,0 +1,31 @@
+---
+layout: page
+title: Using LaTeX to create technical documentation
+---
+
+<div class="page-content-wrapper">
+    <div class="plug">
+        <div class="section-head">{{ page.title }}</div>
+        <div class="section-description">If you need to use use LaTex to create technical documentation, here are some easy to follow instructions that are worth reading.</div>
+    </div>
+
+    <div class="topic">
+      <div class="article">
+        <div class="article-body">
+            <h1>Contents</h1>
+            <p>In this series of articles I hope to show you how you can use LaTeX for technical documentation, if your output is PDF. It requires diving into the minutia of LaTeX packages, commands, options, arguments and so forth. You can start learning using the Quick Start Guide or jump over that and go directly to creating a documentation root file.</p>
+            <p>
+                {% for item in site.data.latex.toc %}
+                <ul>
+                    {% for entry in item.items %}
+                    <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+

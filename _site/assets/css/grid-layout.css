@@ -1,0 +1,97 @@
+/*  CSS Grid styles */
+
+:root {
+    --background: rgba(240, 240, 240 0.5);
+  }
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    /* margin-inline: auto; centers container */
+    max-width: 60rem;
+    /* width: min(90%, 1000px); determines min width */
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 2fr 1fr auto 1fr;
+    /* grid-template-columns: 1fr repeat(auto-fit, 20em) 1fr; */
+    /* grid-template-columns: 2fr minmax(0,calc(3.5rem + 66ch)) 2fr; */
+    grid-template-columns: 1fr repeat(auto-fit, 20em) 1fr;
+    /* grid-template-areas: "hero hero hero"
+                            "menu menu menu"
+                            "content content content"
+                            "footer footer footer" ; */
+    grid-template-areas: ". hero"
+                            "menu menu menu"
+                            ". content ."
+                            ". footer ." ;                            
+    background: white;
+}
+.header {
+    grid-area: hero;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    align-content: center;
+    border: silver;
+    border-style: solid;
+    border-radius: 10pt;
+    background-image: url("/assets/img/backgrounds/header-bg.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+}
+.header-item {
+    position: relative;
+    background: rgba(0,0,0,.75);
+    margin-left: 0rem;
+    margin-top: 2.5rem;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.header-item a {
+    text-decoration: none;
+}
+.header-item:after {
+    content: "while drinking tea";
+    display: block;
+    font-size: 1rem;
+    color: white;
+    top: 50px;
+    left: 50px;
+}
+.menu {
+    grid-area: menu;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    align-content: center;
+    background: var(--background);
+    /* border: silver;
+    border-style: solid;
+    border-radius: 5pt; */
+    max-height: 4em;
+}
+.content {
+    grid-area: content; 
+    background: #ffffff;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    align-content: center;
+    border: white;
+    border-style: solid;
+    border-radius: 10pt;
+}
+.footer {
+    grid-area: footer;
+    background-color: #7C3030;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    border: silver;
+    border-style: solid;
+    border-radius: 10pt;
+}

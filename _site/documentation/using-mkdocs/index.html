@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; GitBook or MKDocs for product documentation?</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="GitBook or MKDocs for product documentation?" />
+    <meta property="og:url" content="http://localhost:4029/documentation/using-mkdocs/" />
+    <meta property="og:description" content="GitBook or MKDocs for product documentation?
+" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/documentation/">Documentation</a>
+      
+    
+      
+        / GitBook or MKDocs for product documentation?
+      
+    
+</div></div>
+      <h1 id="gitbook-or-mkdocs-for-product-documentation">GitBook or MKDocs for product documentation?</h1>
+
+<p>In the past two years I worked with two different tools for producing technical documentation. They both use Markdown but approach writing content entirely differently. I used <strong><a href="https://www.gitbook.com/">GitBook</a></strong> for over a year during 2091 and 2020. I used <strong>MKDocs</strong> - specifically <strong><a href="https://squidfunk.github.io/mkdocs-material/">Material for MKDocs</a></strong> - following that from 2020 to today. Having previously worked with tools such as Flare, <a href="https://github.com/wagtail">Wagtail</a>, Help &amp; Manual, Adobe FrameMaker, I was glad to write documentation using tools that allow me to use Markdown. At this point, I have used both sufficiently to make an intelligent analysis of GitBook and MKDocs and form some conclusions as to which is the better choice, at least for me.</p>
+
+<p>Both GitBook and MKDocs were chosen not by me but by the engineers and product managers of the respective companies for which I produced documentation. Both of these tools would automatically make them a good choice because (1) these companies wanted to use them and (2) it is always good to be on the side of the engineers and project managers on any project. Sure, I sometimes have had an opportunity to advise which tool to use - and I have done that many times - but I was glad to just jump in to an existing tool set and start swimming.</p>
+
+<h2 id="what-is-gitbook">What is GitBook?</h2>
+
+<p>GitBook used to be an <a href="https://github.com/GitbookIO/gitbook">open-source tool</a> for creating documentation but a few years ago it became proprietary. This meant I was dependent on the features the GitBook company allowed me to use. Second, it is hosted on a GitBook server not on a local repository so if it was down, so was our documentation.</p>
+
+<figure><img class="img" src="/assets/img/blog/gitbook.png" alt="Gitbook" /></figure>
+<figurecaption>GitBook example project</figurecaption>
+
+<p>On the other hand, it is easy to use - if you were happy with the features they provided, which I sometimes was not. It is very simple. First, I signed in to <a href="https://app.gitbook.com/">app.gitbook.com</a> then I chosed the type of project - Docs. GitBook then built a template for me and then I started writing my topics. To be fair, since I last worked with GitBook they have significantly upgraded their offerings and features. So, it seems they have listened to some of the complaints of customers. But the workflow hasn’t changed since I used it and that is what I am most interested in here.</p>
+
+<h3 id="creating-topics-with-gitbook">Creating topics with GitBook</h3>
+
+<p>GitBook does have some useful features such as adding new paragraphs just by hitting <strong>Enter</strong> after an existing paragraph. That’s a typical Markdown behaviour. Once I add a paragraph, I you can choose from a set of options to format the paragraph into a heading, list, hint, quote, code block or just keep it as a paragraph. Additionally, I can insert images, files, URLs, tables, tabs and even API methods using the same method. Clearly GitBook has been hard at work since I last worked with this tool. These tasks were more difficult to do when I used it.</p>
+
+<figure><img class="img" src="/assets/img/blog/gitbook-inline-menu.png" alt="Gitbook" /></figure>
+<figurecaption>GitBook inline menu</figurecaption>
+
+<p>Adding captions to inserted images is simple as is embedding YouTube videos, sound files, Codepen and other types of exernal files. When I used it, the options were inserting videos or links to files. So, again they have listed to complaints and expanded their offereings.</p>
+
+<p>Here is an image inserted with a caption. Notice the pop-up menu that appears over the caption. These sort of pop-up menus are available throughout the topic during edit mode. They allowed me to format words in typical manner such as bold, italics, underlined and so forth.</p>
+
+<figure><img class="img" src="/assets/img/blog/gitbook-insert-image.png" alt="Gitbook" /></figure>
+<figurecaption>Inserting images and captions</figurecaption>
+
+<p>You might notice GitBook has already spell-checked the topic content. This is a basic feature any tool should have. Right-clicking on a misspelled words brings up a menu which I can use to correct the spelling. Basically, this is standard spell checking behaviour.</p>
+
+<p>Many of the tasks in GitBook can be done using keyboard shortcuts, not that I used them that much. But they did make my work a bit easier - when I used them. GitBook now allows importing external documents written in Google Docs, Word or wherever. I also noticed GitBook has listened to its critics and allowed content to be synced with a GitHub repository, something it couldn’t do before.</p>
+
+<h3 id="so-what-do-i-think-about-this-new-and-improved-gitbook">So, what do I think about this new and improved GitBook?</h3>
+
+<p>Well, its hard to say. I do appreciate its improvements but I am no longer a fan of writing topics within an interface. I like writing topics in something like Atom or Visual Studio Code, basically a tool that allows me to write in Markdown and connect with my repository in GitHub.</p>
+
+<p>But as GitBook does have the word GIT in its name, it must by definition connect with GitHub. Surprisingly, a normal user would not notice this so the name of the product seems a bit archaic or a mismatch. It is probably closer to a tool like Flare or a CMS. And as I fled from Flare some years ago, being roped into another interface like Flare wasn’t exactly my cup of tea nor my cup of coffee.</p>
+
+<p>It might be yours though. Yet, unlike Flare it doesn’t have a menu on top to format text, import items and so forth. It is all through embedded menus and keyboard shortcuts and lots of mouse clicks to get things done.</p>
+
+<h3 id="final-score">Final score</h3>
+
+<p>So, in summary, I would give <strong>GitBook</strong> the following score:</p>
+
+<ul>
+  <li><strong>5 out of 10 for ease of use</strong></li>
+  <li><strong>5 out of 10 for writing content</strong></li>
+  <li><strong>6 out of 10 for project results</strong></li>
+</ul>
+
+<p>Perhaps the API docs might be its saving grace, although I haven’t worked with that part of the tool yet. It is a smart move on the part of GitBook to allow users to integrate API docs into their product documentation using the same tool. To be fair, that aspect of GitBook might be its best selling point.</p>
+
+<h2 id="what-is-mkdocs">What is MKDocs?</h2>
+
+<p>MKDocs is a static site generator that, like Jekyll, uses Python and Markdown. Unlike Jekyll which is often used for Blogs, MKDocs is used for product documentation. Similarly with Jekyll, I can develop locally using Visual Source Code or Atom, run a command to generate a site then host the output wherever. MKDocs can be hosted on a GitHub repo for integration into a company documentation site. With MKDocs, many useful themes are available such as <a href="https://docs.readthedocs.io/en/stable/intro/getting-started-with-mkdocs.html">ReadTheDocs</a> or <a href="https://squidfunk.github.io/mkdocs-material/">Material for MKDocs</a>.</p>
+
+<figure><img class="img" src="/assets/img/blog/mkdocs.png" alt="Gitbook" /></figure>
+<figurecaption>MKDocs</figurecaption>
+
+<p>MK in MKDocs, of course, stands for Markdown. I quite like the simplicity of Markdown. It is quite easy to write text without having to worry about layout and design. Well, actually, I have to worry about layout and design but not while writing topics. In fact, in some companies, this aspect of writing docs can be farmed out to the engineering or design teams to keep the look of the docs consistent with corporate standards. This was my experience with it. I had some input into style guides for the docs but the actually layout, colour schemes and so forth were out of my hands. Thankfully I could focus on writing the docs and for that I was quite pleased.</p>
+
+<p>As for processes, using MKDocs is also knowing how to use git commands and GitHub. This was a bit of a learning curve for me but glad to have some day to day experience with it instead of just head-knowledge from my Git books. At the end of each day I uploaded to a corporate repository my work for the day. For major changes I would create a new branch, work on the branch, push it to the repo and run a Pull Request for review and eventual merge into the main repository. It worked quite efficiently.</p>
+
+<h3 id="material-for-mkdocs">Material for MKDocs</h3>
+
+<p>Material for MKDocs was developed by Martin Donath (see <a href="https://github.com/squidfunk">github.com/squidfunk</a>) in Germany. I have had very good experience with this MKDocs theme. As with all MKDocs themes, it requires Python and Pip.</p>
+
+<p>Running <code class="language-plaintext highlighter-rouge">pip install mkdocs-material</code> installs both MKDocs and the theme. Then running <code class="language-plaintext highlighter-rouge">mkdocs new .</code> builds a basic structure. Adding a few lines to a basic configuration YAML file <code class="language-plaintext highlighter-rouge">mkdocs.yml</code> the site is ready to be built using <code class="language-plaintext highlighter-rouge">mkdocs build</code>. A nice feature is the <em>previewing as you write</em> command <code class="language-plaintext highlighter-rouge">mkdocs serve</code>. The result is a decent basic site ready for customization and content:</p>
+
+<figure><img class="img" src="/assets/img/blog/mkdocs-material-base.png" alt="Gitbook" /></figure>
+<figurecaption>Material for MKDocs base</figurecaption>
+
+<p>Of course, the Material for MKDocs theme can be fully customized. In my experience a corporate designer was responsible for colour themes, icons, font use and so forth. Front-end engineers loaded up the <code class="language-plaintext highlighter-rouge">mkdocs.yml</code> file with these customizations. That was handy. I had input into anything content-related. And as this theme uses Markdown, it was a no-brainer. For example, I could add an admonition using:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!!! note "Title of admonition"
+    This is a note admonition
+</code></pre></div></div>
+
+<p>I could add code blocks quickly using standard Markdown triple ticks followed by language:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="err">3</span> <span class="na">ticks</span><span class="nt">&gt;</span>py
+        python code here
+<span class="nt">&lt;</span><span class="err">3</span> <span class="na">ticks</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Basically, if you know Markdown, using Material for MKDocs is a breeze. I am a fan of this theme and MKDocs in general. In my research for this topic, Incidently, I did some research to see of anyone else had compared GitBook with MKDocs. Not to many did but I did find a good review of Material for MKDocs by Steve Martinelli at <a href="https://www.stevemar.net/five-things-about-mkdocs/">www.stevemar.net/five-things-about-mkdocs/</a>. Highly recommended reading.</p>
+
+<p>I liked Steve’s his summary of MKDocs:</p>
+
+<ol>
+  <li>
+    <p><strong>Good looking interface with a good plugin support</strong>. I have to agree. It’s the plugins that make this theme very customizable.</p>
+  </li>
+  <li>
+    <p><strong>Social media footers function</strong>. I would like this in my own site but this theme makes adding them simple. Always a good selling point.</p>
+  </li>
+  <li>
+    <p><strong>GitHub Actions integration</strong>. As I have never used this before I can’t comment on it, but for those in the know, this must be important, including Steve.</p>
+  </li>
+  <li>
+    <p><strong>Easy to set up</strong>. I would have put this as the number 1 point. I showed you how easy it was to setup and build a simple site.</p>
+  </li>
+  <li>
+    <p><strong>All governed by a single file</strong>. Yep. true. As I mentioned, the <code class="language-plaintext highlighter-rouge">mkdocs.yml</code> file governs everything in the project. As the engineers set this up I had little to do with it except don’t touch it. But it is like a Jekyll site so that makes it a great feature.</p>
+  </li>
+</ol>
+
+<p>I would add that unlke Jekylll, creating a new topic is a real breeze:</p>
+
+<ul>
+  <li>Adding a new .md file</li>
+  <li>Write topic content</li>
+  <li>Add the topic to a Navigation (Menu) file</li>
+  <li>Running <code class="language-plaintext highlighter-rouge">MKDocs Serve</code> to preview</li>
+  <li>Edit the topic, insert images and so forth</li>
+  <li>Push changes to a repo</li>
+</ul>
+
+<p>Simple. Straightforward. Quick. And for technical writers what can be better?</p>
+
+<h3 id="final-score-1">Final score</h3>
+
+<p>So, in summary, I would give <strong>Material for MKDocs</strong> the following score:</p>
+
+<ul>
+  <li><strong>9 out of 10 for ease of use</strong></li>
+  <li><strong>9 out of 10 for writing content</strong></li>
+  <li><strong>8 out of 10 for project results</strong></li>
+</ul>
+
+<p>Clearly, it is easy to use. As a technical writer, I can quickly write topics. And it creates good looking product documentation.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>GitBook</strong> has unique advantages. If you like a typical user interface like Word or Flare, I would suggest using GitBook. This, of course, limits customization but GitBook does have many options for embedding different types of content. No need to worry about managing a GitHub repo and it is a WYSIWYG type of tool. It has its uses and user types. But on the downside, it is also proprietary and has a launchpad fee. Writing topics is employing lots of mouse-clicks and right-mouse clicks. And probably the most troublesome, it is an expense for a company.</p>
+
+<p><strong>Material for MKDocs</strong> is open source. I am sure the maintainer would appreciate some financial support but it is basically a MKDocs theme and freely available. But I think it is a tool with a future. I write so much faster using a text editor like VSC and let a configuration file and navigation file take care of the look and feel of the results. Having now over two years experience with both tools, I can safely say I have enjoyed working with this tool over GitHub.</p>
+
+<p><strong>Winner: Material for MKDocs.</strong></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

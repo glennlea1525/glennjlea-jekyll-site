@@ -1,0 +1,46 @@
+/* ======================================
+pagination styles
+======================================= */
+
+/* Pagination styles */
+
+.paginate_continue a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #3c4257;
+    font-weight: 200;
+    line-height: 1.22em;
+}
+
+.paginate_continue a:hover {
+    color: #c3bda8;
+}
+
+.paginate_date {
+    font-size: 0.8rem;
+    color: #79031D;
+    margin: 5px 0;
+    font-weight: 200;
+}
+
+.pagination a, .pagination span {
+    padding: 7px 18px;
+    border: 1px solid darkgrey;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: 20px;
+    background-color: lightgray;
+    display: inline-block;
+    }
+
+.pagination a {
+    &:hover {
+        background-color: darkgray;
+        color: #333;
+    }
+}
+
+.pagination {
+    text-align: center;
+}

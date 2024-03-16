@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Adding and defining fonts</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Adding and defining fonts" />
+    <meta property="og:url" content="http://localhost:4029/latex/adding-defining-fonts/" />
+    <meta property="og:description" content="Define the base font for your LaTeX documents." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Adding and defining fonts
+      
+    
+</div></div>
+      <h1 id="adding-and-defining-fonts">Adding and defining fonts</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#adding-and-defining-fonts" id="markdown-toc-adding-and-defining-fonts">Adding and defining fonts</a>    <ul>
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+      <li><a href="#setting-base-fonts-for-the-entire-document" id="markdown-toc-setting-base-fonts-for-the-entire-document">Setting base fonts for the entire document</a></li>
+      <li><a href="#using-font-declarations" id="markdown-toc-using-font-declarations">Using font declarations</a>        <ul>
+          <li><a href="#select-pre-defined-font-families" id="markdown-toc-select-pre-defined-font-families">Select pre-defined font families</a></li>
+          <li><a href="#add-a-declaration" id="markdown-toc-add-a-declaration">Add a declaration</a></li>
+          <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+        </ul>
+      </li>
+      <li><a href="#using-the-micriotype-package" id="markdown-toc-using-the-micriotype-package">Using the Micriotype package</a></li>
+      <li><a href="#allowing-relative-font-sizes" id="markdown-toc-allowing-relative-font-sizes">Allowing relative font sizes</a></li>
+      <li><a href="#setting-fonts-for-table-of-contents" id="markdown-toc-setting-fonts-for-table-of-contents">Setting fonts for table of contents</a></li>
+      <li><a href="#redefine-line-spacing" id="markdown-toc-redefine-line-spacing">Redefine line spacing</a></li>
+      <li><a href="#making-dummy-text-available" id="markdown-toc-making-dummy-text-available">Making dummy text available</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>You can add to the stylesheet settings for a document’s base font, font size and monospaced fonts. This allows these settings to be used in any document that uses the stylesheet. Setting fonts, however, in LaTeX is not an obvious task. It is, to be honest, rather cumbersome. So, let’s start with the basics. Fonts are packages which you add using the <code class="language-plaintext highlighter-rouge">\usepackage</code> command. For example, <code class="language-plaintext highlighter-rouge">\usepackage{helvet}</code>.</p>
+
+<div class="note">Note: For more information about about using fonts in LaTeX, see <a href="https://www.tug.org/pracjourn/2006-1/schmidt/schmidt.pdf">Font selection in LaTeX: The most frequently asked questions</a> - PDF file. </div>
+
+<h2 id="setting-base-fonts-for-the-entire-document">Setting base fonts for the entire document</h2>
+
+<p>For a project I typically use several fonts. For example, I used <code class="language-plaintext highlighter-rouge">Helvetica</code> for the base font and then I used <code class="language-plaintext highlighter-rouge">Latin Modern</code> as an alternate base font. <code class="language-plaintext highlighter-rouge">Latin Modern</code> is a set of true handmade vector fonts.</p>
+
+<p>In the stylesheet, I added the following commands. The first two set the base fonts for the document while the third changes the default family to sans serif.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>helvet<span class="p">}</span>                        <span class="c">% Base font for document</span>
+<span class="k">\usepackage</span><span class="p">{</span>lmodern<span class="p">}</span>                       <span class="c">% Alternate base font</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\familydefault</span><span class="p">}{</span><span class="k">\sfdefault</span><span class="p">}</span>  <span class="c">% Changes the default family to Sans Serif</span>
+</code></pre></div></div>
+
+<h2 id="using-font-declarations">Using font declarations</h2>
+
+<p>You can add font declarations that are valid within the current scope in the document. A declaration means that the font remains in effect until the end of the current group or environment. They are unlike defining a font in stylesheet which are used throughout the document.</p>
+
+<p>Font families, series and shapes can be combined in a single command. For example, the command <code class="language-plaintext highlighter-rouge">\bfseries\itshape</code> results in bold italic type.</p>
+
+<h3 id="select-pre-defined-font-families">Select pre-defined font families</h3>
+
+<p>You first add font declarations to allow you to select between pre-defined font families. Then within each font family you add declarations to select the type of font, such as weight, form, and so on.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\rmfamily</span>  <span class="c">% Selects a roman family</span>
+<span class="k">\sffamily</span>  <span class="c">% Selects a san serif family</span>
+<span class="k">\ttfamily</span>  <span class="c">% Selects a monospaced font</span>
+</code></pre></div></div>
+
+<h3 id="add-a-declaration">Add a declaration</h3>
+
+<p>You then add the following declarations within each font family by using the following:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\mdseries</span>   <span class="c">% Format the font as regular to keep the font as it is.</span>
+<span class="k">\bfseries</span>   <span class="c">% Bold the font.</span>
+</code></pre></div></div>
+
+<h3 id="examples">Examples</h3>
+
+<p>Text strings can be formatted using the following:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\upshate</span>  <span class="c">% reverts the text back to normal</span>
+<span class="k">\slshape</span>  <span class="c">% forward slants the text</span>
+<span class="k">\itshape</span>  <span class="c">% italicizes the font</span>
+<span class="k">\scshape</span>  <span class="c">% makes the text All Caps and Small Caps</span>
+</code></pre></div></div>
+
+<h2 id="using-the-micriotype-package">Using the Micriotype package</h2>
+
+<p>To improve readability, you can add the Microtype package. When used, you need to define some options and settings. For example, the PostScript font Adobe Courier is used for monospaced text.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>microtype<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>courier<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="allowing-relative-font-sizes">Allowing relative font sizes</h2>
+
+<p>To allow relative font size specifications, (e.g. \smaller, \larger) use the the package <code class="language-plaintext highlighter-rouge">relsize</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{relsize}</code></p>
+
+<h2 id="setting-fonts-for-table-of-contents">Setting fonts for table of contents</h2>
+
+<p>To control the fonts and formatting used in the Table of Contents, use the <code class="language-plaintext highlighter-rouge">titles</code> package and set the argument <code class="language-plaintext highlighter-rouge">tocloft</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage[titles]{tocloft}</code></p>
+
+<h2 id="redefine-line-spacing">Redefine line spacing</h2>
+
+<p>You can redefine the spacing to make the text more aesthetically appealing.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength</span><span class="p">{</span><span class="k">\cftbeforechapskip</span><span class="p">}{</span>2ex<span class="p">}</span>
+<span class="k">\setlength</span><span class="p">{</span><span class="k">\cftbeforesecskip</span><span class="p">}{</span>0.5ex<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="making-dummy-text-available">Making dummy text available</h2>
+
+<p>You can make dummy text available to use in the document with the lipsum package.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{lipsum}</code></p>
+
+<p><a href="/latex/adding-multi-lingual-support.html">Next: Adding multi-lingual support</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

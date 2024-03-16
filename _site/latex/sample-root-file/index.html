@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Sample root file</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Sample root file" />
+    <meta property="og:url" content="http://localhost:4029/latex/sample-root-file/" />
+    <meta property="og:description" content="Here is a sample root file that you can use right away to get you started." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Sample root file
+      
+    
+</div></div>
+      <h1 id="sample-root-file">Sample root file</h1>
+
+<p>Here is a sample root file that you can use right away to get you started. It is typically named <code class="language-plaintext highlighter-rouge">main.tex</code> and saved to the root of the project.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Manual ROOT FILE</span>
+<span class="c">% Copyright 2020 Glenn J. Lea</span>
+
+<span class="c">%\RequirePackage[l2tabu, orthodox]{nag}</span>
+
+<span class="k">\documentclass</span><span class="na">[a4paper,11pt,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span>(makeidx)
+<span class="k">\usepackage</span><span class="p">{</span>styles/template<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+
+<span class="k">\frontmatter</span>
+<span class="c">% Configuration of the header strings for the frontmatter pages.</span>
+<span class="k">\setcounter</span><span class="p">{</span>tocdepth<span class="p">}{</span>3<span class="p">}</span>
+<span class="k">\fancyhead</span><span class="na">[RE,LO]</span><span class="p">{}</span>
+
+<span class="c">% Document Title Page</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-titlepage.tex<span class="p">}</span>
+<span class="c">%\thispagestyle{empty}</span>
+<span class="k">\newpage</span>
+<span class="k">\pagecolor</span><span class="p">{</span>white<span class="p">}</span>
+
+<span class="c">% Forward Section  </span>
+<span class="c">% \section*{Foreward}</span>
+<span class="k">\textbf</span><span class="p">{</span>Document Information<span class="p">}</span>
+
+<span class="c">%% Document information table</span>
+<span class="nt">\begin{center}</span>
+<span class="nt">\begin{longtable}</span><span class="p">{&amp;</span>gt;<span class="p">{</span><span class="k">\RaggedLeft</span><span class="p">}</span>p<span class="p">{</span>4cm<span class="p">}</span>|<span class="p">&amp;</span>gt;<span class="p">{</span><span class="k">\RaggedRight</span><span class="p">}</span>p<span class="p">{</span>10cm<span class="p">}}</span>
+  <span class="k">\endfirsthead</span> <span class="k">\multicolumn</span><span class="p">{</span>2<span class="p">}{</span>l<span class="p">}{</span><span class="k">\textit</span><span class="p">{</span>Document Information continued<span class="p">}}</span><span class="k">\
+  \endhead</span> <span class="k">\multicolumn</span><span class="p">{</span>2<span class="p">}{</span>r<span class="p">}{</span><span class="k">\textit</span><span class="p">{</span>Continued on next page<span class="p">}}</span><span class="k">\
+  \endfoot</span>
+  <span class="k">\endlastfoot</span>
+  <span class="k">\textbf</span><span class="p">{</span>Item<span class="p">}</span> <span class="p">&amp;</span>amp; <span class="k">\textbf</span><span class="p">{</span>Description<span class="p">}</span>
+  Document Version <span class="p">&amp;</span>amp; Version #<span class="k">\\</span>
+  Revision Number <span class="p">&amp;</span>amp; Rev #<span class="k">\\</span>
+  Document ID #<span class="k">\
+  </span>Date Published #<span class="k">\
+</span><span class="nt">\end{longtable}</span>
+<span class="nt">\end{center}</span>
+
+<span class="c">% Copyright Information</span>
+<span class="k">\textbf</span><span class="p">{</span>Copyright Information<span class="p">}</span>
+<span class="k">\textbf</span><span class="p">{</span>Glenn J.Lea<span class="p">}</span><span class="k">\\</span>
+<span class="k">\textbf</span><span class="p">{</span>Additional Information<span class="p">}</span><span class="k">\
+\newpage</span>
+
+<span class="c">%% Table of Contents</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\newpage</span>
+
+<span class="c">%% List of tables</span>
+<span class="k">\listoftables</span>
+<span class="k">\newpage</span>
+
+<span class="c">%% List of Figures</span>
+<span class="k">\listoffigures</span>
+<span class="k">\newpage</span> 
+
+<span class="c">%% Main part of the document</span>
+<span class="k">\mainmatter</span><span class="p">{}</span>
+
+<span class="c">%% Configuration of the header strings for the main pages.</span>
+<span class="c">%%\fancyhead[RE,LO]{\thesection}</span>
+<span class="k">\fancyhead</span><span class="na">[RO,LE]</span><span class="p">{</span><span class="k">\bfseries\leftmark</span><span class="p">}</span>
+<span class="k">\fancyhead</span><span class="na">[RE,LO]</span><span class="p">{</span><span class="k">\bfseries\rightmark</span><span class="p">}</span>
+
+<span class="c">%% Input all external files of the document</span>
+<span class="c">%% You must use the \input(filename.tex) form  </span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch01-preface.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch02-overvew.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch03.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch04.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch05.tex<span class="p">}</span>
+
+<span class="c">%% Appendix Inputs</span>
+<span class="k">\appendix</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/app01.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/app02.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/app05-glossary.tex<span class="p">}</span>
+
+<span class="k">\backmatter</span>
+<span class="nt">\end{document}</span>
+
+</code></pre></div></div>
+
+<p><a href="/latex/documentclass.html">Next: Selecting the Document Class</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

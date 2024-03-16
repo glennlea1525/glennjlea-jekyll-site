@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Inserting images</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Inserting images" />
+    <meta property="og:url" content="http://localhost:4029/latex/inserting-images/" />
+    <meta property="og:description" content="You define in the stylesheet how images appear in the document." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Inserting images
+      
+    
+</div></div>
+      <h1 id="inserting-images">Inserting images</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#inserting-images" id="markdown-toc-inserting-images">Inserting images</a>    <ul>
+      <li><a href="#adding-the-graphicx-package" id="markdown-toc-adding-the-graphicx-package">Adding the graphicx package</a></li>
+      <li><a href="#formatting-images-using-the-graphicx-package" id="markdown-toc-formatting-images-using-the-graphicx-package">Formatting images using the graphicx package</a></li>
+      <li><a href="#adding-captions-using-the-caption-package" id="markdown-toc-adding-captions-using-the-caption-package">Adding captions using the caption package</a></li>
+      <li><a href="#insert-images-using-includegraphics" id="markdown-toc-insert-images-using-includegraphics">Insert images using includegraphics</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You define in the stylesheet how images appear in the document using the <code class="language-plaintext highlighter-rouge">graphicx</code> package. You can add captions to images using the <code class="language-plaintext highlighter-rouge">caption</code> package.</p>
+
+<h2 id="adding-the-graphicx-package">Adding the graphicx package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">graphicx</code> pack­age pro­vid­es a key-value in­ter­face for optional arguments to the <code class="language-plaintext highlighter-rouge">\include­graph­ics</code> command.</p>
+
+<p>Note: Do not use the other graphics package when using <code class="language-plaintext highlighter-rouge">graphicx</code>.</p>
+
+<p>Add the <code class="language-plaintext highlighter-rouge">graphicx</code> package using the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{graphicx}</code></p>
+
+<h2 id="formatting-images-using-the-graphicx-package">Formatting images using the graphicx package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">graphicx</code> pack­age builds upon the graph­ics pack­age pro­vid­ing a key-value in­ter­face for op­tional ar­gu­ments to the <code class="language-plaintext highlighter-rouge">\in­clude­graph­ics</code> com­mand.</p>
+
+<p>This in­ter­face pro­vides fa­cil­i­ties that go far be­yond what the <code class="language-plaintext highlighter-rouge">graph­ics</code> pack­age of­fers on its own. Do not use the older graphics package when using <code class="language-plaintext highlighter-rouge">graphicx</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{graphicx}</code></p>
+
+<p>Then you include an image in a .tex file using the following syntax:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\includegraphics[scale=1]{images/logo.png}</code></p>
+
+<p>Here is another example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\includegraphics[width=10.91cm, height=2.33cm]{images/rgb_logo.png}\\[-1em]</code></p>
+
+<h2 id="adding-captions-using-the-caption-package">Adding captions using the caption package</h2>
+
+<p>You can define captions using the <code class="language-plaintext highlighter-rouge">caption</code> package. For example, you can define how the captions are formatting using the following:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]<span class="p">{</span>caption<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This sets the font size to a LaTex defined small size and without any decoration.</p>
+
+<p>Then you an insert an image in the document using the following syntax. Note that you do not need to include the image extension.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{figure}</span>[h!]  
+    <span class="k">\centering</span>
+    <span class="k">\includegraphics</span><span class="na">[scale=.75]</span><span class="p">{</span>images/Image-name<span class="p">}</span>
+  <span class="k">\caption</span><span class="p">{</span>Caption of an image<span class="p">}</span>
+<span class="nt">\end{figure}</span>
+</code></pre></div></div>
+
+<h2 id="insert-images-using-includegraphics">Insert images using includegraphics</h2>
+
+<p>Then insert an image within a text flow using <code class="language-plaintext highlighter-rouge">includegraphics</code>.</p>
+
+<p>In the following example, the image is resized:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\includegraphics[width=10.91cm, height=2.33cm]{images/logo.png}</code></p>
+
+<p>Note: The file extension can be omitted, but I prefer to keep the entire filename, including the extension.</p>
+
+<p>In this example, the image is resized to the following values: set the width to 10.19 cm and set the height to 2.33 cm.</p>
+
+<p>Alternatively, the image can be scaled.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\includegraphics[scale=1.75]{images/logo.png}[-1em]</code></p>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">[-1em]</code> is a positioning element, which moves the image 1em to the left of the defined left margin. This is a page design issue.</p>
+
+<p>You can optionally set the path to graphics using the <code class="language-plaintext highlighter-rouge">\graphicspath</code> command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\graphicspath{ {images/} }</code></p>
+
+<p><a href="/latex/inserting-code-snippets.html">Next: Inserting code snippets</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

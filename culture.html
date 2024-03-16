@@ -1,0 +1,49 @@
+---
+layout: page
+title: Culture
+---
+<div class="page-content-wrapper">
+  <div class="plug">
+      <div class="section-head">{{ page.title }}</div>
+      <div class="section-description">  </div>
+  </div>
+
+  <div class="topic">
+
+    <div class="article">
+
+      <div class="article-body">
+
+        {% for post in site.categories.culture %}
+        
+        <div class="card-box">
+
+          <div class="card-entry"><a href="{{ post.url }}">{{ post.title }}</a></div>
+
+          <div class="card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+ 
+            {% if post.category %} • 
+            <a href="{{ baseurl }}/{{post.category }}/">{{post.category }}</a>
+            {% endif %}
+
+            {% if post.author %} • 
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ post.author }}</span></span>
+            {% endif %}
+
+          </div>
+
+          <div class="card-description">{{ post.description }}</div>
+
+        </div>
+        
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>

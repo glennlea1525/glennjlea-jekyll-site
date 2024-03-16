@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Commands for font formatting and lists</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Commands for font formatting and lists" />
+    <meta property="og:url" content="http://localhost:4029/latex/formatting-text/" />
+    <meta property="og:description" content="LaTeX provides commands for formatting text, creating lists and adding images." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Commands for font formatting and lists
+      
+    
+</div></div>
+      <h1 id="commands-for-font-formatting-and-lists">Commands for font formatting and lists</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#commands-for-font-formatting-and-lists" id="markdown-toc-commands-for-font-formatting-and-lists">Commands for font formatting and lists</a>    <ul>
+      <li><a href="#formatting-fonts" id="markdown-toc-formatting-fonts">Formatting fonts</a></li>
+      <li><a href="#formatting-ordered-and-unordered-lists" id="markdown-toc-formatting-ordered-and-unordered-lists">Formatting ordered and unordered lists</a></li>
+      <li><a href="#formatting-nested-lists" id="markdown-toc-formatting-nested-lists">Formatting nested Lists</a></li>
+      <li><a href="#resuming-a-list-after-paragraphs" id="markdown-toc-resuming-a-list-after-paragraphs">Resuming a list after paragraphs</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>LaTeX provides commands for formatting fonts and creating lists.</p>
+
+<h2 id="formatting-fonts">Formatting fonts</h2>
+
+<p>To make sections of text use the following:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\B</span><span class="p">{</span>...<span class="p">}</span>  - bold
+<span class="k">\I</span><span class="p">{</span>...<span class="p">}</span> - italic
+<span class="k">\T</span><span class="p">{</span>...<span class="p">}</span> - monospaced
+<span class="k">\TB</span><span class="p">{</span>...<span class="p">}</span> - monospaced bold
+<span class="k">\TB</span><span class="p">{</span>...<span class="p">}</span> - monospaced italic
+</code></pre></div></div>
+
+<p>To format paragraphs use the following:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\textbf</span><span class="p">{</span>Road Runner<span class="p">}</span> - bold
+<span class="k">\textit</span><span class="p">{</span>ACME<span class="p">}</span> - italics
+<span class="k">\emph</span><span class="p">{</span>ACME<span class="p">}</span> - italics
+<span class="k">\underline</span><span class="p">{</span>Tunnel Ahead<span class="p">}</span> - underlined
+</code></pre></div></div>
+
+<h2 id="formatting-ordered-and-unordered-lists">Formatting ordered and unordered lists</h2>
+
+<p>When making an unordered list, you use <code class="language-plaintext highlighter-rouge">itemize</code>. When making an ordered list, you use <code class="language-plaintext highlighter-rouge">enumerate</code>.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">itemize</code>to create an unordered list as shown below.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{itemize}</span>
+<span class="k">\item</span> <span class="k">\textbf</span><span class="p">{</span>Body<span class="p">}</span> - The thing that holds the fins in the right place.
+<span class="k">\item</span> <span class="k">\textbf</span><span class="p">{</span>Fins<span class="p">}</span> - The things that steer the tunafish in the sea.
+<span class="k">\item</span>
+<span class="nt">\end{itemize}</span>
+</code></pre></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">enumerate</code> to create ordered lists as shown below.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+<span class="k">\item</span> Get a boat
+<span class="k">\item</span> Get a fishing rod
+<span class="k">\item</span> Find fish
+<span class="k">\item</span> Open can of tuna fish
+<span class="k">\item</span> Cast the line out 
+<span class="k">\item</span> Reel in the tuna fish
+<span class="nt">\end{enumerate}</span>
+</code></pre></div></div>
+
+<h2 id="formatting-nested-lists">Formatting nested Lists</h2>
+
+<p>Use the following commands to create nested lists.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+<span class="k">\item</span> <span class="k">\textbf</span><span class="p">{</span>Body<span class="p">}</span> - The thing that holds the fins
+     <span class="nt">\begin{itemize}</span>
+     <span class="k">\item</span> The yummy part that you can eat
+     <span class="k">\item</span> Lots of bones and stuff that you cannot eat
+     <span class="k">\item</span> <span class="k">\textbf</span><span class="p">{</span>Fins<span class="p">}</span> - The things that steer the tunafish
+        <span class="nt">\begin{itemize}</span>
+        <span class="k">\item</span> The fins are sometimes sharp
+        <span class="k">\item</span> Do not eat them
+        <span class="nt">\end{itemize}</span>
+     <span class="nt">\end{itemize}</span>
+<span class="nt">\end{enumerate}</span>
+</code></pre></div></div>
+
+<h2 id="resuming-a-list-after-paragraphs">Resuming a list after paragraphs</h2>
+
+<p>I found it rather annoying that LaTeX didn’t have an easy way of dealing with interrupted lists, until I learned this tip on StackOverflow.</p>
+
+<p>Use the package <code class="language-plaintext highlighter-rouge">\enumitem</code> and the <code class="language-plaintext highlighter-rouge">[resume]</code> option on an <code class="language-plaintext highlighter-rouge">enumerate</code> scope to cause the LaTeX typesetter to continue numbering from the previous list.</p>
+
+<p>First, add the <code class="language-plaintext highlighter-rouge">enumitem</code> package to the stylesheet for resuming enumeration after intervening text element.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{enumitem}</code></p>
+
+<p>Then in the text use <code class="language-plaintext highlighter-rouge">[resume]</code> to continue the list, as shown in the following example.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+    <span class="k">\item</span> List item
+    <span class="k">\item</span> Another list item
+<span class="nt">\end{enumerate}</span>
+
+A randomly inserted paragraph.
+
+<span class="nt">\begin{enumerate}</span>[resume]
+    <span class="k">\item</span> Further item
+    <span class="k">\item</span> Final item
+<span class="nt">\end{enumerate}</span>
+
+Paragraph of comments on list items 1 and 2.
+
+<span class="nt">\begin{enumerate}</span>[resume]
+<span class="k">\item</span> Further item
+<span class="k">\item</span> Final item
+<span class="nt">\end{enumerate}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/inserting-images.html">Next: Inserting images</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

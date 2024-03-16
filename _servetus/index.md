@@ -1,0 +1,35 @@
+---
+layout: page
+title: Michael Servetus and the Socinians - Antitrinitarians of the Reformation
+permalink: /servetus/home/
+---
+
+<div class="page-content-wrapper">
+  <div class="plug">
+    <div class="section-head">{{ page.title }}</div>
+    <div class="section-description"><em>Michael Servetus has the singular distinction of having been burned by the Catholics in effigy and by the Protestants in actuality. - Roland H. Bainton.</em></div>
+  </div>
+
+  <div class="topic">
+    <div class="article">
+      <div class="article-body">
+        <p><img class="post-image" src="{{ baseurl }}/assets/img/servetus/servetus-small.png" alt="Portrait of Michael Servetus"/>Has there ever been such a strange uniting of efforts by two powerful rivals - the Protestants and Catholics - to expunge from amongst themselves someone they considered so repulsive? Probably so, but Michael Servetus was considered so diabolical that in the midst of the rupture between Rome and the Protestants, both were determined to stamp out this radical whose teachings they considered too dangerous for Christianity.</p>
+
+        <p>Michael Servetus had crossed that boundary by rejecting two of the most fundamental teachings of orthodox Christianity - the Trinity and Infant Baptism. This was simply intolerable for the Churches and Servetus forfeited his life for his impiety. Yet Servetus did succeed. His influence survived.</p> 
+
+        <p>This article outlines his teachings and follows his contributions not so much on the course of the Reformation but on specific developments during that period. This was first and foremost an increasing tolerance for religious dissidents. And secondly, the emergence of antitrinitarianism and infant baptism as the “third way” that ultimately became the distinguishing feature of the radical Polish Brethren, otherwise known as the Socinians.</p>
+
+        <h1>Contents</h1>
+        {% for item in site.data.servetus.toc %}
+        <ul>
+          {% for entry in item.items %}
+          <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+

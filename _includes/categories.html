@@ -1,0 +1,58 @@
+<!-- his is the page which will be shown when someone clicks on any category. Something like my jekyll tags page. Copy below code and paste it into a new file and name it categories.html.-->
+---
+layout: page
+permalink: /categories/
+title: Categories
+---
+
+
+<div id="archives">
+{% for category in site.categories %}
+  <div class="archive-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <div id="#{{ category_name | slugize }}"></div>
+    <p></p>
+
+    <h3 class="category-head">{{ category_name }}</h3>
+    <a name="{{ category_name | slugize }}"></a>
+    {% for post in site.categories[category_name] %}
+    <article class="archive-item">
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+    </article>
+    {% endfor %}
+  </div>
+{% endfor %}
+</div>
+
+<!-- If you want a simple list of all posts inside a certain category then use the below code. -->
+
+{% for post in site.categories.Documentation %}
+ <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+{% for post in site.categories.Usability %}
+ <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+{% for post in site.categories.Culture %}
+ <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+
+<!-- Copy this to post layout wherever you want to show the categories.-->
+
+<div class="post-categories">
+    {% if post %}
+      {% assign categories = post.categories %}
+    {% else %}
+      {% assign categories = page.categories %}
+    {% endif %}
+    {% for category in categories %}
+    <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+    {% unless forloop.last %}&nbsp;{% endunless %}
+    {% endfor %}
+  </div>
+
+  <!-- This can also be done using a simple piece of code if you just want to show categories without any link.
+-->
+
+  {{page.categories | capitalize | join: ', '}}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Defining sectioning styles</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Defining sectioning styles" />
+    <meta property="og:url" content="http://localhost:4029/latex/sectioning-styles/" />
+    <meta property="og:description" content="Two packages titlesec and sectsty are used to set sectioning styles." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Defining sectioning styles
+      
+    
+</div></div>
+      <h1 id="defining-sectioning-styles">Defining sectioning styles</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#defining-sectioning-styles" id="markdown-toc-defining-sectioning-styles">Defining sectioning styles</a>    <ul>
+      <li><a href="#using-the-titlesec-package" id="markdown-toc-using-the-titlesec-package">Using the titlesec package</a></li>
+      <li><a href="#defining-chapter-titles" id="markdown-toc-defining-chapter-titles">Defining chapter titles</a></li>
+      <li><a href="#defining-section-headings" id="markdown-toc-defining-section-headings">Defining section headings</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>A section in a document usually consists of a chapter title as well as first, second and third level headings. The <code class="language-plaintext highlighter-rouge">titlesec</code> package is used for this and then you define how each of the headings are formatted.</p>
+
+<p>Note: For some of the long commands, I added line breaks for readability. You need to remove those breaks when using the syntax.</p>
+
+<h2 id="using-the-titlesec-package">Using the titlesec package</h2>
+
+<p>To set sectioning styles and packages, you can use the <code class="language-plaintext highlighter-rouge">titlesec</code> package. <code class="language-plaintext highlighter-rouge">titlesec</code> pro­vid­es an in­ter­face for defining var­i­ous ti­tle styles.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>titlesec<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="defining-chapter-titles">Defining chapter titles</h2>
+
+<p>I configured the chapter title to have a 19pt font size.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}{</span><span class="k">\fontsize</span><span class="p">{</span>19pt<span class="p">}{</span>0em<span class="p">}</span><span class="k">\selectfont\bf</span><span class="p">}{</span><span class="k">\thechapter</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<p>To remove the large space above the chapter title:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titlespacing*</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}{</span>0pt<span class="p">}{</span>-30pt<span class="p">}{</span>20pt<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To indent the section label:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titlelabel</span><span class="p">{</span><span class="k">\llap</span><span class="p">{</span><span class="k">\makebox</span><span class="na">[1cm][l]</span><span class="p">{</span><span class="k">\thetitle</span><span class="p">}}</span><span class="k">\hspace*</span><span class="p">{</span>25.4mm<span class="p">}}</span>
+</code></pre></div></div>
+
+<p>To set the size and position of the chapter heading:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\chapter</span><span class="p">}{</span><span class="k">\fontsize</span><span class="p">{</span>20pt<span class="p">}{</span>0em<span class="p">}</span>
+  <span class="k">\selectfont\bf\color</span><span class="p">{</span>namecolor<span class="p">}}{</span><span class="k">\thechapter</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<h2 id="defining-section-headings">Defining section headings</h2>
+
+<p>To set the size and position of the section headings:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\section</span><span class="p">}</span>[hang]
+  <span class="p">{</span><span class="k">\normalfont\Large\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+  <span class="p">{</span><span class="k">\thesection</span>.<span class="p">}</span>
+  <span class="p">{</span>1em<span class="p">}{}</span>
+
+<span class="k">\titlespacing</span><span class="p">{</span><span class="k">\section</span><span class="p">}{</span>0pt<span class="p">}{</span>*4<span class="p">}{</span>*1<span class="k">\.</span>5<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For subsection headings:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\subsection</span><span class="p">}</span>[hang]
+  <span class="p">{</span><span class="k">\normalfont\Normalsize\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+  <span class="p">{</span><span class="k">\thesubsection</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<p>For subsubsection headings:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\titleformat</span><span class="p">{</span><span class="k">\subsubsection</span><span class="p">}</span>[hang]
+  <span class="p">{</span><span class="k">\normalfont\Normalsize\bfseries\color</span><span class="p">{</span>namecolor<span class="p">}}</span>
+  <span class="p">{</span><span class="k">\thesubsubsection</span>.<span class="p">}{</span>1em<span class="p">}{}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/numbering.html">Next: Numbering</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

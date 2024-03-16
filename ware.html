@@ -1,0 +1,36 @@
+---
+layout: page
+title: John Ware, Canada's Legendary Cowboy (1845-1905)
+permalink: /ware/
+---
+<div class="page-content-wrapper">
+  <div class="plug">
+      <div class="section-head">{{ page.title }}</div>
+  
+      <div class="section-description"><em>“a man of unquestioned honesty and agreeable nature…[who] boasted the rare distinction of never having been thrown from a horse. At roughriding and roping he was an expert’’ (Turner, 1950, pg. 461).</em></div>
+  </div>
+
+  <div class="topic">
+
+      <div class="article">
+          <div class="article-body">
+              <img class="post-image" src="{{ baseurl }}/assets/img/ware/johnware-family.png" alt="John Ware" />
+
+              <p>John Ware was a cowboy who lived in the latter decades of the nineteen century in Alberta, Canada. He was not some Hollywood imaginary gun-slinging desperado. He was a professional, business-like cowboy who was highly respected amongst his peers not only because of his skills but also because of his character and deportment. What made John Ware unique amongst the many cowboys of Alberta was were he was from and what he became in his new home. I was honoured to have spent many an afternoon in my landlady's kitchen listening to his daughter talk about his father. They were longtime friends from Vulcan, Alberta. </p>
+
+
+              <p>This is the story about how I first learned about John Ware, a man whom the Blackfoot Indians called "Matoxy Sex Apee Quin" because they thought he was related to the spirit world. He was undoubtedly one of the best cowboys ever to ride on the prairies of 19th century Alberta, Canada. What makes his story even more amazing than his skill is his backstory. He was a freed slave who made western Canada his home and through his legendary skills and character became a hero to many black Canadians.</p>
+
+              <h1>Contents</h1>
+              {% for item in site.data.ware.toc %}
+              <ul>
+          {% for entry in item.items %}
+          <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+          {% endfor %}
+      </ul>
+      {% endfor %}
+      </div>
+  </div>
+  </div>
+</div>
+

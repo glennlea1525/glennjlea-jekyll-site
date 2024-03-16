@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; About LaTeX</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="About LaTeX" />
+    <meta property="og:url" content="http://localhost:4029/latex/about-latex/" />
+    <meta property="og:description" content="LaTeX comes "out-of-the-box well prepared to produce high-quality product documentation." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / About LaTeX
+      
+    
+</div></div>
+      <h1 id="about-latex">About LaTeX</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#about-latex" id="markdown-toc-about-latex">About LaTeX</a>    <ul>
+      <li><a href="#why-latex" id="markdown-toc-why-latex">Why LaTeX?</a></li>
+      <li><a href="#first-its-lah-tech" id="markdown-toc-first-its-lah-tech">First, its Lah-tech</a></li>
+      <li><a href="#know-your-sources" id="markdown-toc-know-your-sources">Know your sources</a></li>
+      <li><a href="#latex-syntax" id="markdown-toc-latex-syntax">LaTex syntax</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="why-latex">Why LaTeX?</h2>
+
+<p>Some time ago, a client requested that I use LaTeX to produce their set of documentation. After taking a deep breath and saying OK, I went about trying to figure out how to do this. At the time I had zero experience with this system. LaTeX is, after all, typically used to write academic and scientific writing and is not often used for high quality product technical documentation.</p>
+
+<p>With a little work (actually a lot of work) LaTeX can produce quite reasonable technical documentation. However, it only is capable of outputting to PDF. I could be wrong on this, so if you know of a way of outputting to HTML, I’d love to hear about it.</p>
+
+<p>If you are like me and had never used LaTeX before, learning this tool is all about research, trying out some ideas, reading some more, trying again and so on. You learn best by doing.</p>
+
+<p>Frankly, LaTeX doesn’t come “out of the box” very well prepared for creating professional level technical documentation. In fact, there is “no box” for it to come out of. LaTeX separates content from layout so you need to know the commands and markup language of LaTeX. You also need to know how to generate output. That makes it quite similar to Markdown or HTML, in a sense.</p>
+
+<h2 id="first-its-lah-tech">First, its Lah-tech</h2>
+
+<p>Incidentally, LaTeX is pronounced as “Lah-tech”. Why? No idea.</p>
+
+<p>LaTeX is a typesetting language “intertwined with LaTeX commands”. Since it has been around a long time, many plugins, which are called <strong>packages</strong>, are available to customize the layout and design for a wide range of uses.</p>
+
+<h2 id="know-your-sources">Know your sources</h2>
+
+<p>Where to start? A fellow Canadian told me to start by going to the <a href="http://tug.org/" target="_blank">TeX User Group (TUG)</a> site. Good advice.</p>
+
+<p>At TUG, you can download all the required software to set up a LaTeX publishing system on both MAC and Windows machines. As I wasn’t sure which OS I would ultimately use, I set up LaTEX on both machines. The site has a <em>Getting Started</em> page which I recommend reading. See <a href="https://tug.org/begin.html">Getting Started with TeX, LaTeX and Friends</a></p>
+
+<p>Some other useful resources include the <em>LaTeX Project Site</em> (<a href="http://www.latex-project.org/">www.latex-project.org</a>), as is the <em>Comprehensive TeX Archive Network</em> (<a href="http://ctan.org/">ctan.org</a>).</p>
+
+<h2 id="latex-syntax">LaTex syntax</h2>
+
+<p>For the purposes of this tutorial, we focus on only the following types of syntax for LaTex.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\</code></td>
+      <td>Commands begin with a backslash. For example: <code class="language-plaintext highlighter-rouge">\documentclass</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ }</code></td>
+      <td>Command arguments are enclosed in curly braces. For example: <code class="language-plaintext highlighter-rouge">\documentclass{class}</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">[]</code></td>
+      <td>Optional arguments are enclosed in square brackets and are placed before the command arguments. For example: <code class="language-plaintext highlighter-rouge">\documentclass[opt,opt,. . . ]{class}</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="/latex/installing_distributions.html">Next: Selecting a LaTeX distribution and editor</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

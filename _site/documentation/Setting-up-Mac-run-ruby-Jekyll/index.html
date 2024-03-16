@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Setting up a Mac to run Jekyll</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Setting up a Mac to run Jekyll" />
+    <meta property="og:url" content="http://localhost:4029/documentation/Setting-up-Mac-run-ruby-Jekyll/" />
+    <meta property="og:description" content="Setting up a Mac to run Jekyll
+" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/documentation/">Documentation</a>
+      
+    
+      
+        / Setting up a Mac to run Jekyll
+      
+    
+</div></div>
+      <h1 id="setting-up-a-mac-to-run-jekyll">Setting up a Mac to run Jekyll</h1>
+
+<p>If you had some challenges trying to run Ruby and Jekyll on my Mac, you are not alone. I encountered this problem some time ago. I finally got it running and basically this is how I did it.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>You need the following:</p>
+
+<ol>
+  <li>Latest Ruby version.</li>
+  <li>RubyGems</li>
+  <li>Jekyll installed and a project directory created.</li>
+</ol>
+
+<h2 id="which-ruby-version-does-you-mac-currently-have">Which Ruby version does you Mac currently have?</h2>
+
+<p>According to the Jekyll documentation, you need at least Ruby version 2.5.0 or higher. You can check which version is installed on your MAC by using the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ ruby -v</code></p>
+
+<p>It could show for example the following version:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin17]</code></p>
+
+<p>If you don’t have Ruby installed on your MAC, then go ahead and install it. You can get plenty of information about installing Ruby at the official Ruby site here: <a href="https://www.ruby-lang.org/en/documentation/installation/">Installing Ruby</a> This site suggests using Homebrew which is installed by default on macOS. It is quite easy. Just run this command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ brew install ruby</code></p>
+
+<p>If you received an error after running this command, you may need to try upgrading Ruby using the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ brew upgrade ruby</code></p>
+
+<p>This may take a few minutes. You can get more information about updating Ruby on your MAC to the latest version on this page on <a href="https://codingpad.maryspad.com/2017/04/29/update-mac-os-x-to-the-current-version-of-ruby/">The Coding Pad</a>.</p>
+
+<p>We now need to set the path for Ruby. In the following command replace X.X with the first two digits of your Ruby version, which in my case is 2.7</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' &gt;&gt; ~/.bash_profile</code></p>
+
+<p>where X.X is the Ruby version you found by running ruby -v above</p>
+
+<p>You can get more information about checking the PATH of your Mac at <a href="https://osxdaily.com/2010/08/31/check-the-path-of-your-mac-with-echo-path/">OSXDaily</a>.</p>
+
+<p>Restart the terminal to have the terminal recognize the new Ruby version. Then  re-run the Ruby version command to confirm you have the latest version:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ ruby -v</code></p>
+
+<h2 id="which-gem-is-your-mac-running">Which Gem is your Mac running?</h2>
+
+<p>Jekyll requires the use of RubyGems to run packages. Check which version of RubyGems is on your Mac using the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ gem -v</code></p>
+
+<p>You may need to install RubyGems. Try running the following first to see where, if at all, RubyGems is running on your Mac:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ which gem</code></p>
+
+<p>If you need to install/update RubyGems, try the following:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ gem update --system</code></p>
+
+<p>RubyGems should now be installed.</p>
+
+<h2 id="installing-bundler">Installing Bundler</h2>
+
+<p>Once you have satisfied the prerequisites, you need to install Bundler which provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.</p>
+
+<p>First, check if bundler is already installed on your Mac:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundler -v</code></p>
+
+<p>If you need to install Bundler, simply run the following command in the Jekyll project directory:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ cd &lt;jekyll project directory&gt;</code></p>
+
+<p>Then run the following command to install bundler:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle install</code></p>
+
+<p>All the required files will be installed in the project directory and a Gemfile will be created.</p>
+
+<p>You can then check the version of Bundler is the latest using the following command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle update --bundler</code></p>
+
+<p>You should see a list of updated Gems installed, then the following:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle updated!</code></p>
+
+<h2 id="now-install-jekyll">Now install Jekyll</h2>
+
+<p>With Ruby and Bundler installed, you are ready to install Jekyll.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ gem install --user-install bundler Jekyll</code></p>
+
+<p>This installs Jekyll.</p>
+
+<p>The official Jekyll documentation provides additional installation information:</p>
+
+<ul>
+  <li><a href="https://jekyllrb.com/">jekyll.com</a></li>
+</ul>
+
+<p>Check the gem environment by running:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ gem environment</code></p>
+
+<p>If the INSTALLATION DIRECTORY still has the old Ruby version in it let’s update that to the latest version.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ export GEM_HOME=/usr/username/.gem/ruby/2.7.0;</code></p>
+
+<p>This updates the INSTALLATION DIRECTORY to 2.7.0</p>
+
+<p>Now let’s check the RubyGems environment again by running the following command again:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ gem environment</code></p>
+
+<p>Run again <code class="language-plaintext highlighter-rouge">bundle install</code> to ensure you have all the latest gems required by Jekyll:</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle install</code></p>
+
+<p>This will fetch and install the required gems to use bundle</p>
+
+<h2 id="run-the-jekyll-server">Run the Jekyll server</h2>
+
+<p>Now that you have installed the latest version of Ruby, Bundler and Jekyll, run the Jekyll server.</p>
+
+<p>Note that you need to run this command in the directory of your Jekyll project.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundler exec jekyll serve</code></p>
+
+<p>This will start the Jekyll server and provide an HTTP address for a Jekyll website. Open a browser and enter the Server address shown and a new default Jekyll website will load.</p>
+
+<p>That’s it.</p>
+
+<h2 id="not-quite-i-keep-getting-deprecation-errors">Not quite. I keep getting deprecation errors</h2>
+
+<p>After running <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>, the Jekyll Server ran but I kept getting the following error:</p>
+
+<p><code class="language-plaintext highlighter-rouge">.rvm/gems/ruby-2.7.0/gems/jekyll-4.0.0/lib/jekyll/tags/include.rb:179: warning: Using the last argument as keyword parameters is deprecated</code></p>
+
+<p>Trying to fix that proved problematic. I first tried the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">gem update jekyll</code></p>
+
+<p>That didn’t work so I then tried the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo bundle update jekyll</code></p>
+
+<p>That didn’t work as well so I ran this command again:</p>
+
+<p><code class="language-plaintext highlighter-rouge">bundle install</code></p>
+
+<p>That fixed it. Now all I needed to do was run the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>
+
+<p>I have the right version of Jekyll and Bundler. I wasn’t sure why I had to do this but it fixed whatever problems Jekyll was annoyed about or maybe it was something Bundler was upset about. Either way, they are both happy and so am I!</p>
+
+<p>I hope you are too.</p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

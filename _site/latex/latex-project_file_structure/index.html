@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; LaTeX Project file structure</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="LaTeX Project file structure" />
+    <meta property="og:url" content="http://localhost:4029/latex/latex-project_file_structure/" />
+    <meta property="og:description" content="Here is a suggested structure for your LaTeX project." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / LaTeX Project file structure
+      
+    
+</div></div>
+      <h1 id="latex-project-file-structure">LaTeX Project file structure</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-project-file-structure" id="markdown-toc-latex-project-file-structure">LaTeX Project file structure</a>    <ul>
+      <li><a href="#latex-projects" id="markdown-toc-latex-projects">LaTeX Projects</a></li>
+      <li><a href="#suggested-project-file-structure" id="markdown-toc-suggested-project-file-structure">Suggested project file structure</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can organize your project structure any way you want, of course. The suggested structure described in this topic allows me to keep the organization of the project manageable.</p>
+
+<h2 id="latex-projects">LaTeX Projects</h2>
+
+<p>A LaTeX project consists of a set of files having a .tex extension, as well as image files and stylesheets having a .sty extension.</p>
+
+<p>A User Guide or Reference Manual should, ideally, be created from multiple files, usually one file per chapter and a single root file that you would use to generate the output.</p>
+
+<p>A root file is the main LaTeX file that the LaTeX typesetter uses to collect the style sheets, title page, chapters and appendices, and generate output using the defined headers and footers, TOC and so forth. Typically, you want to name it something like <code class="language-plaintext highlighter-rouge">main.tex</code> or similar.</p>
+
+<p>When creating a project file structure, a root file is placed in the root of the directory. All chapter .tex files, image files and stylesheets are placed in sub-directories. This allows for better file management.</p>
+
+<p>To build the LaTeX document, you then need only run the build command on the root file to generate output.</p>
+
+<h2 id="suggested-project-file-structure">Suggested project file structure</h2>
+
+<p>The following shows the suggested structure of a documentation project directory.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Root
+├── main. tex                              # main root file
+├── <span class="k">\styles\stylesheet</span>.sty                 # project stylesheet
+├── <span class="k">\content</span> (or tex)                      # .tex topic (chapter) files
+├── <span class="k">\img</span>                                   # image files
+├── <span class="k">\titlepage</span>                             # document title layout
+├── <span class="k">\common</span>                                # common files
+</code></pre></div></div>
+
+<p><a href="/latex/latex-main-file.html">Next: LaTeX main file</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

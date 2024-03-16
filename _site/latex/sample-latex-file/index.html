@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Sample LaTeX file - Hello World</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Sample LaTeX file - Hello World" />
+    <meta property="og:url" content="http://localhost:4029/latex/sample-latex-file/" />
+    <meta property="og:description" content="Let's now take a closer look at the structure of a very simple LaTeX file, the classic Hello World file." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Sample LaTeX file - Hello World
+      
+    
+</div></div>
+      <h1 id="sample-latex-file---hello-world">Sample LaTeX file - Hello World</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#sample-latex-file---hello-world" id="markdown-toc-sample-latex-file---hello-world">Sample LaTeX file - Hello World</a>    <ul>
+      <li><a href="#hello-world" id="markdown-toc-hello-world">Hello World</a></li>
+      <li><a href="#first-line---class-of-document" id="markdown-toc-first-line---class-of-document">First line - class of document</a></li>
+      <li><a href="#second-line---begin-document" id="markdown-toc-second-line---begin-document">Second line - begin document</a></li>
+      <li><a href="#document-content" id="markdown-toc-document-content">Document content</a></li>
+      <li><a href="#final-line---end-of-document" id="markdown-toc-final-line---end-of-document">Final line - end of document</a></li>
+      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>In the <a href="/latex/1-3-quick-start-guide">Quick Start Guide</a>, we entered a sample LaTeX document in a LaTeX editor then built this file to generate a pdf. Let’s now take a closer look at the structure of a very simple LaTeX file, the classic <em>Hello World</em> file.</p>
+
+<h2 id="hello-world">Hello World</h2>
+
+<p>This simple LaTeX file includes the most basic requirements to output a file using LaTeX.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+Hello world!
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p>When you write a LaTeX document you are essentially giving commands to the LaTeX typesetter how to treat the information on each line, or blocks of lines.</p>
+
+<h2 id="first-line---class-of-document">First line - class of document</h2>
+
+<p>The first line in this example tells the compiler that what follows is a type of document of class <code class="language-plaintext highlighter-rouge">article</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The compiler now knows what to expect and it has built-in macros to deal with this type of document (as well as many other types of LaTeX documents). It tells the compiler to use its <code class="language-plaintext highlighter-rouge">article</code> macros to build a layout and use the content.</p>
+
+<h2 id="second-line---begin-document">Second line - begin document</h2>
+
+<p>After this command, you then need to tell the compiler that the document is beginning.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{document}</span>
+</code></pre></div></div>
+
+<h2 id="document-content">Document content</h2>
+
+<p>Afterwards, you give the compiler the content of the document, which in this case is quite uninspiring.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello World!
+</code></pre></div></div>
+
+<h2 id="final-line---end-of-document">Final line - end of document</h2>
+
+<p>Then you have to tell the compiler that the document is finished.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\end{document}</span>
+</code></pre></div></div>
+<p>That’s it! You can go ahead and try this using TeXworks. A pdf file is generated using the default font, layout and so forth. Like the input, the output is uninspiring.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Of course, for creating a technical document much more detail is required. But these elements form the basic structure of a simple LaTeX file.</p>
+
+<p><a href="/latex/basic_latex_skeleton_file.html">Next: LaTeX skeleton structure</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

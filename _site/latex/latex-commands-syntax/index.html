@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; LaTeX commands overview</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="LaTeX commands overview" />
+    <meta property="og:url" content="http://localhost:4029/latex/latex-commands-syntax/" />
+    <meta property="og:description" content="Here is a (very) brief overview of LaTeX commands." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / LaTeX commands overview
+      
+    
+</div></div>
+      <h1 id="latex-commands-overview">LaTeX commands overview</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-commands-overview" id="markdown-toc-latex-commands-overview">LaTeX commands overview</a>    <ul>
+      <li><a href="#latex-commands-begin-with-a-backslash" id="markdown-toc-latex-commands-begin-with-a-backslash">LaTeX commands begin with a backslash</a></li>
+      <li><a href="#setting-fonts-for-the-document" id="markdown-toc-setting-fonts-for-the-document">Setting fonts for the document</a></li>
+      <li><a href="#command-arguments-are-included-within-curly-brackets" id="markdown-toc-command-arguments-are-included-within-curly-brackets">Command arguments are included within curly brackets</a></li>
+      <li><a href="#commands-can-act-as-on-off-switches" id="markdown-toc-commands-can-act-as-on-off-switches">Commands can act as on-off switches</a></li>
+      <li><a href="#commands-can-include-options" id="markdown-toc-commands-can-include-options">Commands can include options</a></li>
+      <li><a href="#redefine-commands-using-renewcommand" id="markdown-toc-redefine-commands-using-renewcommand">Redefine commands using renewcommand</a></li>
+      <li><a href="#using-reserved-characters" id="markdown-toc-using-reserved-characters">Using reserved characters</a></li>
+      <li><a href="#commenting-out-lines" id="markdown-toc-commenting-out-lines">Commenting out lines</a></li>
+      <li><a href="#using-text-and-line-spacing" id="markdown-toc-using-text-and-line-spacing">Using text and line spacing</a></li>
+      <li><a href="#adding-comments-to-latex-files" id="markdown-toc-adding-comments-to-latex-files">Adding comments to LaTeX files</a></li>
+      <li><a href="#environment-commands" id="markdown-toc-environment-commands">Environment commands</a>        <ul>
+          <li><a href="#document-environments" id="markdown-toc-document-environments">Document environments</a></li>
+          <li><a href="#list-environments" id="markdown-toc-list-environments">List environments</a></li>
+          <li><a href="#auto-numbered-environments-sections-and-equations" id="markdown-toc-auto-numbered-environments-sections-and-equations">Auto-numbered environments (sections and equations)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The following sections provide an overview of LaTeX syntax.</p>
+
+<p><strong>Note:</strong> File extensions are not necessary in a LaTeX file. For example, <code class="language-plaintext highlighter-rouge">mystyles.sty</code> is the same as <code class="language-plaintext highlighter-rouge">mystyles</code> to the LaTeX typesetter.</p>
+
+<h2 id="latex-commands-begin-with-a-backslash">LaTeX commands begin with a backslash</h2>
+
+<p>A backslash lets the LaTeX typesetter know that a particular line is a command.</p>
+
+<p>For example <code class="language-plaintext highlighter-rouge">\documentclass</code>, <code class="language-plaintext highlighter-rouge">\begin</code>, <code class="language-plaintext highlighter-rouge">\include</code> and are all LaTeX commands. They let the LaTeX typesetter know how to handle the information within brackets, curly brackets or default values.</p>
+
+<p>The following shows commands within a LaTeX file. Command arguments are included within curly brackets, while command options, if any, are included within square brackets preceding the argument.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a4paper,12pt,draft,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+
+<span class="k">\frontmatter</span>
+<span class="k">\include</span><span class="p">{</span>tex/title<span class="p">}</span>
+
+<span class="k">\tableofcontents</span>
+<span class="k">\mainmatter</span>
+<span class="k">\include</span><span class="p">{</span>tex/preface<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/intro<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap01<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap02<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/summary<span class="p">}</span>
+
+<span class="k">\backmatter</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<h2 id="setting-fonts-for-the-document">Setting fonts for the document</h2>
+
+<p>Another example of a command are font settings. The following changes the font style of the text within the curly brackets to emphasis:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\emph</span><span class="p">{</span>This text emphasized<span class="p">}</span>
+</code></pre></div></div>
+
+<p>LaTeX has hundreds of commands. Don’t worry though. Most of them you wont use. In these topics, we only focus on the most important commands, as I see it, needed to produce technical documentation.</p>
+
+<h2 id="command-arguments-are-included-within-curly-brackets">Command arguments are included within curly brackets</h2>
+
+<p>Command arguments are included within curly brackets { }. Here are the first two commands from the example above.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a4paper,12pt,draft,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The command <code class="language-plaintext highlighter-rouge">\documentclass</code> provides the argument <code class="language-plaintext highlighter-rouge">{Book}</code> to tell the LaTeX typesetter to use the <code class="language-plaintext highlighter-rouge">{book}</code> package for the document layout. The information within the square brackets are the command options that you give to the LaTeX typesetting to define how to use the argument.</p>
+
+<p>Similarly, The command <code class="language-plaintext highlighter-rouge">\usepackage</code> provides a path to a styles file called <code class="language-plaintext highlighter-rouge">{mystyles}</code>.</p>
+
+<h2 id="commands-can-act-as-on-off-switches">Commands can act as on-off switches</h2>
+
+<p>You can tell the LaTeX typesetter to set a command without a scope. When the LaTeX typesetter encounters a command that does not have a scope, it will set all text that follows the command according to the command. The following is a command without an argument.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\large</code></p>
+
+<p>This command will make all text that follows the <code class="language-plaintext highlighter-rouge">/large</code> command to the font size according to the switch. When the LaTeX typesetter encounters a different switch, then the font size will change.</p>
+
+<h2 id="commands-can-include-options">Commands can include options</h2>
+
+<p>Options are provided within square brackets [ ] immediately after the command name but before the command arguments.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\documentclass[a4paper,12pt,draft,twoside]{book}</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">\documentclass</code> using the <code class="language-plaintext highlighter-rouge">book</code> argument includes a set of options are provided to the LaTeX typesetter to indicate the paper size, base font size, document status, and pagination.</p>
+
+<h2 id="redefine-commands-using-renewcommand">Redefine commands using renewcommand</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">\renewcommand{}</code> redefines a command. For example, these two commands changes the default LaTeX settings for rule widths to 0 which essentially removes them from the document.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\renewcommand</span><span class="p">{</span><span class="k">\headrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+<span class="k">\renewcommand</span><span class="p">{</span><span class="k">\footrulewidth</span><span class="p">}{</span>0pt<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="using-reserved-characters">Using reserved characters</h2>
+
+<p>LaTeX has 10 special (reserved) characters that are used in LATEX commands:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\ # $ % &amp;amp; ~ _ ^ { }</code></p>
+
+<p>To insert a backslash:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\textbackslash</code></p>
+
+<p>To insert a tilde:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\textasciitilde</code></p>
+
+<p>To insert a caret:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\textasciicircum</code></p>
+
+<p>Other special characters are entered as text by preceding them with a backslash.</p>
+
+<h2 id="commenting-out-lines">Commenting out lines</h2>
+
+<p>You can use several methods to comment out lines in LaTex. Use either <code class="language-plaintext highlighter-rouge">%</code> or <code class="language-plaintext highlighter-rouge">\comment</code> and <code class="language-plaintext highlighter-rouge">\endcomment</code> commands. However, the <code class="language-plaintext highlighter-rouge">\comment</code> commands require the <code class="language-plaintext highlighter-rouge">Comments</code> package.</p>
+
+<p><code class="language-plaintext highlighter-rouge">% Commented out text</code></p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\Comment</span>
+Lots of text that goes on and on that 
+needs to be commented out.
+<span class="k">\endcomment</span>
+</code></pre></div></div>
+
+<h2 id="using-text-and-line-spacing">Using text and line spacing</h2>
+
+<p>Extra spacing between words and commands is ignored.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\Large</span>   This   is   a   sample   text   with   extra   spacing.
+</code></pre></div></div>
+
+<p>Blank lines indicate a new paragraph.</p>
+
+<p>This is an amazing sentence containing consonants and vowels, as well as containing nouns and verbs.</p>
+
+<p>This is yet another amazing sentence that somehow missed an ending point and therefore is a bad example of a sentence</p>
+
+<h2 id="adding-comments-to-latex-files">Adding comments to LaTeX files</h2>
+
+<p>Comments are added using the % character. Any text or commands following the % character are ignored.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% First Include</span>
+<span class="k">\include</span><span class="p">{</span>tex/preface<span class="p">}</span>
+<span class="c">% Second Include</span>
+<span class="k">\include</span><span class="p">{</span>tex/intro<span class="p">}</span>
+<span class="c">% Third Include</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap01<span class="p">}</span>
+<span class="c">% Fourth Include</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap02<span class="p">}</span>
+<span class="c">% Fifth Include</span>
+<span class="k">\include</span><span class="p">{</span>tex/summary<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="environment-commands">Environment commands</h2>
+
+<p>LaTeX has a number of environment commands that are required by the LaTeX typesetter to know how to handle the lines following the command. These include document environments and list environments.</p>
+
+<h3 id="document-environments">Document environments</h3>
+
+<p>Environments define structures in LaTeX. For instance, the environment variable <code class="language-plaintext highlighter-rouge">\begin</code> with the argument <code class="language-plaintext highlighter-rouge">{document}</code> tells the LaTeX typesetter that the document begins at this point and ends at the <code class="language-plaintext highlighter-rouge">\end</code> command.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a4paper,12pt,draft,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+<span class="k">\frontmatter</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\mainmatter</span>
+<span class="k">\backmatter</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<h3 id="list-environments">List environments</h3>
+
+<p>Other environment commands include both ordered and unordered lists. For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{itemize}</span>
+   <span class="k">\item</span>
+   <span class="k">\item</span>
+   <span class="k">\item</span>
+<span class="nt">\end{itemize}</span>
+</code></pre></div></div>
+
+<h3 id="auto-numbered-environments-sections-and-equations">Auto-numbered environments (sections and equations)</h3>
+
+<p>Some environments are automatically numbered such as sections and equations. Auto-numbering can be switched off using an asterisk (*). For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{equation*}</span>
+<span class="nt">\end{equation*}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/latex-project_file_structure.html">Next: LaTeX project file structure</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Creating custom title pages</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Creating custom title pages" />
+    <meta property="og:url" content="http://localhost:4029/latex/creating-custom-title-page/" />
+    <meta property="og:description" content="LaTeX has the capability of defining quite good looking title pages." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Creating custom title pages
+      
+    
+</div></div>
+      <h1 id="creating-custom-title-pages">Creating custom title pages</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#creating-custom-title-pages" id="markdown-toc-creating-custom-title-pages">Creating custom title pages</a>    <ul>
+      <li><a href="#creating-a-title-page" id="markdown-toc-creating-a-title-page">Creating a title page</a></li>
+      <li><a href="#adding-the-title-page-in-project-root-file" id="markdown-toc-adding-the-title-page-in-project-root-file">Adding the title page in project root file</a></li>
+      <li><a href="#defining-the-title-page-colours-in-the-stylesheet" id="markdown-toc-defining-the-title-page-colours-in-the-stylesheet">Defining the title page colours in the stylesheet</a></li>
+      <li><a href="#include-the-number-of-table-of-contents-levels" id="markdown-toc-include-the-number-of-table-of-contents-levels">Include the number of Table of Contents levels</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>LaTeX has the capability of defining quite good looking title pages. Not easy but doable. LaTeX comes with a standard title page, but you can create your own custom title page. Using the settings in this topics, you can create a title page similar to the following. The background is a dark blue while the text is an orange colour. It makes for a striking colour contrast for the title page, but a white colour would be just as good, if not better. However, what is set here is a branding colour</p>
+
+<p><img class="img" src="/assets/img/latex/titlepage.png" alt="Sample title page" /></p>
+
+<h2 id="creating-a-title-page">Creating a title page</h2>
+
+<p>Here is the source that created the title page shown above.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\typeout</span><span class="p">{}</span> <span class="c">% Typeout to terminal</span>
+<span class="k">\typeout</span><span class="p">{</span>=====================================================================<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>==== Titlepage<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>====<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>==== titlepage.tex<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>=====================================================================<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{}</span>
+
+<span class="p">{</span>
+<span class="nt">\begin{titlepage}</span> <span class="c">% Opening environment</span>
+
+<span class="c">% Add the cover to TOC so it becomes the home link</span>
+<span class="k">\addcontentsline</span><span class="p">{</span>toc<span class="p">}{</span>chapter<span class="p">}{</span>Sample Manual<span class="p">}</span>
+
+<span class="c">% Set the page margins</span>
+<span class="k">\newgeometry</span><span class="p">{</span>left=5cm,top=6cm<span class="p">}</span> 
+
+<span class="c">% Set the background colour</span>
+<span class="k">\pagecolor</span><span class="p">{</span>titlepagecolor<span class="p">}</span>
+
+<span class="c">% Remove indentations so margin is reference point</span>
+<span class="k">\noindent</span>
+
+<span class="c">% Place company logo at specified location</span>
+<span class="k">\includegraphics</span><span class="na">[width=10.91cm, height=2.33cm]</span><span class="p">{</span>images/logo.png<span class="p">}</span><span class="k">\\</span><span class="na">[-1em]</span>
+
+<span class="c">% Set default background colour</span>
+<span class="k">\color</span><span class="p">{</span>white<span class="p">}</span>
+
+<span class="c">% Create a frame box</span>
+<span class="k">\makebox</span><span class="na">[0pt][l]</span><span class="p">{</span><span class="k">\rule</span><span class="p">{</span>1.3<span class="k">\textwidth</span><span class="p">}{</span>1pt<span class="p">}}</span>
+
+<span class="c">% Add a paragraph in this box</span>
+<span class="k">\par</span>
+
+<span class="c">% Remove indentation so paragraph starts on left-side</span>
+<span class="k">\noindent</span>
+
+<span class="c">% Add some text to top of page</span>
+<span class="k">\textcolor</span><span class="p">{</span>namecolor<span class="p">}{</span><span class="k">\large\textsf</span><span class="p">{</span>User Guide<span class="p">}}</span>
+
+<span class="c">% Add spacing between top text and title</span>
+<span class="k">\vfill</span>
+
+<span class="c">% Add document title</span>
+<span class="p">{</span><span class="k">\huge</span> <span class="k">\textsf</span><span class="p">{</span>ACME Road Runner Catchment Device<span class="p">}}</span>
+<span class="k">\vskip\baselineskip</span>
+<span class="k">\noindent</span>
+<span class="k">\textcolor</span><span class="p">{</span>namecolor<span class="p">}{</span><span class="k">\large\textsf</span><span class="p">{</span><span class="k">\PSDATE</span><span class="p">{}}}</span><span class="k">\\</span><span class="na">[0.25cm]</span>
+<span class="k">\textcolor</span><span class="p">{</span>namecolor<span class="p">}{</span><span class="k">\large\textsf</span><span class="p">{</span>Copyright <span class="k">\copyright</span> <span class="k">\ </span>Glenn J. Lea<span class="p">}}</span>
+
+<span class="c">% Restore geometry and end the title page</span>
+<span class="k">\restoregeometry</span> 
+<span class="nt">\end{titlepage}</span>
+<span class="p">}</span>
+
+<span class="c">% Finally, restores page colour to white (no colour)</span>
+<span class="k">\clearpage</span>
+<span class="k">\pagecolor</span><span class="p">{</span>white<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="adding-the-title-page-in-project-root-file">Adding the title page in project root file</h2>
+
+<p>When you create a title page, such as <code class="language-plaintext highlighter-rouge">titlepage.tex</code>, place it in its own subdirectory of the project directory. Then in the project root file use the <code class="language-plaintext highlighter-rouge">\include</code> command to add the title page to the project output.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\frontmatter</span><span class="p">{}</span>
+<span class="k">\fancyhead</span><span class="na">[RE,LO]</span><span class="p">{}</span>
+<span class="k">\include</span><span class="p">{</span>files/titlepage<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>files/frontmatter<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>toc<span class="p">}</span>
+<span class="k">\clearpage</span>
+</code></pre></div></div>
+
+<p>Note: The <code class="language-plaintext highlighter-rouge">\fancyhead</code> command is defined within the stylesheet.</p>
+
+<h2 id="defining-the-title-page-colours-in-the-stylesheet">Defining the title page colours in the stylesheet</h2>
+
+<p>First add the <code class="language-plaintext highlighter-rouge">xcolor</code> package. Next, define the colours that will be used on the title page. Of course, the background colour on the title page can be white and text colour can be black, but you can set them to whatever you want as a defined colour.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>xcolor<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>lipsum<span class="p">}</span><span class="c">% Used for dummy text.</span>
+<span class="k">\definecolor</span><span class="p">{</span>titlepagecolor<span class="p">}{</span>RGB<span class="p">}{</span>0,38,75<span class="p">}</span> <span class="c">% Prussian Blue</span>
+<span class="k">\definecolor</span><span class="p">{</span>namecolor<span class="p">}{</span>RGB<span class="p">}{</span>232,134,12<span class="p">}</span> <span class="c">% Orange</span>
+</code></pre></div></div>
+
+<h2 id="include-the-number-of-table-of-contents-levels">Include the number of Table of Contents levels</h2>
+
+<p>Before you include the command <code class="language-plaintext highlighter-rouge">\input{subdir/titlepage.tex}</code> the typesetter needs to know the depth of the Table of Contents. You do this using the following command. In this example it is set to three levels.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\setcounter{tocdepth}{2}</code></p>
+
+<p><a href="/latex/generating-output-latex-files.html">Next: Generating output from a LaTeX project</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

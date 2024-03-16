@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Formatting chapter sections</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Formatting chapter sections" />
+    <meta property="og:url" content="http://localhost:4029/latex/formatting-chapter-sections/" />
+    <meta property="og:description" content="Chapters in LaTeX require specific commands and use section headings which are pulled out into the Table of Contents." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Formatting chapter sections
+      
+    
+</div></div>
+      <h1 id="formatting-chapter-sections">Formatting chapter sections</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#formatting-chapter-sections" id="markdown-toc-formatting-chapter-sections">Formatting chapter sections</a>    <ul>
+      <li><a href="#a-note-about-file-structure" id="markdown-toc-a-note-about-file-structure">A note about file structure</a></li>
+      <li><a href="#defining-a-chapter-title" id="markdown-toc-defining-a-chapter-title">Defining a chapter title</a></li>
+      <li><a href="#section-headings" id="markdown-toc-section-headings">Section headings</a></li>
+      <li><a href="#paragraphs" id="markdown-toc-paragraphs">Paragraphs</a></li>
+      <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+      <li><a href="#paragraph-line-breaks" id="markdown-toc-paragraph-line-breaks">Paragraph line breaks</a></li>
+      <li><a href="#indenting-paragraphs-in-lists" id="markdown-toc-indenting-paragraphs-in-lists">Indenting paragraphs in lists</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="a-note-about-file-structure">A note about file structure</h2>
+
+<p>If a document consists of multiple chapters, then it is good practice to create one <code class="language-plaintext highlighter-rouge">.tex</code> filer per chapter. For example:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">chapterone.tex</code></li>
+  <li><code class="language-plaintext highlighter-rouge">chaptertwo.tex</code></li>
+  <li><code class="language-plaintext highlighter-rouge">chapterthree.tex</code></li>
+  <li><code class="language-plaintext highlighter-rouge">chapterfour.tex</code></li>
+</ul>
+
+<p>Then you define the title and other information at the top of each chapter using specific commands. Furthermore, the document’s TOC (Table of Contents) are built using the chapter title and each chapter’s section headings. You can also add index entries for the chapter.</p>
+
+<h2 id="defining-a-chapter-title">Defining a chapter title</h2>
+
+<p>Each chapter begins with the following elements:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\chapter</span><span class="p">{</span>Overview<span class="p">}</span>  <span class="c">% Chapter title</span>
+<span class="k">\label</span><span class="p">{</span>sec:Overview<span class="p">}</span> <span class="c">% Used for cross-referencing</span>
+<span class="k">\index</span><span class="p">{</span>overview<span class="p">}</span> <span class="c">% Used for indexing</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>The first line requires you to define the title of the chapter. This is used in the headers and in the Table of Contents.</p>
+  </li>
+  <li>
+    <p>The second line is used for cross-referencing to this chapter. It serves as a marker or anchor.</p>
+  </li>
+  <li>
+    <p>The third line is used by the index.</p>
+  </li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\typeout</span><span class="p">{}</span>
+<span class="k">\typeout</span><span class="p">{</span>=====================================================================<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>==== Installing Software<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>====<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>==== installing.tex<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{</span>=====================================================================<span class="p">}</span>
+<span class="k">\typeout</span><span class="p">{}</span>
+<span class="c">% The above lines are printed out in a terminal to indicate this file is being processed.</span>
+
+
+<span class="k">\chapter</span><span class="p">{</span>Installing Software<span class="p">}</span>
+<span class="k">\label</span><span class="p">{</span>sec:Preparing to Install Software<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="section-headings">Section headings</h2>
+
+<p>Creating a section headings is quite easy - use the <code class="language-plaintext highlighter-rouge">section</code> command. Second and third level headings are just as easy. These levels use <code class="language-plaintext highlighter-rouge">subsection</code> and <code class="language-plaintext highlighter-rouge">subsubsection</code> commands. For example:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\section</span><span class="p">{</span>heading text<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>heading text<span class="p">}</span>
+<span class="k">\subsubsection</span><span class="p">{</span>heading text<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note: Three levels of headings are best. Any more and you may need to rewrite sections so they are at most third level deep. If you must, then just use a bolded paragraph for a fourth level heading.</p>
+
+<h2 id="paragraphs">Paragraphs</h2>
+
+<p>Paragraphs are entered without markup tags. Adding a new paragraph simply requires a blank line between paragraphs.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is the first paragraph about Road Runners.
+
+This is the second paragraph about Road Runners.
+</code></pre></div></div>
+
+<h2 id="comments">Comments</h2>
+
+<p>You can add comments to a <code class="language-plaintext highlighter-rouge">.tex</code> file as required using the <code class="language-plaintext highlighter-rouge">%</code> character.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Add a comment using this character and LaTeX will ignore the rest of the current line.</span>
+</code></pre></div></div>
+
+<h2 id="paragraph-line-breaks">Paragraph line breaks</h2>
+
+<p>You can add a line break into text by adding a backslash {\} or using the <code class="language-plaintext highlighter-rouge">\newline</code> command. However, these two commands are not entirely identical. The backslash provides two optional parameters.</p>
+
+<p>The following command tells LaTeX to start a new line.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\</code></p>
+
+<p>The following command tells LaTeX not to start a new page after the line by issuing a <code class="language-plaintext highlighter-rouge">\nobreak</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\*</code></p>
+
+<p>The following command specifies the vertical space <code class="language-plaintext highlighter-rouge">&lt;len&gt;</code> to be inserted before the next line. This value can also be negative.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\[&lt;len&gt;]</code></p>
+
+<p>Note: The above two can also be mixed. That is, using both a starred + optional argument combination <code class="language-plaintext highlighter-rouge">\*[&lt;len&gt;]</code>.</p>
+
+<p>The following command is similar to the backslash.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\newline</code></p>
+
+<h2 id="indenting-paragraphs-in-lists">Indenting paragraphs in lists</h2>
+
+<p>You can define the indentation value of paragraphs within lists in the stylesheet then apply the command where needed.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newenvironment</span><span class="p">{</span>myindentpar<span class="p">}\[</span><span class="m">1</span><span class="p">\]\[</span><span class="m">1</span><span class="p">\]</span><span class="c">%</span>
+<span class="p">{</span><span class="nt">\begin{list}</span><span class="p">{}</span><span class="c">%</span>
+  <span class="p">{</span><span class="k">\setlength</span><span class="p">{</span><span class="k">\leftmargin</span><span class="p">}{</span>#1<span class="p">}}</span><span class="c">% \item[]% }</span>
+  <span class="p">{</span><span class="nt">\end{list}</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then Use <code class="language-plaintext highlighter-rouge">myindentpar</code> in the document flow to indent a paragraph based on the settings.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\begin{myindentpar}{1cm} % text text text... % \end{myindentpar}</code></p>
+
+<p>Note that you can adjust the indent in this command as required.</p>
+
+<p><a href="/latex/formatting-text.html">Next: Commands for font formatting and lists</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

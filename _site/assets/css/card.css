@@ -1,0 +1,100 @@
+/* Home Page Boxes */
+/* from https://heydonworks.com/article/the-flexbox-holy-albatross/ */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    --multiplier: calc(40em - 100%);
+    margin: calc(var(--margin) * -1); /* excess margin removed */
+    gap: 2em;
+}
+.card-container > * {
+    min-width: calc(33% - (var(--margin) * 2)); /* remove from both sides */
+    min-width: 33%;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-basis: calc(var(--multiplier) * 999);
+    margin: var(--margin);
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+}
+.card:third-child {
+    align-self: stretch;
+}
+.card-img {
+    width: 100%;
+}
+.card p {
+    font-size: 1.15rem;
+    text-align: left;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.card button{
+    border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #7C3030;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.card button a {
+    color: white;
+}
+.card button:hover {
+    opacity: 0.7;
+  }
+
+  /* Blog boxes */
+
+.card-box {
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-bottom: 1.5em;
+    padding-top: 0.5em;
+}
+.card-category {
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-transform: capitalize;
+}
+.card-entry {
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+.card-entry a:link {
+    text-decoration: none;
+}
+.card-entry a:hover {
+    text-decoration: underline;
+}
+.card-meta {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #666666;
+    text-transform: uppercase;
+
+}
+.card-description {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+

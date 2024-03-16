@@ -1,0 +1,25 @@
+#markdown-toc {
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    list-style: disc;
+    display: inline-block;
+}
+#markdown-toc::before {
+    content: " ";
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+    margin-top: 0rem;
+}
+#markdown-toc ul {
+    list-style-type: disc;
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding-top: 0rem;
+    padding-left: 0rem;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Numbering</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Numbering" />
+    <meta property="og:url" content="http://localhost:4029/latex/numbering/" />
+    <meta property="og:description" content="Create numbering when the list is interrupted by a paragraph." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Numbering
+      
+    
+</div></div>
+      <h1 id="numbering">Numbering</h1>
+
+<p>Creating ordered lists is relatively easy in LaTex. Two packages are available. You can use either the <code class="language-plaintext highlighter-rouge">enumitem</code> or <code class="language-plaintext highlighter-rouge">mdwlist</code> packages for numbering.</p>
+
+<h2 id="using-the-enumitem-package">Using the enumitem package</h2>
+
+<p>Numbering is defined using the <code class="language-plaintext highlighter-rouge">enumitem</code> package. Using a <code class="language-plaintext highlighter-rouge">resume</code> command, you can continue the numbering after a break due to a paragraph.</p>
+
+<p>For example, you define the package for the document using <code class="language-plaintext highlighter-rouge">enumitem</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>enumitem<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then in the document you insert the list using <code class="language-plaintext highlighter-rouge">enumerate</code> as follows.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+  <span class="k">\item</span> List item
+  <span class="k">\item</span> Another list item
+<span class="nt">\end{enumerate}</span>
+</code></pre></div></div>
+
+<p>Suppose you have an indented paragraph and you want to resume the list after the paragraph, you would insert the following.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+  <span class="k">\item</span> Further item
+  <span class="k">\item</span> Final item
+<span class="nt">\end{enumerate}</span>
+</code></pre></div></div>
+
+<h2 id="using-the-mdwlist-package">Using the mdwlist package</h2>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">mdwlist</code> package (which is part of <code class="language-plaintext highlighter-rouge">mdwtools</code>).</p>
+
+<p>You define the <code class="language-plaintext highlighter-rouge">mdwlist</code> package as follows:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>mdwlist<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then in the document you insert the list using <code class="language-plaintext highlighter-rouge">mdwlist</code> as follows:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{enumerate}</span>
+<span class="k">\item</span> List item
+<span class="k">\item</span> Another list item
+<span class="k">\suspend</span><span class="p">{</span>enumerate<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then you can insert a paragraph for the second list item, then continue to list as follows:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\resume</span><span class="p">{</span>enumerate<span class="p">}</span>
+<span class="k">\item</span> Further item
+<span class="k">\item</span> Final item
+<span class="nt">\end{enumerate}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/latex-stylesheets.html">Next: Creating LaTeX Stylesheets</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

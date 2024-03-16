@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Defining page size, margins and layout</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Defining page size, margins and layout" />
+    <meta property="og:url" content="http://localhost:4029/latex/setting-page-layout/" />
+    <meta property="og:description" content="You use packages and settings to define the page size, margins and layout." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Defining page size, margins and layout
+      
+    
+</div></div>
+      <h1 id="defining-page-size-margins-and-layout">Defining page size, margins and layout</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#defining-page-size-margins-and-layout" id="markdown-toc-defining-page-size-margins-and-layout">Defining page size, margins and layout</a>    <ul>
+      <li><a href="#setting-the-page-size" id="markdown-toc-setting-the-page-size">Setting the page size</a></li>
+      <li><a href="#using-the-geometry-package" id="markdown-toc-using-the-geometry-package">Using the geometry package</a></li>
+      <li><a href="#defining-offsets-for-headers-and-footers" id="markdown-toc-defining-offsets-for-headers-and-footers">Defining offsets for headers and footers</a></li>
+      <li><a href="#defining-text-flow-size" id="markdown-toc-defining-text-flow-size">Defining text flow size</a></li>
+      <li><a href="#defining-the-distance-between-text-flow-and-headers-and-footers" id="markdown-toc-defining-the-distance-between-text-flow-and-headers-and-footers">Defining the distance between text flow and headers and footers</a></li>
+      <li><a href="#paragraph-settings" id="markdown-toc-paragraph-settings">Paragraph settings</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You use several packages and settings in the project stylesheet to define the page size, margins and layout of the document. This topic goes through each of the settings to give you an idea of how this is done.</p>
+
+<p>This should be done before customizing headers and footers,</p>
+
+<h2 id="setting-the-page-size">Setting the page size</h2>
+
+<p>Page size is defined when the LaTex document class, in this case <code class="language-plaintext highlighter-rouge">book</code>. In this example, the page size is defined as A4 which in the stylesheet is set as mm values: 210mm x 295mm. Alternately, you can use <code class="language-plaintext highlighter-rouge">letterpaper</code> for US letter size. Using the <code class="language-plaintext highlighter-rouge">book</code> class, this command sets the page size to A4, the base font size to 11pt and pagination to double-sided.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a4paper,11pt,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="using-the-geometry-package">Using the geometry package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">geometry</code> package defines page dimensions. It provides many arguments but I only used the following two arguments:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">vcentering</code> which sets vertical auto-centering</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">dvips</code> which writes the paper size in the dvi output</p>
+
+    <p>The <code class="language-plaintext highlighter-rouge">dvips</code> option is superceded if <code class="language-plaintext highlighter-rouge">pdflatex</code> is used but is necessary to generate a correct PostScript bounding box under standard LaTeX.</p>
+  </li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">\geometry</code> command sets the <code class="language-plaintext highlighter-rouge">papersize</code> precisely, where</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">papersize</code> determines the size of the paper, which in this case is 210mm by 295mm.</li>
+  <li><code class="language-plaintext highlighter-rouge">total</code> defines the bounding box for the content area of the document. It is 160mm x 185mm, which results in pleasing margins.</li>
+</ul>
+
+<p>You then add this to the preamble in your stylesheet.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\usepackage[vcentering,dvips]{geometry}
+\geometry{papersize={210mm,295mm},total={160mm,185mm}}
+</code></pre></div></div>
+
+<h2 id="defining-offsets-for-headers-and-footers">Defining offsets for headers and footers</h2>
+
+<p>You need to allow space for the headers and footer on the page. This can be done using the package <code class="language-plaintext highlighter-rouge">geometry</code> to define the offsets for headers and footers between the body text and the footers.</p>
+
+<p>For example, use the following commands for an A4 page size.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\topmargin{1cm}
+\setlength\oddsidemargin{3cm}
+\setlength{\evensidemargin}{3cm}
+</code></pre></div></div>
+
+<h2 id="defining-text-flow-size">Defining text flow size</h2>
+
+<p>The height of the text flow on each page is defined using <code class="language-plaintext highlighter-rouge">textheight</code>. The original setting for text height was 24.5. The following command changes it to 23.5cm.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\setlength\textheight{23.5cm}
+</code></pre></div></div>
+
+<p>The width of the text flow is defined using <code class="language-plaintext highlighter-rouge">textwidth</code>. The original setting for text height was 16cm. The following changes it to 15cm.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength\textwidth</span><span class="p">{</span>15cm<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="defining-the-distance-between-text-flow-and-headers-and-footers">Defining the distance between text flow and headers and footers</h2>
+
+<p>The command <code class="language-plaintext highlighter-rouge">footskip</code> defines the distance between the footer and the text flow.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength\footskip</span><span class="p">{</span>1.0cm<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The commands <code class="language-plaintext highlighter-rouge">headheight</code> and <code class="language-plaintext highlighter-rouge">headsep</code> define the distance between the header and the text flow.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength\headheight</span><span class="p">{</span>1cm<span class="p">}</span>
+<span class="k">\setlength\headsep</span><span class="p">{</span>1cm<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="paragraph-settings">Paragraph settings</h2>
+
+<p>You can indent the first line of paragraphs using the <code class="language-plaintext highlighter-rouge">paarindent</code> command. If you set the indentation to 0cm then the paragraphs do not have an indentation.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength</span><span class="p">{</span><span class="k">\parindent</span><span class="p">}{</span>0cm<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can set the spacing between paragraphs in points using <code class="language-plaintext highlighter-rouge">\parskip</code>. In the following example, the distance is set to 3 pts.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength</span><span class="p">{</span><span class="k">\parskip</span><span class="p">}{</span>3pt<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Line spacing is determined by these commands. In the following example, line spacing is set to 1.5 using the <code class="language-plaintext highlighter-rouge">\setspace</code> package. Options are commented out.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>setspace<span class="p">}</span>
+<span class="k">\singlespacing</span>
+<span class="c">%\onehalfspacing</span>
+<span class="c">%\doublespacing</span>
+<span class="k">\setstretch</span><span class="p">{</span>1.1<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Alternately, you can use the command <code class="language-plaintext highlighter-rouge">\baselinestretch</code> but you can adjust the command using <code class="language-plaintext highlighter-rouge">\renewcommand</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\renewcommand</span><span class="p">{</span><span class="k">\baselinestretch</span><span class="p">}{</span>1.5<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/customizing-headers-footers.html">Next: Customizing headers and footers</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

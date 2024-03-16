@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; LaTeX skeleton structure</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="LaTeX skeleton structure" />
+    <meta property="og:url" content="http://localhost:4029/latex/basic_latex_skeleton_file/" />
+    <meta property="og:description" content="This is the LaTeX skeleton file that I found on StackExchange that got me started learning how to develop high quality LaTeX based product documentation." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / LaTeX skeleton structure
+      
+    
+</div></div>
+      <h1 id="latex-skeleton-structure">LaTeX skeleton structure</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-skeleton-structure" id="markdown-toc-latex-skeleton-structure">LaTeX skeleton structure</a>    <ul>
+      <li><a href="#step-1---create-project-directories" id="markdown-toc-step-1---create-project-directories">Step 1 - Create Project Directories</a></li>
+      <li><a href="#step-2---create-your-own-document-class-based-on-book-class" id="markdown-toc-step-2---create-your-own-document-class-based-on-book-class">Step 2 - Create your own document class based on book class</a>        <ul>
+          <li><a href="#declare-a-new-class-mybook-based-on-the-book-class" id="markdown-toc-declare-a-new-class-mybook-based-on-the-book-class">Declare a new class mybook based on the book class:</a></li>
+          <li><a href="#define-new-commands" id="markdown-toc-define-new-commands">Define new commands:</a></li>
+          <li><a href="#load-the-new-class" id="markdown-toc-load-the-new-class">Load the new class:</a></li>
+          <li><a href="#create-subsections-chapterpath" id="markdown-toc-create-subsections-chapterpath">Create subsections chapterpath:</a></li>
+          <li><a href="#add-subsection-to-path" id="markdown-toc-add-subsection-to-path">Add Subsection to path:</a></li>
+          <li><a href="#add-subsection-to-path-1" id="markdown-toc-add-subsection-to-path-1">Add SubSection to path:</a></li>
+          <li><a href="#create-a-new-chapter" id="markdown-toc-create-a-new-chapter">Create a new chapter:</a></li>
+          <li><a href="#add-a-line" id="markdown-toc-add-a-line">Add a line:</a></li>
+          <li><a href="#add-subsection-to-table-of-contents" id="markdown-toc-add-subsection-to-table-of-contents">Add SubSection to table of contents:</a></li>
+          <li><a href="#add-subsubsection-to-table-of-contents" id="markdown-toc-add-subsubsection-to-table-of-contents">Add SubSubSection to table of contents:</a></li>
+          <li><a href="#add-the-xcolor-package" id="markdown-toc-add-the-xcolor-package">Add the xcolor package:</a></li>
+          <li><a href="#add-listings-package-and-define-lists" id="markdown-toc-add-listings-package-and-define-lists">Add listings package and define lists:</a></li>
+          <li><a href="#define-a-style" id="markdown-toc-define-a-style">Define a style:</a></li>
+          <li><a href="#add-a-new-coding-style" id="markdown-toc-add-a-new-coding-style">Add a new coding style:</a></li>
+          <li><a href="#add-links-and-hypcap-packages" id="markdown-toc-add-links-and-hypcap-packages">Add links and hypcap packages:</a></li>
+          <li><a href="#add-an-index-package-makeidx" id="markdown-toc-add-an-index-package-makeidx">Add an index package makeidx:</a></li>
+          <li><a href="#close-the-new-book-class-mybook" id="markdown-toc-close-the-new-book-class-mybook">Close the new book class <code class="language-plaintext highlighter-rouge">mybook</code>:</a></li>
+        </ul>
+      </li>
+      <li><a href="#step-3---create-the-main-input-file-maintex" id="markdown-toc-step-3---create-the-main-input-file-maintex">Step 3 - Create the main input file main.tex</a></li>
+      <li><a href="#step-4---create-a-variables-file" id="markdown-toc-step-4---create-a-variables-file">Step 4 - Create a Variables file</a></li>
+      <li><a href="#step-5---create-variables-directory" id="markdown-toc-step-5---create-variables-directory">Step 5 - Create Variables Directory</a></li>
+      <li><a href="#step-6---create-a-declaration-file" id="markdown-toc-step-6---create-a-declaration-file">Step 6 - Create a Declaration file</a></li>
+      <li><a href="#step-7---start-creating-topics" id="markdown-toc-step-7---start-creating-topics">Step 7 - Start creating topics</a></li>
+      <li><a href="#finalize---generate-output" id="markdown-toc-finalize---generate-output">Finalize - Generate output</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>I found this LaTeX skeleton on the TEX StackExchange Site by a user named <a href="https://tex.stackexchange.com/questions/20101/technical-documentation-and-or-book-templates/20110#20110" target="_blank">XPort</a> (opens in new window).</p>
+
+<p>I thought it was quite useful so I reproduced it here to help you get started. It wasn’t used in the final product I created but it gave me an idea of how to go about building a LaTeX project for technical documentation.</p>
+
+<h2 id="step-1---create-project-directories">Step 1 - Create Project Directories</h2>
+
+<p>Divide your project into at least the following subdirectories:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MyProject</code></td>
+      <td>Directory containing your LaTeX project files and from which you<br /> compile your project.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MyProject\content</code></td>
+      <td>Place all your LaTeX topic files here.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MyProject\img</code></td>
+      <td>Place any topic images here.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MyProject\code</code></td>
+      <td>Place project styles and other non-topic files here.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="step-2---create-your-own-document-class-based-on-book-class">Step 2 - Create your own document class based on book class</h2>
+
+<p>Create a document class file to store LaTeX design settings. Name it <code class="language-plaintext highlighter-rouge">mybook.cls</code> and save it to the root of the <code class="language-plaintext highlighter-rouge">MyProject</code> directory. Then, add the following content to the file. Descriptions are provided following this file.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\ProvidesClass</span><span class="p">{</span>mybook<span class="p">}</span>[2011/06/07 v 0.01 my own class (hv)]
+<span class="k">\DeclareOption*</span><span class="p">{</span><span class="k">\PassOptionsToClass</span><span class="p">{</span><span class="k">\CurrentOption</span><span class="p">}{</span>book<span class="p">}}</span>
+<span class="k">\ProcessOptions\relax</span>
+<span class="k">\LoadClass</span>
+[
+<span class="c">%other default options go  here</span>
+]<span class="p">{</span>book<span class="p">}</span>
+
+<span class="k">\newcommand\ContentsPath</span><span class="p">{</span>Contents/<span class="p">}</span>
+<span class="k">\newcommand\ChapterPath</span><span class="p">{</span><span class="k">\ContentsPath</span><span class="p">}</span>
+<span class="k">\newcommand\SectionPath</span><span class="p">{</span><span class="k">\ChapterPath</span><span class="p">}</span>
+<span class="k">\newcommand\SubSectionPath</span><span class="p">{</span><span class="k">\SectionPath</span><span class="p">}</span>
+
+<span class="k">\@</span>ifclassloaded<span class="p">{</span>book<span class="p">}</span>
+<span class="p">{</span>
+    <span class="k">\newcommand\IncludeChapter</span><span class="na">[1]</span>
+    <span class="p">{</span>
+        <span class="k">\renewcommand\ChapterPath</span><span class="p">{</span><span class="k">\ContentsPath</span>#1/<span class="p">}</span>
+        <span class="k">\include</span><span class="p">{</span><span class="k">\ContentsPath</span>#1<span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">\newcommand\IncludeOnlyChapter</span><span class="na">[1]</span>
+    <span class="p">{</span>
+        <span class="k">\includeonly</span><span class="p">{</span><span class="k">\ContentsPath</span>#1<span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}{}</span>
+</code></pre></div></div>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\InputSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\renewcommand\SectionPath</span><span class="p">{</span><span class="k">\ChapterPath</span>#1/<span class="p">}</span>
+    <span class="k">\input</span><span class="p">{</span><span class="k">\ChapterPath</span>#1<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">\newcommand\InputSubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\renewcommand\SubSectionPath</span><span class="p">{</span><span class="k">\SectionPath</span>#1/<span class="p">}</span>
+    <span class="k">\input</span><span class="p">{</span><span class="k">\SectionPath</span>#1<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">\newcommand\InputSubSubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\input</span><span class="p">{</span><span class="k">\SubSectionPath</span>#1<span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">\@</span>ifclassloaded<span class="p">{</span>book<span class="p">}</span>
+<span class="p">{</span>
+    <span class="k">\newcommand\Chapter</span><span class="na">[1]</span>
+    <span class="p">{</span>
+        <span class="k">\chapter</span><span class="p">{</span>#1<span class="p">}</span>
+        <span class="c">%\addcontentsline{toc}{chapter}{#1}</span>
+    <span class="p">}</span>
+<span class="p">}{}</span>
+
+<span class="k">\newcommand\Section</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\section</span><span class="p">{</span>#1<span class="p">}</span><span class="c">%</span>
+    <span class="c">%\addcontentsline{toc}{section}{#1}</span>
+<span class="p">}</span>
+
+<span class="k">\newcommand\SubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\subsection</span><span class="p">{</span>#1<span class="p">}</span>
+    <span class="c">%\addcontentsline{toc}{subsection}{#1}</span>
+<span class="p">}</span>
+
+<span class="k">\newcommand\SubSubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+    <span class="k">\subsubsection</span><span class="p">{</span>#1<span class="p">}</span>
+    <span class="c">%\addcontentsline{toc}{subsubsection}{#1}</span>
+<span class="p">}</span>
+
+<span class="k">\RequirePackage</span><span class="p">{</span>xcolor<span class="p">}</span>
+
+<span class="k">\RequirePackage</span><span class="p">{</span>listings<span class="p">}</span>
+<span class="k">\lstdefinestyle</span><span class="p">{</span>Common<span class="p">}</span>
+<span class="p">{</span>
+        breaklines=true,
+        tabsize=3,
+        showstringspaces=false,
+        aboveskip=0pt,
+        belowskip=0pt,
+        extendedchars=<span class="k">\true</span>,
+        language=PHP,
+        frame=single,   
+        <span class="c">%===========================================================</span>
+        framesep=3pt,<span class="c">%expand outward.</span>
+        framerule=0.4pt,<span class="c">%expand outward.</span>
+        xleftmargin=3.4pt,<span class="c">%make the frame fits in the text area.</span>
+        xrightmargin=3.4pt,<span class="c">%make the frame fits in the text area.</span>
+        <span class="c">%===========================================================</span>
+        rulecolor=<span class="k">\color</span><span class="p">{</span>Red<span class="p">}</span><span class="c">%</span>
+<span class="p">}</span>
+
+<span class="k">\lstdefinestyle</span><span class="p">{</span>ThemeA<span class="p">}</span>
+<span class="p">{</span>
+        style=Common,
+        backgroundcolor=<span class="k">\color</span><span class="p">{</span>Yellow!10<span class="p">}</span>,
+
+        basicstyle=<span class="k">\scriptsize\color</span><span class="p">{</span>Black<span class="p">}</span><span class="k">\ttfamily</span>,
+        keywordstyle=<span class="k">\color</span><span class="p">{</span>Orange<span class="p">}</span>,
+        identifierstyle=<span class="k">\color</span><span class="p">{</span>Cyan<span class="p">}</span>,
+        stringstyle=<span class="k">\color</span><span class="p">{</span>Red<span class="p">}</span>,
+        commentstyle=<span class="k">\color</span><span class="p">{</span>Green<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">\newcommand</span><span class="p">{</span><span class="k">\IncludeCode</span><span class="p">}</span>[2][style=ThemeA]
+<span class="p">{</span>
+    <span class="k">\lstinputlisting</span><span class="na">[#1,caption={\href{#2}{#2}}]</span><span class="p">{</span>#2<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">\RequirePackage</span><span class="na">[colorlinks=true,bookmarksnumbered=true,bookmarksopen=true]</span><span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\RequirePackage</span><span class="na">[all]</span><span class="p">{</span>hypcap<span class="p">}</span>
+
+<span class="k">\RequirePackage</span><span class="p">{</span>makeidx<span class="p">}</span>
+<span class="k">\makeindex</span>
+
+<span class="k">\endinput</span>
+</code></pre></div></div>
+
+<p>The following sections gives an explanation of the class file.</p>
+
+<h3 id="declare-a-new-class-mybook-based-on-the-book-class">Declare a new class mybook based on the book class:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">\ProvidesClass</span><span class="p">{</span>mybook<span class="p">}</span>[2020/01/01 my own class (hv)]
+  <span class="k">\DeclareOption*</span><span class="p">{</span><span class="k">\PassOptionsToClass</span><span class="p">{</span><span class="k">\CurrentOption</span><span class="p">}{</span>book<span class="p">}}</span>
+  <span class="k">\ProcessOptions\relax</span>
+  <span class="k">\LoadClass</span> [
+  <span class="c">%other default options go here</span>
+  ]<span class="p">{</span>book<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="define-new-commands">Define new commands:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\ContentsPath</span><span class="p">{</span>Contents/<span class="p">}</span>
+<span class="k">\newcommand\ChapterPath</span><span class="p">{</span><span class="k">\ContentsPath</span><span class="p">}</span>
+<span class="k">\newcommand\SectionPath</span><span class="p">{</span><span class="k">\ChapterPath</span><span class="p">}</span>
+<span class="k">\newcommand\SubSectionPath</span><span class="p">{</span><span class="k">\SectionPath</span><span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="load-the-new-class">Load the new class:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\@</span>ifclassloaded<span class="p">{</span>book<span class="p">}</span>
+<span class="p">{</span>
+  <span class="k">\newcommand\IncludeChapter</span><span class="na">[1]</span>
+  <span class="p">{</span>
+    <span class="k">\renewcommand\ChapterPath</span><span class="p">{</span><span class="k">\ContentsPath</span>#1/<span class="p">}</span>
+    <span class="k">\include</span><span class="p">{</span><span class="k">\ContentsPath</span>#1<span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">\newcommand\IncludeOnlyChapter</span><span class="na">[1]</span>
+  <span class="p">{</span>
+    <span class="k">\includeonly</span><span class="p">{</span><span class="k">\ContentsPath</span>#1<span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}{}</span>
+</code></pre></div></div>
+
+<h3 id="create-subsections-chapterpath">Create subsections chapterpath:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\InputSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+  <span class="k">\renewcommand\SectionPath</span><span class="p">{</span><span class="k">\ChapterPath</span>#1/<span class="p">}</span>
+  <span class="k">\input</span><span class="p">{</span><span class="k">\ChapterPath</span>#1<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-subsection-to-path">Add Subsection to path:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\InputSubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+  <span class="k">\renewcommand\SubSectionPath</span><span class="p">{</span><span class="k">\SectionPath</span>#1/<span class="p">}</span>
+  <span class="k">\input</span><span class="p">{</span><span class="k">\SectionPath</span>#1<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-subsection-to-path-1">Add SubSection to path:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\newcommand\InputSubSubSection[1]
+{
+  \input{\SubSectionPath#1}
+}
+</code></pre></div></div>
+
+<h3 id="create-a-new-chapter">Create a new chapter:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\@</span>ifclassloaded<span class="p">{</span>book<span class="p">}</span>
+<span class="p">{</span>
+  <span class="k">\newcommand\Chapter</span><span class="na">[1]</span>
+  <span class="p">{</span>
+    <span class="k">\chapter</span><span class="p">{</span>#1<span class="p">}</span>
+    <span class="c">%\addcontentsline{toc}{chapter}{#1}</span>
+  <span class="p">}</span>
+<span class="p">}{}</span>
+</code></pre></div></div>
+
+<h3 id="add-a-line">Add a line:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\Section</span><span class="na">[1]</span>
+<span class="p">{</span>
+  <span class="k">\section</span><span class="p">{</span>#1<span class="p">}</span><span class="c">%</span>
+  <span class="c">%\addcontentsline{toc}{section}{#1}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-subsection-to-table-of-contents">Add SubSection to table of contents:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\SubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+  <span class="k">\subsection</span><span class="p">{</span>#1<span class="p">}</span>
+  <span class="c">%\addcontentsline{toc}{subsection}{#1}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-subsubsection-to-table-of-contents">Add SubSubSection to table of contents:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand\SubSubSection</span><span class="na">[1]</span>
+<span class="p">{</span>
+  <span class="k">\subsubsection</span><span class="p">{</span>#1<span class="p">}</span>
+  <span class="c">%\addcontentsline{toc}{subsubsection}{#1}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-the-xcolor-package">Add the xcolor package:</h3>
+
+<p><code class="language-plaintext highlighter-rouge">\RequirePackage{xcolor}</code></p>
+
+<h3 id="add-listings-package-and-define-lists">Add listings package and define lists:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\RequirePackage</span><span class="p">{</span>listings<span class="p">}</span>
+<span class="k">\lstdefinestyle</span><span class="p">{</span>Common<span class="p">}</span>
+<span class="p">{</span>
+  breaklines=true,
+  tabsize=3,
+  showstringspaces=false,
+  aboveskip=0pt,
+  belowskip=0pt,
+  extendedchars=<span class="k">\true</span>,
+  language=PHP,
+  frame=single,  
+  <span class="c">%===========================================================</span>
+  framesep=3pt,<span class="c">%expand outward.</span>
+  framerule=0.4pt,<span class="c">%expand outward.</span>
+  xleftmargin=3.4pt,<span class="c">%make the frame fits in the text area.</span>
+  xrightmargin=3.4pt,<span class="c">%make the frame fits in the text area.</span>
+  <span class="c">%===========================================================</span>
+  rulecolor=<span class="k">\color</span><span class="p">{</span>Red<span class="p">}</span><span class="c">% }</span>
+</code></pre></div></div>
+
+<h3 id="define-a-style">Define a style:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\lstdefinestyle</span><span class="p">{</span>ThemeA<span class="p">}</span>
+<span class="p">{</span>
+  style=Common,
+  backgroundcolor=<span class="k">\color</span><span class="p">{</span>Yellow!10<span class="p">}</span>,
+  basicstyle=<span class="k">\scriptsize\color</span><span class="p">{</span>Black<span class="p">}</span><span class="k">\ttfamily</span>,
+  keywordstyle=<span class="k">\color</span><span class="p">{</span>Orange<span class="p">}</span>,
+  identifierstyle=<span class="k">\color</span><span class="p">{</span>Cyan<span class="p">}</span>,
+  stringstyle=<span class="k">\color</span><span class="p">{</span>Red<span class="p">}</span>,
+  commentstyle=<span class="k">\color</span><span class="p">{</span>Green<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-a-new-coding-style">Add a new coding style:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\newcommand</span><span class="p">{</span><span class="k">\IncludeCode</span><span class="p">}</span>[2][style=ThemeA]
+<span class="p">{</span>
+  <span class="k">\lstinputlisting</span><span class="na">[#1,caption={\href{#2}{#2}}]</span><span class="p">{</span>#2<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-links-and-hypcap-packages">Add links and hypcap packages:</h3>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\RequirePackage</span><span class="na">[colorlinks=true,bookmarksnumbered=true,bookmarksopen=true]</span><span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\RequirePackage</span><span class="na">[all]</span><span class="p">{</span>hypcap<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-an-index-package-makeidx">Add an index package makeidx:</h3>
+
+<p><code class="language-plaintext highlighter-rouge">\RequirePackage{makeidx} \makeindex</code></p>
+
+<h3 id="close-the-new-book-class-mybook">Close the new book class <code class="language-plaintext highlighter-rouge">mybook</code>:</h3>
+
+<p><code class="language-plaintext highlighter-rouge">\endinput</code></p>
+
+<h2 id="step-3---create-the-main-input-file-maintex">Step 3 - Create the main input file main.tex</h2>
+
+<p>This is a critical file. It is the main input file which you will compile to generate the project. It is called <code class="language-plaintext highlighter-rouge">main.tex</code>.</p>
+
+<p>Create in the root of <code class="language-plaintext highlighter-rouge">MyProject</code> the <code class="language-plaintext highlighter-rouge">main.tex</code> file, then add the following content to the file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+\documentclass[dvipsnames,cmyk,12pt]{mybook}
+\usepackage[a4paper,vmargin=15mm,hmargin=10mm]{geometry}
+
+\title{Introduction to LaTeX}
+\author{Your Name}
+\date{\today}
+
+%\IncludeOnlyChapter{Variables}
+
+\begin{document}
+\frontmatter
+        \maketitle
+        \thispagestyle{empty}
+        \tableofcontents
+    \lstlistoflistings
+\mainmatter
+        \part{Part 1}
+                \IncludeChapter{Variables}
+                \IncludeChapter{Array}
+        \part{Part 2}   
+                \IncludeChapter{Interface}
+                \IncludeChapter{SubClass}
+        \appendix\renewcommand{\chaptername}{\appendixname}
+        \part{Appendix}
+                \IncludeChapter{YourAppendix}
+\backmatter
+        \printindex
+\end{document}
+</code></pre></div></div>
+
+<h2 id="step-4---create-a-variables-file">Step 4 - Create a Variables file</h2>
+
+<p>Create a file for chapter <code class="language-plaintext highlighter-rouge">Variables</code> called <code class="language-plaintext highlighter-rouge">Variables.tex</code> and save it to <code class="language-plaintext highlighter-rouge">MyProject\Contents</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+\Chapter{Variables}
+\InputSection{Declaration}
+\InputSection{Instantiation}
+</code></pre></div></div>
+
+<h2 id="step-5---create-variables-directory">Step 5 - Create Variables Directory</h2>
+
+<p>Create a directory within the <code class="language-plaintext highlighter-rouge">MyProject\Contents\</code> and name it <code class="language-plaintext highlighter-rouge">Variables</code>.</p>
+
+<h2 id="step-6---create-a-declaration-file">Step 6 - Create a Declaration file</h2>
+
+<p>Create a file to hold a Declaration section and call it <code class="language-plaintext highlighter-rouge">Declaration.tex</code>. Then save it in <code class="language-plaintext highlighter-rouge">MyProject\Contents\Variables</code>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\Section</span><span class="p">{</span>Declaration<span class="p">}</span>
+
+<span class="k">\IncludeCode</span><span class="na">[style=ThemeA]</span><span class="p">{</span>Codes/Declaration.php<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="step-7---start-creating-topics">Step 7 - Start creating topics</h2>
+
+<p>You can now start writing your topics for the project. Remember to save the files as .tex file and save to the <code class="language-plaintext highlighter-rouge">MyProject\Content\</code> directory.</p>
+
+<h2 id="finalize---generate-output">Finalize - Generate output</h2>
+
+<p>Here is an output from this skeleton project.</p>
+
+<p><img class="img" src="/assets/img/latex/2-0-skeleton.png" alt="Output from the LaTeX skeleton project" /></p>
+
+<p><a href="/latex/latex-commands-syntax.html">Next: LaTeX commands overview</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

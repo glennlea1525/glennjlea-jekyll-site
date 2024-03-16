@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Using Input/Include Commands</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Using Input/Include Commands" />
+    <meta property="og:url" content="http://localhost:4029/latex/input-or-include-commands/" />
+    <meta property="og:description" content="In a root file, referencing chapter file can be done using either the include or the input commands." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Using Input/Include Commands
+      
+    
+</div></div>
+      <h1 id="using-inputinclude-commands">Using Input/Include Commands</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#using-inputinclude-commands" id="markdown-toc-using-inputinclude-commands">Using Input/Include Commands</a>    <ul>
+      <li><a href="#using-the-input-command" id="markdown-toc-using-the-input-command">Using the input Command</a></li>
+      <li><a href="#using-the-include-command" id="markdown-toc-using-the-include-command">Using the include Command</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Each chapter or section in the document is referenced in a root file using either the <code class="language-plaintext highlighter-rouge">\input</code> or the <code class="language-plaintext highlighter-rouge">\include</code> command. This has the added advantage of listing all the external chapter files in the <code class="language-plaintext highlighter-rouge">main</code> file and then by either commenting or uncomment them, include or exclude them to the output stream when generating a LaTex document.</p>
+
+<p><strong>Note:</strong> For more information about input and include and their differences, see this topic on tex.stackexchange.com: <a href="https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include">When should I use input vs. include</a>.</p>
+
+<h2 id="using-the-input-command">Using the input Command</h2>
+
+<p>The command <code class="language-plaintext highlighter-rouge">\input{filename}</code> imports a file such as <code class="language-plaintext highlighter-rouge">filename.tex</code> into the target file. It’s equivalent to typing the content of <code class="language-plaintext highlighter-rouge">filename.tex</code> into the current file at the location of the <code class="language-plaintext highlighter-rouge">\input</code> line.</p>
+
+<p>Additionally, the order in which the files are listed determines the order of the chapters or sections.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\input{filename}</code></p>
+
+<p>For example, the following list of chapters use the <code class="language-plaintext highlighter-rouge">\input</code> command to insert the files into the typesetting stream for output.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">%% Chapters inputs</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch01-preface.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch02-overview.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch03.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch04.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch05.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch06.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch07.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch08.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch09.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch10.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch11-troubleshooting.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch12-tutorials.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch13-faq.tex<span class="p">}</span>
+<span class="k">\input</span><span class="p">{</span>MANUAL/manual-ch14-release-notes<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For most purposes, the <code class="language-plaintext highlighter-rouge">\input</code> command is sufficient. If you want more control over placement of content, then use the <code class="language-plaintext highlighter-rouge">\include</code> command.</p>
+
+<h2 id="using-the-include-command">Using the include Command</h2>
+
+<p>The command <code class="language-plaintext highlighter-rouge">include{filename}</code> adds a <code class="language-plaintext highlighter-rouge">\clearpage</code> before and after the insertion of the LaTex file into the typesetting stream. This results in the chapter starting on a new page.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\include{filename}</code></p>
+
+<p>For example, the following list of chapters use the <code class="language-plaintext highlighter-rouge">\include</code> command to insert the files into the typesetting stream for output but all starting on a new page in the document.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\include</span><span class="p">{</span>tex/preface<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/intro<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap01<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap02<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/summary<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/footnotes-widow-orphans.html">Next: Footnotes, widows and orphans</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

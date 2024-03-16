@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Selecting the Document Class</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Selecting the Document Class" />
+    <meta property="og:url" content="http://localhost:4029/latex/documentclass/" />
+    <meta property="og:description" content="The documentclass command tells the LaTeX typesetter how to handle the document and which document package to use to typeset the output." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Selecting the Document Class
+      
+    
+</div></div>
+      <h1 id="selecting-the-document-class">Selecting the Document Class</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#selecting-the-document-class" id="markdown-toc-selecting-the-document-class">Selecting the Document Class</a>    <ul>
+      <li><a href="#selecting-a-document-class" id="markdown-toc-selecting-a-document-class">Selecting a document class</a>        <ul>
+          <li><a href="#book-document-class" id="markdown-toc-book-document-class">book document class</a></li>
+          <li><a href="#memoir-document-class" id="markdown-toc-memoir-document-class">memoir document class</a></li>
+        </ul>
+      </li>
+      <li><a href="#setting-up-the-documentclass-command" id="markdown-toc-setting-up-the-documentclass-command">Setting up the documentclass command</a>        <ul>
+          <li><a href="#setting-the-paper-size" id="markdown-toc-setting-the-paper-size">Setting the Paper Size</a></li>
+          <li><a href="#setting-the-base-font-size" id="markdown-toc-setting-the-base-font-size">Setting the Base Font Size</a></li>
+          <li><a href="#setting-pagination" id="markdown-toc-setting-pagination">Setting Pagination</a></li>
+        </ul>
+      </li>
+      <li><a href="#including-a-stylesheet" id="markdown-toc-including-a-stylesheet">Including a stylesheet</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>At the head of every LaTeX project file (<code class="language-plaintext highlighter-rouge">main.tex</code>) is the <code class="language-plaintext highlighter-rouge">\documentclass</code> command. In the following example, the <code class="language-plaintext highlighter-rouge">\documentclass</code> command tells the LaTeX typesetter how to handle the document and which document package to use to typeset the output. It also tells the typesetter to find the styles for the document in the location indicated.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">% Copyright Glenn J Lea</span>
+<span class="c">% Name of Document and Version</span>
+<span class="c">%</span>
+<span class="c">% MAIN FILE</span>
+<span class="c">%</span>
+<span class="k">\documentclass</span><span class="na">[a4paper,11pt,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/styles-template<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+</code></pre></div></div>
+
+<p>These two commands are probably the most important decision you need to make for creating technical documentation using LaTeX: which type of document class and where to find the document styles.</p>
+
+<h2 id="selecting-a-document-class">Selecting a document class</h2>
+
+<p>After looking at several types of document classes, I settled on the <code class="language-plaintext highlighter-rouge">book</code> class as the best fit to do the job.</p>
+
+<p>Other documentclass types did not have the capability to output long documents with proper headers and footers and all the required elements of a professional quality technical document.</p>
+
+<h3 id="book-document-class">book document class</h3>
+
+<p>After it seems like forever searching for that ideal class for technical documents, the solution was staring me in the face. The basic <code class="language-plaintext highlighter-rouge">book</code> class had all the requirements I needed. It was customizable and it was designed specifically for books, that is, long documents.</p>
+
+<p><strong>Note:</strong> Information about the <em>book</em> class is available <a href="https://www.ctan.org/pkg/book?lang=en">here</a>.</p>
+
+<h3 id="memoir-document-class">memoir document class</h3>
+
+<p>I also looked at the <code class="language-plaintext highlighter-rouge">memoir</code> documentclass. The author of this class, Peter Wilson, describes the memoir class as best suited for <em>type­set­ting po­etry, fic­tion, non-fic­tion, and math­e­mat­i­cal works.</em> It can use a wide range of font sizes, has quite a number of page styles to choose from as well as chapter styles to customize your document. It is very useful.</p>
+
+<p>I tried to use this class first, but it just didn’t suit my needs. I needed more flexibility in designing my title pages, adding headers and footers, and so forth. Frankly, I can’t remember all the reasons why I didn’t choose <code class="language-plaintext highlighter-rouge">memoir</code>, but in the end, it just didn’t suit my needs.</p>
+
+<p><strong>Note:</strong> Information about the <em>memoir</em> class is available <a href="https://www.ctan.org/pkg/memoir?lang=en">here</a>.</p>
+
+<h2 id="setting-up-the-documentclass-command">Setting up the documentclass command</h2>
+
+<p>As shown above, you set the <code class="language-plaintext highlighter-rouge">\documentclass</code> in the document root file (<code class="language-plaintext highlighter-rouge">main.tex</code>) at the top of the file:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\documentclass[a4paper,11pt,twoside]{book}</code></p>
+
+<p>This command includes a number of options. I</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">class</code> is set at the end of the command within the curly brackets - `{book}</li>
+  <li><code class="language-plaintext highlighter-rouge">arguments</code> are included within the square brackets - <code class="language-plaintext highlighter-rouge">[a4paper,11pt,twoside]</code></li>
+</ul>
+
+<p>It tells the LaTeX typesetter to use the built-in book class and output a document with an A4 paper size, use an 11pt font as the base font and use double-sided printing.</p>
+
+<h3 id="setting-the-paper-size">Setting the Paper Size</h3>
+
+<p>As I was producing the document for European audiences, the paper size needed to be A4. You can choose <code class="language-plaintext highlighter-rouge">letter</code> for North American audiences.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">a4paper</code> sets the page size to 210 × 297 millimeters or 8.27 × 11.69 inches.</li>
+</ul>
+
+<h3 id="setting-the-base-font-size">Setting the Base Font Size</h3>
+
+<p>A good readable base font size is 11 points. 10 points or 9 points is too small for technical documentation. These documents are used by people in a hurry or having difficulty or wanting to know how to do some task. Why strain their eyes on a very small font size. Of course, if you are producing the document for online viewing, you need to adjust this accordingly, say perhaps 12 or 14 pts.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">11pt</code> which is quite readable for user documentation.</li>
+</ul>
+
+<h3 id="setting-pagination">Setting Pagination</h3>
+
+<p>I want the typesetter to paginate on two sides so I don’t end up with blank pages after each page. Setting two-sided makes the document doublesided, but DOES NOT tell the printer to print double-sided. This is important for page numbering, chapter titles and section titles in headers and footers. The book class is double-sided by default.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">twoside</code> which makes the document double-sided, which means the margins on the left and right pages are mirrored.</li>
+</ul>
+
+<h2 id="including-a-stylesheet">Including a stylesheet</h2>
+
+<p>Stylesheets are discussed in detail in a later topics. Rather than adding all the styles in the head section of main.tex, you can put them all in a stylesheets document and then reference the file in main.tex. This way you can have several stylesheets and comment out stylesheets you are not using.</p>
+
+<p><a href="/latex/input-or-include-commands.html">Next: Using Input/Include Commands</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

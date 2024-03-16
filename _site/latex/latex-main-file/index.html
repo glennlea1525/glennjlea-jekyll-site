@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; LaTeX root file - main.tex</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="LaTeX root file - main.tex" />
+    <meta property="og:url" content="http://localhost:4029/latex/latex-main-file/" />
+    <meta property="og:description" content="A LaTeX root file main.tex tells the LaTeX typesetting how to build the document." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / LaTeX root file - main.tex
+      
+    
+</div></div>
+      <h1 id="latex-root-file---maintex">LaTeX root file - main.tex</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-root-file---maintex" id="markdown-toc-latex-root-file---maintex">LaTeX root file - main.tex</a>    <ul>
+      <li><a href="#simplified-root-file" id="markdown-toc-simplified-root-file">Simplified root file</a></li>
+      <li><a href="#define-the-document-class" id="markdown-toc-define-the-document-class">Define the document class</a></li>
+      <li><a href="#reference-the-stylesheet" id="markdown-toc-reference-the-stylesheet">Reference the stylesheet</a></li>
+      <li><a href="#begin-the-document-scope" id="markdown-toc-begin-the-document-scope">Begin the document scope</a></li>
+      <li><a href="#insert-the-title-page-and-table-of-contents" id="markdown-toc-insert-the-title-page-and-table-of-contents">Insert the title page and table of contents</a></li>
+      <li><a href="#insert-the-document-content" id="markdown-toc-insert-the-document-content">Insert the document content</a></li>
+      <li><a href="#insert-an-index-if-required" id="markdown-toc-insert-an-index-if-required">Insert an index, if required</a></li>
+      <li><a href="#end-the-document-scope" id="markdown-toc-end-the-document-scope">End the Document Scope</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>A LaTeX root file main.tex tells the LaTeX typesetting how to build the document. The title page, stylesheets, table of contents, chapters, and appendices are references in the root file using <code class="language-plaintext highlighter-rouge">\include</code> commands.</p>
+
+<h2 id="simplified-root-file">Simplified root file</h2>
+
+<p>The following is a simplified root file.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[a4paper,12pt,draft,twoside]</span><span class="p">{</span>book<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+<span class="k">\frontmatter</span>
+<span class="k">\include</span><span class="p">{</span>tex/title<span class="p">}</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\mainmatter</span>
+<span class="k">\include</span><span class="p">{</span>tex/preface<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/intro<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap01<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap02<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/summary<span class="p">}</span>
+<span class="k">\backmatter</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p>Let’s go through this file line by line.</p>
+
+<p><strong>Note:</strong> Commands included before the <code class="language-plaintext highlighter-rouge">\begin{document}</code> command apply to the entire document. They are outside any scope, or fixed section of the document stream.</p>
+
+<h2 id="define-the-document-class">Define the document class</h2>
+
+<p>The first line tells the LaTeX generator the type of document it is about to generate (or typeset) and what styles are to be used.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\documentclass[a4paper,12pt,draft,twoside]{book}
+</code></pre></div></div>
+
+<p>All these elements are defined in separate class files (more about these classes later).</p>
+
+<p><code class="language-plaintext highlighter-rouge">\documentclass</code> tells the LaTeX generator the type of document you intend to create. This document will be printed (or output to pdf) in A4 format. The base font will be 12 points, although this can be modified in the document. It is marked as draft initially. And it will be printed on both sides.</p>
+
+<p><code class="language-plaintext highlighter-rouge">{book}</code> tells the typesetter to use the <code class="language-plaintext highlighter-rouge">book</code> class. This is a set of predefined outputting instructions, which in this case has functionality that can handle large multi-chapter documents.</p>
+
+<h2 id="reference-the-stylesheet">Reference the stylesheet</h2>
+
+<p>The next line tell the typesetter to use the styles defined in an external document called <code class="language-plaintext highlighter-rouge">mystyles</code> located in the <code class="language-plaintext highlighter-rouge">styles</code> directory.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>styles/mystyles<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">mystyles</code> is the name of the stylesheet where all the styles have been defined that will be used in this document. This allows you to update the stylesheet without having to worry about finding the styles within the root file (which is the alternate location for styles).</p>
+
+<h2 id="begin-the-document-scope">Begin the document scope</h2>
+
+<p>Like the <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> tag in HTML, the actual content follows this tag. The <code class="language-plaintext highlighter-rouge">\begin</code> tag tells the typesetter that what follows is the document.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{document}</span>
+</code></pre></div></div>
+
+<p>You put meta information and additional instructions before this tag such as <code class="language-plaintext highlighter-rouge">\title</code>, <code class="language-plaintext highlighter-rouge">\author</code>, <code class="language-plaintext highlighter-rouge">\date</code>, and so on.</p>
+
+<p>The document section is divided into three sections:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\frontmatter</code>
+<code class="language-plaintext highlighter-rouge">\mainmatter</code>
+<code class="language-plaintext highlighter-rouge">\backmatter</code></p>
+
+<h2 id="insert-the-title-page-and-table-of-contents">Insert the title page and table of contents</h2>
+
+<p>Within the <code class="language-plaintext highlighter-rouge">\frontmatter</code>section, you include a title page. Alternatively, the <code class="language-plaintext highlighter-rouge">{book}</code> class has a default title page which can be referred to simply as <code class="language-plaintext highlighter-rouge">titlepage</code>.</p>
+
+<p>Also, in this section you can add a table of contents, which is then automatically generated during output.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\frontmatter</span>
+<span class="k">\include</span><span class="p">{</span>tex/title<span class="p">}</span>
+<span class="k">\tableofcontents</span>
+</code></pre></div></div>
+
+<h2 id="insert-the-document-content">Insert the document content</h2>
+
+<p>The document itself - the contents - is contained within the <code class="language-plaintext highlighter-rouge">\mainmatter</code> section.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\mainmatter</span>
+</code></pre></div></div>
+<p>You then follow this tag with references to the topics, or chapters, of the document.</p>
+
+<p><strong>Note:</strong> To keep this simple and to allow chapters to be toggled off or on (included/excluded) as required, my practice is to place topic contents in sets of files contained within a subdirectory called <code class="language-plaintext highlighter-rouge">\tex</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">\include</code> command tells the typesetter to include the file referenced within the curly braces in the output stream at the location in the list of includes. You can easily rearrange the topics by rearranging these <code class="language-plaintext highlighter-rouge">\include</code> lines in this list.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\include</span><span class="p">{</span>tex/preface<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/intro<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap01<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/chap02<span class="p">}</span>
+<span class="k">\include</span><span class="p">{</span>tex/summary<span class="p">}</span>
+<span class="k">\include</span>(tex/appendix)
+</code></pre></div></div>
+
+<h2 id="insert-an-index-if-required">Insert an index, if required</h2>
+
+<p>A <code class="language-plaintext highlighter-rouge">\backmatter</code> section can also be included, which typically includes the Index.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\backmatter</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> You would also define your headers and footers here, but I excluded them in this example to keep it simple. I will get to them in due time.</p>
+
+<h2 id="end-the-document-scope">End the Document Scope</h2>
+
+<p>You need to tell the typesetter when the document is complete and that there are no more files to generate. In other words, you need to close your document, as with html <code class="language-plaintext highlighter-rouge">&lt;/html&gt;</code>.`</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p>This simple command indicates the end of the document. Now, we can go ahead and generate the output.</p>
+
+<p><a href="/latex/sample-root-file.html">Next: Sample root file</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

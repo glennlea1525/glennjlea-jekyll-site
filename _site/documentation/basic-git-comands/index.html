@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; A list of basic git commands</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="A list of basic git commands" />
+    <meta property="og:url" content="http://localhost:4029/documentation/basic-git-comands/" />
+    <meta property="og:description" content="A list of basic git commands
+" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/documentation/">Documentation</a>
+      
+    
+      
+        / A list of basic git commands
+      
+    
+</div></div>
+      <h1 id="a-list-of-basic-git-commands">A list of basic git commands</h1>
+
+<p>Some basic Git commands.</p>
+
+<h2 id="file-classifications">File classifications</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Tracked</code> - Any file already in the repository or staged in the index.</li>
+  <li><code class="language-plaintext highlighter-rouge">Ignored</code> - Any file that is declared invisible or ignored in the repository though present in the working directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">Untracked</code> - Any file that is neither tracked nor ignored.</li>
+</ul>
+
+<h2 id="renaming-a-branch">Renaming a branch</h2>
+
+<p>This is from <strong><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch">Renaming a branch</a></strong> on Github. Refer to this link for the authoritative instructions.</p>
+
+<ol>
+  <li>Go to the main page of the repository.</li>
+  <li>Click the <strong>Branches</strong> icon.</li>
+  <li>Click the <strong>Edit</strong> icon to the right of the branch to be renamed.</li>
+  <li>Type a new name for the branch in the <strong>Rename this branch</strong> field.</li>
+  <li>Review the messages. They show the implications of renaming this branch.</li>
+  <li>Click <strong>Rename branch</strong>. The branch is now renamed.</li>
+  <li>Run the following set of commands on a local clone of the repository to update the name of the default branch:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git branch <span class="nt">-m</span> OLD-BRANCH-NAME NEW-BRANCH-NAME
+<span class="nv">$ </span>git fetch origin
+<span class="nv">$ </span>git branch <span class="nt">-u</span> origin/NEW-BRANCH-NAME NEW-BRANCH-NAME
+<span class="nv">$ </span>git remote set-head origin <span class="nt">-a</span>
+</code></pre></div></div>
+<p>The branch is now renamed and a local clone has been updated.</p>
+
+<h2 id="git-command-list">Git command list</h2>
+
+<table>
+  <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$ git</td>
+      <td>Git Help.</td>
+    </tr>
+    <tr>
+      <td>$ git version</td>
+      <td>Provides version of git.</td>
+    </tr>
+    <tr>
+      <td>$ git init</td>
+      <td>Create a repository. Create a directory, such as /example. cd to this directory and run git init to turn the directory into a repository.</td>
+    </tr>
+    <tr>
+      <td>$ git add</td>
+      <td>Staging a file. For example, run git add index.html to add this file to the new repository.</td>
+    </tr>
+    <tr>
+      <td>$ git status</td>
+      <td>Check the state of the repository. Shows which files need to be committed.</td>
+    </tr>
+    <tr>
+      <td>$ git commit</td>
+      <td>Commits a file to the remote repository.</td>
+    </tr>
+    <tr>
+      <td>$ git commit - m "A comment added to the commit"</td>
+      <td>Commits and adds comment.</td>
+    </tr>
+    <tr>
+      <td>$ git commit --message</td>
+      <td>Same as git commit -m.</td>
+    </tr>
+    <tr>
+      <td>$ git commit --all</td>
+      <td>Stages all known modified files and commits them.</td>
+    </tr>
+    <tr>
+      <td>$ git log</td>
+      <td>View comments.</td>
+    </tr>
+    <tr>
+      <td>$ git checkout branch_name</td>
+      <td>Switches to the branch provided in branch_name.</td>
+    </tr>
+    <tr>
+      <td>$ git pull</td>
+      <td>Pulls from origin repository to make the local repo up-to-date.</td>
+    </tr>
+    <tr>
+      <td>$ git checkout -b new_branch_name</td>
+      <td>Creates a new branch named new_branch_name.</td>
+    </tr>
+    <tr>
+      <td>$ git rm filename</td>
+      <td>Removes file from both repository and working directory.</td>
+    </tr>
+    <tr>
+      <td>$ git commit - "Remove a file called filename"</td>
+      <td>Same as git rm filename but adds a comment.</td>
+    </tr>
+    <tr>
+      <td>$ git clone repository_directory new_repository_directory</td>
+      <td>Makes a copy (a clone) of a repository</td>
+    </tr>
+    <tr>
+      <td>$ git mv filename newfilename</td>
+      <td>Moves a file to a new filename (same as renaming.</td>
+    </tr>
+    <tr>
+      <td>$ git commit -m "renamed filename to newfilename"</td>
+      <td>Renames a file.</td>
+    </tr>
+        <tr>
+      <td>$ git remote prune origin</td>
+      <td>Remove tracking references to the old branch name.</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+table.highlight {
+    /* overflow: auto; */
+    display: block;
+}
+table.highlight td.code {
+    width: 100%;
+}
+code {
+    background-color: #eef7fa;
+    font-size: 1.10rem;
+    font-family: monospace;
+    margin: 0;
+    padding: 0px;
+    border-left: 0   
+}
+figure {
+    border: thin silver solid;
+    text-align: left;
+}
+figcaption{
+    padding: 0.5em;
+    color: black;
+    text-align: center;
+}
+.highlight {
+    padding-top: 1.5em;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 1.5em;
+}
+
+pre {
+    background: #eef7fa;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}

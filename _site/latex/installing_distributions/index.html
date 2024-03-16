@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Selecting a LaTeX distribution and editor</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Selecting a LaTeX distribution and editor" />
+    <meta property="og:url" content="http://localhost:4029/latex/installing_distributions/" />
+    <meta property="og:description" content="To write LaTeX files, you can use LaTeX editors, but you need a TeX distribution to build LaTeX files into an output such as PDF." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Selecting a LaTeX distribution and editor
+      
+    
+</div></div>
+      <h1 id="selecting-a-latex-distribution-and-editor">Selecting a LaTeX distribution and editor</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#selecting-a-latex-distribution-and-editor" id="markdown-toc-selecting-a-latex-distribution-and-editor">Selecting a LaTeX distribution and editor</a>    <ul>
+      <li><a href="#selecting-a-tex-distribution" id="markdown-toc-selecting-a-tex-distribution">Selecting a TeX Distribution</a></li>
+      <li><a href="#selecting-a-latex-editor" id="markdown-toc-selecting-a-latex-editor">Selecting a LaTeX Editor</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>To write and edit LaTeX files, you can use any text editor such as Atom or Sublime Text but good LaTeX editors are available. Whatever tool you choose to use, you need a TeX distribution to build LaTeX files into an output such as PDF. You can download all this software for free.</p>
+
+<h2 id="selecting-a-tex-distribution">Selecting a TeX Distribution</h2>
+
+<p>Before you can begin working with LaTeX, you need to first install a TeX distribution. This is a typesetting program that takes the LaTeX files and generates output based on the settings in the LaTeX files. TeX distributions are available for Linux, Windows and MAC.</p>
+
+<ul>
+  <li>
+    <p>Windows: I recommend using MiKTeX available from <a href="https://miktex.org/download">miktex.org</a>.</p>
+  </li>
+  <li>
+    <p>MAC OS: I recommend using <em>MacTeX</em> available from <a href="http://www.tug.org/mactex/">tug.org</a>.</p>
+  </li>
+</ul>
+
+<p>Instructions for installing these programs are provided on the sites where they are available.</p>
+
+<h2 id="selecting-a-latex-editor">Selecting a LaTeX Editor</h2>
+
+<p>Using a simple text editor has its advantages. You can create LaTeX files in an editor such as NotePad++, Atom or Sublime Text. Nevertheless, plenty of good LaTeX editors are available.</p>
+
+<ul>
+  <li>
+    <p>Windows: I use TeXworks which can be downloaded at <a href="https://www.tug.org/texworks/">www.tug.org/texworks/</a>.</p>
+  </li>
+  <li>
+    <p>MAC: TeXnicCenter which can be downloaded at <a href="http://www.texniccenter.org/">http://www.texniccenter.org/</a>.</p>
+  </li>
+</ul>
+
+<p>So, you can choose how you best want to work. For me, an editor that adds tags, closes tags correctly and has a menu selection for generating output works fine.</p>
+
+<p><a href="/latex/quick-start-guide.html">Next: LaTeX quickstart</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

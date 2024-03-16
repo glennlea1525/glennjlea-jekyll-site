@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; LaTeX quickstart</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="LaTeX quickstart" />
+    <meta property="og:url" content="http://localhost:4029/latex/quick-start-guide/" />
+    <meta property="og:description" content="Use this Quick Start to build a sample document" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / LaTeX quickstart
+      
+    
+</div></div>
+      <h1 id="latex-quickstart">LaTeX quickstart</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#latex-quickstart" id="markdown-toc-latex-quickstart">LaTeX quickstart</a>    <ul>
+      <li><a href="#install-the-distributions" id="markdown-toc-install-the-distributions">Install the Distributions</a></li>
+      <li><a href="#create-a-sample-document" id="markdown-toc-create-a-sample-document">Create a Sample Document</a></li>
+      <li><a href="#save-the-file" id="markdown-toc-save-the-file">Save the file</a></li>
+      <li><a href="#compile-build-the-latex-file" id="markdown-toc-compile-build-the-latex-file">Compile (build) the LaTeX File</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>LaTeX can be used to develop very good technical documentation, but it requires the use of specific document classes, packages and settings.</p>
+
+<p>What follows in this and upcoming topics is entirely my own experience having to create high quality user guides and manuals using LaTeX. Much of it was trial and error until I finally landed on a good set of tools to do the job. Consultants, clients and Stack Overflow helped considerably.</p>
+
+<p>So, to get you up and running quickly, here is the most basic of LaTeX projects - an <em>Article</em>. The  simple steps that follow will guide you through generating a pdf file from a sample LaTeX file.</p>
+
+<hr />
+<p><strong>Note:</strong> If you have some experience with LaTeX you can skip this topic and jump right in using the more details topics that follow this topic.</p>
+
+<hr />
+
+<h2 id="install-the-distributions">Install the Distributions</h2>
+
+<p>You first need to install a TeX distribution such as ProTeXt and MacTeX. You will also need an editor such as TeXnicCenter, TeXworks or Eclipse. Atom probably works just as well.</p>
+
+<p>For this Quick Start, we will use the MikTex distribution and TeXworks editor. For MikTex, see <a href="https://miktex.org/">miktex.org</a>. For TeXworks, see <a href="https://github.com/TeXworks/texworks/releases">github.com/TeXworks/texworks/releases</a> They are relatively easy to install and set up. MikTex will install the base program and, if you make the selection, automatically install missing packages. TeXworks allows you to easily compile to PDF the documents.</p>
+
+<p>So, select a distribution and choose a good LaTeX editor:</p>
+<ul>
+  <li>Notepad++</li>
+  <li>Texmaker</li>
+  <li>Texnicle</li>
+</ul>
+
+<hr />
+<p><strong>Note:</strong> For information about TeX distributions and LaTeX editors, see
+<a href="../pages/latex/1-4-installing_distributions/index.md">
+Installing LaTeX distributions</a></p>
+
+<hr />
+
+<h2 id="create-a-sample-document">Create a Sample Document</h2>
+
+<p>Open a LaTeX editor such as TeXworks and enter in the following exactly as shown.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>palatino,url<span class="p">}</span>
+<span class="k">\documentclass</span><span class="na">[12pt]</span><span class="p">{</span>article<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="k">\section*</span><span class="p">{</span>My first document<span class="p">}</span>
+This is a short example of a <span class="k">\LaTeX\ </span>document written
+<span class="k">\today</span>. It shows a few simple features of automated
+typesetting, including
+<span class="nt">\begin{itemize}</span>
+<span class="k">\item</span> setting the default font size to 12pt
+<span class="k">\item</span> specifying an article type for formatting
+<span class="k">\item</span> using the Palatino typeface
+<span class="k">\item</span> adding special formatting for URIs
+<span class="k">\item</span> formatting a heading in section style
+<span class="k">\item</span> using the <span class="k">\LaTeX\ </span>logo
+<span class="k">\item</span> generating today's date
+<span class="k">\item</span> formatting a list of items
+<span class="k">\item</span> centering and italicizing
+<span class="k">\item</span> autonumbering the pages
+<span class="nt">\end{itemize}</span>
+<span class="k">\subsection*</span><span class="p">{</span>More information<span class="p">}</span>
+This example was taken from Formatting Information,
+which you can download from
+<span class="k">\url</span><span class="p">{</span>http://www.ctan.org/tex-archive/info/beginlatex/<span class="p">}</span>
+and use as a teach-yourself guide.
+<span class="nt">\begin{center}</span>
+<span class="k">\textit</span><span class="p">{</span>Some text to close the document<span class="p">}</span>
+<span class="nt">\end{center}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<p>Here is the document in Texworks.</p>
+
+<p><img class="img" src="/assets/img/latex/qs-texworks.png" alt="Quick Start document" /></p>
+<p class="center">Quick Start document in Texworks.</p>
+
+<h2 id="save-the-file">Save the file</h2>
+
+<p>After entering the text, create a directory called <code class="language-plaintext highlighter-rouge">/sampleLatex</code>. Save the file you just created in that directory and call it <code class="language-plaintext highlighter-rouge">QuickStart.tex</code>.</p>
+
+<h2 id="compile-build-the-latex-file">Compile (build) the LaTeX File</h2>
+
+<p>The file needs to be built (or compiled) to generate a PDF file. The preferred way is to use a LaTeX editor such as TeXworks or TeXnicCenter.</p>
+
+<p>In TeXworks, do the following:</p>
+
+<ol>
+  <li>Select the build option <em>pdfLaTeX</em> from the <em>Build</em> menu, then click <em>Build</em> (the arrow next to the dropdown menu).</li>
+  <li>The resultant pdf file is in the root of your project.</li>
+</ol>
+
+<p>Here is the output of the LaTeX file as PDF.</p>
+
+<p><img class="img" src="/assets/img/latex/qs-pdf-out.png" alt="Quick Start document PDF output" /></p>
+<p class="center">Quick Start document PDF output.</p>
+
+<hr />
+<p><strong>Note:</strong> You could also use the command line if you have MikTex in your path. To build the LaTeX file using the command line. Follow the instructions in MikTex.</p>
+
+<hr />
+
+<p><a href="/latex/sample-latex-file.html">Next: Sample LaTeX file - Hello World</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+toc:
+  - title: Using LaTeX to create technical documentation
+    items:
+      - title: Introduction
+        url: /latex/latex-home/
+      - title: About LaTeX
+        url: /latex/about-latex/
+      - title: Selecting a LaTeX distribution and editor
+        url: /latex/installing_distributions/
+      - title: LaTeX Quickstart
+        url: /latex/quick-start-guide/
+      - title: Sample LaTeX file - Hello World
+        url: /latex/sample-latex-file/
+      - title: LaTeX skeleton structure
+        url: /latex/basic_latex_skeleton_file/
+      - title: LaTeX commands overview
+        url: /latex/latex-commands-syntax/
+      - title: LaTeX Project file structure
+        url: /latex/latex-project_file_structure/
+      - title: LaTeX root file - main.tex
+        url: /latex/latex-main-file/
+      - title: Sample root file
+        url: /latex/sample-root-file/
+      - title: Selecting the Document Class
+        url: /latex/documentclass/
+      - title: Using Input-Include Commands
+        url: /latex/input-or-include-commands/
+      - title: Footnotes, widows and orphans
+        url: /latex/footnotes-widow-orphans/
+      - title: Defining sectioning styles
+        url: /latex/sectioning-styles/
+      - title: Numbering
+        url: /latex/numbering/
+      - title: Creating LaTeX Stylesheets
+        url: /latex/latex-stylesheets/
+      - title: Adding and defining fonts
+        url: /latex/adding-defining-fonts/
+      - title: Adding multi-lingual support
+        url: /latex/adding-multi-lingual-support/
+      - title: Defining page size, margins and layout
+        url: /latex/setting-page-layout/
+      - title: Customizing headers and footers
+        url: /latex/customizing-headers-footers/
+      - title: Defining and using colours
+        url: /latex/defining-and-using-colours/
+      - title: Warning, Note and Info Boxes
+        url: /latex/warning-note-info-boxes/
+      - title: Creating custom tables
+        url: /latex/creating-custom-tables/
+      - title: Formatting chapter sections
+        url: /latex/formatting-chapter-sections/
+      - title: Commands for font formatting and lists
+        url: /latex/formatting-text/
+      - title: Inserting images
+        url: /latex/inserting-images/
+      - title: Inserting code snippets
+        url: /latex/inserting-code-snippets/
+      - title: Creating custom title page
+        url: /latex/creating-custom-title-page/
+      - title: Generating output from a LaTeX project
+        url: /latex/generating-output-latex-files/

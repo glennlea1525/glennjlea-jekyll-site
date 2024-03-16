@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Footnotes, widows and orphans</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Footnotes, widows and orphans" />
+    <meta property="og:url" content="http://localhost:4029/latex/footnotes-widow-orphans/" />
+    <meta property="og:description" content="Here are some rules I created for footnotes, widow and orphan control." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Footnotes, widows and orphans
+      
+    
+</div></div>
+      <h1 id="footnotes-widows-and-orphans">Footnotes, widows and orphans</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#footnotes-widows-and-orphans" id="markdown-toc-footnotes-widows-and-orphans">Footnotes, widows and orphans</a>    <ul>
+      <li><a href="#footnote-rules" id="markdown-toc-footnote-rules">Footnote rules</a></li>
+      <li><a href="#widow-and-orphan-control" id="markdown-toc-widow-and-orphan-control">Widow and Orphan Control</a></li>
+      <li><a href="#adding-todo-notes" id="markdown-toc-adding-todo-notes">Adding Todo notes</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Here are a set of commands I created for footnotes, widow and orphan control. You can use them to get started or learn how to make your own set of commands.</p>
+
+<h2 id="footnote-rules">Footnote rules</h2>
+
+<p>This sets the footnote rule which appears just above the first footnote on a page.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\setlength</span><span class="p">{</span><span class="k">\skip\footins</span><span class="p">}{</span>0.119cm<span class="p">}</span>
+<span class="k">\renewcommand\footnoterule</span><span class="p">{</span><span class="k">\vspace*</span><span class="p">{</span>-0.018cm<span class="p">}</span>
+<span class="k">\setlength\leftskip</span><span class="p">{</span>0pt<span class="p">}</span>
+<span class="k">\setlength\rightskip</span><span class="p">{</span>0pt plus 1fil<span class="p">}</span>
+<span class="k">\noindent\textcolor</span><span class="p">{</span>black<span class="p">}{</span><span class="k">\rule</span><span class="p">{</span>0.25<span class="k">\columnwidth</span><span class="p">}{</span>0.018cm<span class="p">}}</span><span class="k">\vspace*</span><span class="p">{</span>0.101cm<span class="p">}}</span>
+</code></pre></div></div>
+
+<h2 id="widow-and-orphan-control">Widow and Orphan Control</h2>
+
+<p>You can control widows and orphans using these commands:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\widowpenalty</span>=300
+<span class="k">\clubpenalty</span>=300
+</code></pre></div></div>
+
+<h2 id="adding-todo-notes">Adding Todo notes</h2>
+
+<p>You can add this Package to add todo notes in the document as a type of comment. They do not appear in the output but serve as useful reminders for yourself what needs to be done in the section, chapter, whatever.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{todonotes}</code></p>
+
+<p>Then insert a note in the doc using the following:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\todo{Rewrite this answer \ldots}</code></p>
+
+<p>At any location in the document a list of the inserted notes can be generated with the following command:</p>
+
+<p><code class="language-plaintext highlighter-rouge">\listoftodos</code></p>
+
+<p><a href="/latex/sectioning-styles.html">Next: Defining sectioning styles</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>

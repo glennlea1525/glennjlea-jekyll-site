@@ -1,0 +1,94 @@
+---
+layout: article
+subject: Haudenosaunee
+title: The Iroquois and Missionaries
+excerpt:
+date: '2021-01-01'
+section: articles
+categories: Haudenosaunee
+---
+# {{ page.title }}
+
+The arrival of Europeans in North America had a significant impact on the Iroquois communities of the Haudenosaunee Confederacy. Aside from the introduction of diseases for which these peoples had no immunity, it was the introduction of a foreign religion that causes the greatest upheaval amongst families, clans and villages of the Five Nations.
+
+In the early part of the seventeenth century, the French Catholic orders in New France sent missionaries to the Iroquois. Although the Beaver Trade (trade in beaver pelts destined for European haberdashers) had already impacted the lives of the Iroquois, the introduction of a competing religion caused considerable strife amongst the communities. The beaver trade introduced unheard of items such as knives, axes and other iron tools. It also increased warfare between the Five Nations and the Huron and Eire peoples. As the beaver trade required access to European traders, having no direct access nor good sources of beaver hides to trade meant going to war against other nations who had those valuable assets. Eventually, the Five Nations were inundated with war captives to replace lost members who died in battles with other peoples. The emergence of missionaries to the Five Nations created its own problems that ran deeper than the need for trade. Unlike warfare losses, conversions to Christianity split families and clans apart and weakened the social order of the Five Nations.
+
+The first missionaries to attempt conversions were the Jesuits of New France. While they had limited "success" in making converts to Christianity, it was the Sulpician Society who were to have the biggest influence on the Iroquois of the Five Nations.
+
+## New France and the Society of the Priests of Saint Sulpice
+
+The *Society of the Priests of Saint Sulpice* or the *Sulpicians* are a Catholic Order named after the Church of Saint-Sulpice in Paris, France. They were founded in 1641 by Father Jean-Jacques Olier de Verneuel[^1] of the Catholic church to work out in daily life the decisions made at the Council of Trent (1545-1563). In New France, the Company of One Hundred Associates, who were responsible for France's colony in the New World, gave the land of Ville-Marie (Montreal) to the Société Notre-Dame de Montréal. Father Olier was active in this society as a Sulpician although the majority were Jesuits. They helped to establish schools and Churches and as royal Seigneurs they were lords of Montreal until the British conquest.
+
+In 1657, the Sulpicians under Father Olier de Verneuel sent four of his missionaries to the new world to form the first parish in this new village of Ville-Marie. After establishing their mission, they began sending missionaries to work amongst the indigenous peoples of New France. In 1660 they sent missionaries to the Iroquois[^1] at the Bay of Quinte near the eastern end of Lake Ontario, two of whom were immediately killed.[^2] Despite these setbacks they continued their work especially amongst the Mohawk nation. "Conversions did occur mostly amongst the Iroquois captives and women, although not exclusively.[^3] After some encouragement, the missionaries convinced them to establish settlements near Ville-Marie for these Iroquois converts. These Mohawk converts established seven "Nations", the most prominent of them being Kanien'kéha:ka (Kanesatake), Kahnawake and Akwesasne.
+
+Frideres provides a good summary of the Mohawk village of Caughnawaga (Kahnawake) under French rule.
+
+>"The Caughnawaga people, at different times, experienced all the apparent advantages (and obvious disadvantages) to which the Indian people of Canada were exposed during their interaction with Europeans.  They were exhorted to be good Christians, and mercenary warriors; they were expected to participate in the fur trade, but were reviled if they traded where prices were best; they were adjured to temperance by the clerics, but coaxed to trade their furs for brandy.  In the end, it was they who guided the British conquerors to Montreal in 1760."
+
+When the Sulpicians applied to the Governor of New France in 1717 for a Seigneury on the north shore of Lac des Deux Montagnes, the Governor granted the Order their land. The Sulpicians set up a Seigneury for the purpose "that it would be to the advantage of the Indian Mission.
+
+The Seminary of St. Sulpice of Paris were the property owners of Montreal and as private property this conferred on them 'full property under title of fief and seigniory'. The Sulpicians not only maintained a mission to the First Nation converts but as "caretakers" of these people, they instilled a loyalty to the King of France. These converts were primarily from the Mohawk nation of the Haudenosaunee as well as Algonquin and Nipissing tribes. The loyalty of these peoples served as a buffer between Montreal and possible incursions of the Iroquois of the Haudenosaunee in time of war.
+
+This conversion continued unabated until the French were defeated by the British in 1763 at the end of Seven Years War. By then, during the 1750s, seven Iroquois communities had been established in and around Montreal.
+
+## The Haudenosaunee and colonial powers
+
+On the other hand, throughout the colonial period, the majority of the Confederacy attempted to retain a peaceful and balanced relationship with these two European powers. The League Iroquois - as opposed to the Seven Nations Iroquois - eventually formed into Anglophile, Francophile and Neutral (not to be confused with the Neutrals inhabiting north of Lake Eire) factions. Each group sought to retain independence from both Colonial powers. The Anglophiles requested Protestant missionaries as a counter to Jesuit and other Catholic missionaries. The Francophiles encouraged the government of New France (now called Canada) to force the British out of their territories. The Neutrals, the largest and most widespread faction, worked endlessly to make peace with both sides with the hope of retaining sovereignty over their lands.
+
+In the 17th century and early 18th century, New France and Dutch colonial America went beyond missionary work to the more significant trade relationships. During this time the Confederacy were a powerful force to be reckoned with. They were treated with the respect due their influence in controlling access to the West and to the lucrative trade in beaver pelts. Several Dutch traders became fluent in Mohawk and began documenting Iroquois lifestyle, customs and religions as well as their day to day lives. French missionaries also learned Iroquois languages producing their own records of their interactions with the Iroquois.
+
+European wars led to the Confederacy caught up in these conflicts as the French, Dutch and British forces battled it out for dominance in the New World. To win battles, all belligerents sought out the Confederacy as allies. For the most part neutrality served their best interests, but not always. They needed trade routes and traders and for that they turned to the Dutch. Eventually the Dutch were defeated and their territories in New Amsterdam were handed over to the British. So from three potential trading colonial powers, the Confederacy had to deal with only two - the French and the British. And both of these powers had a habit of falling out every decade or so. The French tried to prevent the Confederacy from trading with the British while the British tried to prevent trade with the French. Throughout it all, the Confederacy set the terms of trade and asserted their rights to trade with whom they wanted. If they had beaver pelts, they would trade them to those who provided the best returns.
+
+As British power increased and French efforts to eliminate Confederacy influence in access to western sources of trade, the Five Nations experienced a loss of influence and power. But not completely. Both sides still needed them. For instance, by the 1720s, both the French and British were building solid forts on Iroquois territory in defiance of Iroquois leadership. The French built a fort at Niagara on the western end of Lake Ontario while the British built a fort at Oswego close to the eastern end of Lake Ontario. They built these forts to capture trade from the west and avoid the Iroquois middlemen who accompanied western tribesmen crossing their territory on the way to Albany. The French sought to keep the trade with New France. The British sought to undermine Iroquois influence. For the League Iroquois, this battle for trade dominance only served to weaken their hands with the Colonial powers.
+
+By the middle of the 18th century British attacks on New France increased leading to all out war and eventual defeat of the French, ending their 300 year dominance of Canada. Britain now controlled all territories from the Hudson Bay to Spanish Florida. They had also put a buffer on the west to control settlement in areas controlled by tribes living in the Ohio Valley. But this left the League Iroquois in a severely weakened position. Not so the Seven Nations Iroquois.
+
+## British rule and the Iroquois
+
+When the British assumed control of New France, the role of French missionaries were significantly diminished, but not entirely. They continued to provide services such as schools and churches to the Seven Nations Iroquois. Their settlements were on lands belonging to Church orders. The Iroquois at Kahnawake and Kanesatake were on Jesuit territory and on Sulpician territory, which was essentially private land. With British assuming control of Canada, Jesuit lands passed into Government hands but as private land owners, the Sulpicians maintained control over their own land.
+
+>The British acknowledged aboriginal title to the land; the French did not. When Indian lands were ceded to the English they were done so formally for certain considerations, in the form of treaties or agreements...By formally recognizing and honouring Indian rights to the land before extinguishing those rights on occupying the land, the English hoped to eliminate any later recourse to violence.[^5]
+
+Normally, the British signed treaties with existing tribes in advance of settlement. In territories once part of New France, however, the British could not follow that practice. Instead they adopted a policy of accommodation to existing conditions.
+
+>"Article 40 of the Articles of Capitulation of Montreal of 1760 declared that '[t]he savages or Indian allies of his most Christian Majesty, shall be maintained in the lands they inhabit; if they chuse [sic] to remain there...they shall have, as well as the French, liberty of religion, and shall keep their missionaries."
+
+This meant the Jesuits and Sulpicians could continue owning and operating their Indian lands. But a dispute between the Iroquois and the Jesuits resulted in the Jesuits loosing control of their holdings. In 1775, thirteen years after the British assumed control, all Jesuit holdings reverted to the Crown with all their Indian Missions becoming the responsibility of the Government. Church dominance of First Nation territories in Quebec ended, except in Kanesatake which continued to be under the ownership of the Sulpicians.
+
+With British rule, the Sulpician order was not outlawed but they lost control of their civil power in Montreal. In the Quebec act of 1774 "religious orders and communities of the Church of Rome" were without a guarantee that they would have secure property rights. The Crown could appropriate Catholic Church property and lands if it saw fit. All Catholic orders, except the Jesuits, enjoyed the use of their property after capitulation. Religious Orders could sell their assets and take them back to France. As Kanesatake was legally an asset of the Sulpicians of Paris, only the Parisian Sulpician authorities could dispose of the lands. They gave title to Kanesatake to the Sulpician seminary of Montreal. This action became a contentious issue for other Church organizations.
+
+## The Upheaval caused by the American Revolution
+
+In a few short years, the thirteen American colonies rebelled against the crown over many issues including provisions in the Treaty of Paris which prevented western expansion of the colonies into First Nation territories in the Ohio Valley and beyond. With the colonies victorious, Britain was forced to cede the territory belonging to the Haudenosaunee to the Americans. The League Iroquois lost territorial rights to their ancestral land without compensation. The American authorities in New York saw this land as prime settlement territories and set about forcing conditions on the League Iroquois. As most had allied with Britain in the Revolutionary War the Crown offered compensation in the form of territory in Canada. They were granted lands in Upper Canada around the Bay of Quinte and along the Grand River which emptied into Lake Eire. Those who stayed in New York were forced on to reservations in New York and elsewhere.
+
+## Into Upper Canada
+
+Most of the League Iroquois refugees went to the land grant on the Grand River and established the *Six Nations of the Grand River* reserve. Mohawk, Cayuga, Onondaga, Oneida, Seneca and Tuscarora peoples under the leadership of Joseph Brant established villages along the river. Britain had provided territory on both sides of the Grand River from its mouth on Lake Eire up to its source in present day Amaranth Township.
+
+Eventually most of the original land grants were sold off or just simply squatted on by American or European settlers. Yet, these Iroquois peoples would serve as an important impediment for American aggression against the sparsely populated Upper Canada. By the time of the War of 1812, the Iroquois along with the Ojibwa and Mississauga peoples joined forces with British regulars and Upper Canada militia in repelling the American invaders.
+
+## My reflections
+
+The Six Nations Confederacy - the Haudenosaunee - would become critical for the establishment of Upper Canada and the Nation of Canada. The vision of the Great Peacemaker Deganawidah laid out the path of working out differences around the Great Fire ceremony at Nundawao. My journey of understanding these great peoples has led me to understand Canadians have much to learn from these peoples. And much to regret about how they have been treated.
+
+As a final note, the early European arrivals and later immigrants to these shores called the Indigenous peoples a very derogatory term - "savages". After 500 years of interacting with the First Nations people, clearly the Europeans were mistaken. By looking at the history of Europe and how it managed conflict through endless wars, who were the real "savages"? Certainly the Haudenosaunee practiced warfare. But they also practiced a Reckoning Ceremony and a practice of discussing differences around a great fire until a resolution could be found.
+
+Those who arrived on boats across the ocean came to a land that was peopled with complex and successful cultures who had succeeded in working together well enough with the natural world and with each other. From a population in the millions, the Europeans had managed in 500 short years to decimate those number to the thousands or in some cases hundreds or less. They had forced them to live in small patches of territory while the great cities were built around them. They had lost their culture, their sense of belonging, those elements that brought structure and meaning to their lives and had little else to replace it with.
+
+And with a society emerging around them that was hostile to them, how were they expected to survive? That they did is a testament to their resiliency and determination to keep their identity. Many such cultures around the world endured such hostility. Some survived. Many didn't What makes the Iroquois of the Haudenosaunee unique is that though reduced to almost 12,000 or less, they were able to rebuild themselves in their new lands in Upper Canada. Now as the twenty-first century begins, they are demanding reparations and an acknowledgement of wrongs done to them. They are demanding justice by the perpetrators of the depredations caused to them. Not an easy task but a first step is to acknowledge the truth. Then reconcile.  
+
+I can only hope this little attempt on my part has done a little bit towards correcting that history.
+
+Next: [Further Reading](/haudenosaunee/bibliography/)
+
+## Footnotes
+
+[^1]: "Olier can also be considered to be one of the founders of the city of Montreal; along with the Servant of God Jerome le Royer de la Dauversiere he founded the Society of Our Lady of Montreal, in whose name Paul de Chomedey, sieur de Maisonneuve, led the expedition which founded Ville-Marie in 1642."  M. Theriault, "Sulpicians" in the Canadian Encyclopedia.
+
+[^2]: Society if Saint-Sulpice from the [Catholic Encyclopedia](https://www.newadvent.org/cathen/13378a.htm). Retrieved October 10, 2020.
+
+[^3]: Richter, Daniel K.. The Ordeal of the Longhouse (Published by the Omohundro Institute of Early American History and Culture and the University of North Carolina Press) (p. 108). Omohundro Institute and University of North Carolina Press. Kindle Edition.
+
+[^4]: [Society of the Priests of Saint Sulpice. From Wikipedia.](https://en.wikipedia.org/wiki/Society_of_the_Priests_of_Saint_Sulpice) Retrieved October 10, 2020.
+
+[^5]: Frideres, James S. Native People in Canada: Contemporary Conflicts. 1983

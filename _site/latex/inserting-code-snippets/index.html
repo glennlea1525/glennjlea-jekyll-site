@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Glenn J. Lea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Thoughts Worth Documenting &mdash; Inserting code snippets</title>
+    <script src="https://kit.fontawesome.com/1af71f1390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/assets/css/styles.css" rel="stylesheet"> -->
+    <!-- <link href="/css/styles-one-col.css" rel="stylesheet" type='text/css'> -->
+    <link href="/assets/css/base.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/grid-layout.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/menu.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/card.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/pagination.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/syntax.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/toc.css" rel="stylesheet" type='text/css'>
+    <link href="/assets/css/section-styles.css" rel="stylesheet" type='text/css'>
+    <meta property="og:title" content="Inserting code snippets" />
+    <meta property="og:url" content="http://localhost:4029/latex/inserting-code-snippets/" />
+    <meta property="og:description" content="Here is some syntax you can use to insert code snippets and code highlighting in a text flow." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <!-- <style>@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');</style> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');</style>
+    
+
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
+</script>
+
+    <link rel="shortcut icon" href="http://localhost:4029/favicon.ico" >
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q92G0ZSG1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0Q92G0ZSG1');
+  gtag('config', 'UA-215563868-1');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHJKBGV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container"><wrapper class="wrapper">
+  <header class="header">
+      <div class="header-item"><a href="/" style="color:white">Thoughts Worth Documenting</a></div>
+  </header>
+  <nav class="menu"><nav>
+
+  <div class="nav-container">
+    <ul class="menu-main">
+      <li><a href="/">Home</a></li>  
+      <li><a href="/history/">History</a>
+        <div class="menu-sub">
+          <ul>
+              <li><a href="/servetus/home/">Michael Servetus</a></li>
+              <li><a href="/tyndale/home/">William Tyndale</a></li>
+              <li><a href="/ware/home/">John Ware</a></li>
+              <li><a href="/haudenosaunee/home/">Haudenosaunee Confederacy</a></li>
+          </ul>
+        </div> 
+      </li>
+      
+      <li><a href="/blog-categories/">Blog</a>
+        <div class="menu-sub">
+          <ul>
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/culture/">Culture</a></li>  
+            <li><a href="/usability/">Usability</a></li>
+            <li><a href="/humour/">Humour</a></li>
+          </ul>
+        </div> 
+      </li>
+      <li><a href="/about/">About</a></li>
+    </ul>    
+  </div>
+</nav></nav>
+  <main class="content">
+    <div class="page-content-wrapper">
+      <div class="breadcumb"><div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    
+      
+        / <a href="/latex/">Latex</a>
+      
+    
+      
+        / Inserting code snippets
+      
+    
+</div></div>
+      <h1 id="inserting-code-snippets">Inserting code snippets</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#inserting-code-snippets" id="markdown-toc-inserting-code-snippets">Inserting code snippets</a>    <ul>
+      <li><a href="#selecting-a-package" id="markdown-toc-selecting-a-package">Selecting a package</a></li>
+      <li><a href="#inserting-code-in-a-specific-environment" id="markdown-toc-inserting-code-in-a-specific-environment">Inserting code in a specific environment</a></li>
+      <li><a href="#using-the-verbatim-package-to-insert-code" id="markdown-toc-using-the-verbatim-package-to-insert-code">Using the verbatim package to insert code</a></li>
+      <li><a href="#using-the-listings-package" id="markdown-toc-using-the-listings-package">Using the listings package</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="selecting-a-package">Selecting a package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">verbatim</code> and <code class="language-plaintext highlighter-rouge">listings</code> packages can be used for inserting in a text flow source code snippets and code highlighting. However, I found the Listing package<code class="language-plaintext highlighter-rouge">lstset</code> best suited my needs for technical documentation. from the Listing package documentation:</p>
+
+<blockquote>
+  <p>The <code class="language-plaintext highlighter-rouge">listings</code> package is a source code printer for LATEX. You can typeset stand alone files as well as listings with an environment similar to verbatim as well as you can print code snippets using a command similar to <code class="language-plaintext highlighter-rouge">\verb</code>. Many parameters control the output and if your preferred programming language isn’t already supported, you can make your own definition.</p>
+</blockquote>
+
+<p>These packages are inserted using the following commands:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\usepackage</span><span class="p">{</span>listings<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>verbatim<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="inserting-code-in-a-specific-environment">Inserting code in a specific environment</h2>
+
+<p>You can put code inside a corresponding environment. For example, for SQL commands, you could use the following.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\begin</span>(codesql)
+SQL Command syntax, etc.
+<span class="k">\end</span>(codesql)
+</code></pre></div></div>
+
+<p>Other environments include:</p>
+
+<ul>
+  <li>codesh - shell commands</li>
+  <li>codecsv - CSV commands</li>
+  <li>codecpp - C++</li>
+  <li>codejava - Java code</li>
+  <li>codejson JSON</li>
+  <li>codexml - XML</li>
+</ul>
+
+<h2 id="using-the-verbatim-package-to-insert-code">Using the verbatim package to insert code</h2>
+
+<p>LaTeX provides a default command <code class="language-plaintext highlighter-rouge">verbatim</code> for inserting code. It ignores all text and commands within the environment and outputs the text in monospaced font.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{verbatim}</span>
+  /* HelloWorld.java
+  */
+   public class HelloWorld
+   <span class="p">{</span>
+     public static void main(String[] args) <span class="p">{</span>System.out.println("Hello World!");<span class="p">}</span>
+   <span class="p">}</span>
+<span class="nt">\end{verbatim}</span>
+</code></pre></div></div>
+
+<h2 id="using-the-listings-package">Using the listings package</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">listings</code> package supports most common languages. To include this package, add the following line to the stylesheet.</p>
+
+<p><code class="language-plaintext highlighter-rouge">\usepackage{listings}</code></p>
+
+<p>First, define the colours for the source code:</p>
+
+<p>\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightgrey}{RGB}{211,211,211}</p>
+
+<p>Then configure the listing using <code class="language-plaintext highlighter-rouge">\lstset</code>:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\lstset</span><span class="p">{</span>
+  frame=tlrb,
+  frameround=tttt,
+  framerule=0.2pt,
+  rulecolor=<span class="k">\color</span><span class="p">{</span>lightgrey<span class="p">}</span>,
+  language=SQL,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle=<span class="p">{</span><span class="k">\small\ttfamily</span><span class="p">}</span>,
+  numbers=none,
+  numberstyle=<span class="k">\tiny\color</span><span class="p">{</span>gray<span class="p">}</span>,
+  keywordstyle=<span class="k">\color</span><span class="p">{</span>blue<span class="p">}</span>,
+  commentstyle=<span class="k">\color</span><span class="p">{</span>dkgreen<span class="p">}</span>,
+  stringstyle=<span class="k">\color</span><span class="p">{</span>mauve<span class="p">}</span>,
+  breaklines=true,
+  breakatwhitespace=true tabsize=3
+<span class="p">}</span>
+
+<span class="k">\lstset</span><span class="p">{</span>language=SQL<span class="p">}</span>
+
+<span class="k">\newcommand</span><span class="p">{</span><span class="k">\inlineCode</span><span class="p">}{</span><span class="k">\lstinline</span><span class="na">[basicstyle=\normalsize\ttfamily]</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then add your code sample, changing the language setting accordingly:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">\begin{lstlisting}</span>[language=java]
+    /* HelloWorld.java
+    */
+
+    public class HelloWorld
+    <span class="p">{</span>
+        public static void main(String[] args) <span class="p">{</span>
+        System.out.println("Hello World!");
+       <span class="p">}</span>
+    <span class="p">}</span>
+<span class="nt">\end{lstlisting}</span>
+</code></pre></div></div>
+
+<p><a href="/latex/creating-custom-title-page.html">Next: Creating custom title pages</a></p>
+
+    </div>
+  </main>
+  <footer class="footer"><div class="footer-content">
+<div class="footer-text">&copy;	2022-2024 Glenn J Lea Technical Writing. All rights reserved.
+</div>
+</div>
+</footer>
+</wrapper></div>
+</body>
+</html>
